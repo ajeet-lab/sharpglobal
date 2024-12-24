@@ -1,0 +1,505 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      <form action="/admin/po/process" method="POST" class="d-none">
+        <div class="row">
+          <div class="col-lg-4 mb-3">
+            <label for="">Inquiry closed with</label>
+            <select
+              name="inquiryClosedWith"
+              id=""
+              class="form-control form-control-sm"
+            >
+              <option value="Immediate PO">Immediate PO</option>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 mb-3">
+            <label for="customerName">Custmer name</label>
+            <input
+              type="text"
+              name="customerName"
+              id="customerName"
+              value="Test"
+              class="form-control form-control-sm"
+            />
+          </div>
+          <div class="col-lg-6 mb-3">
+            <label for="contractBooked">Contract Booked for</label>
+            <select
+              name="contractBooked"
+              id="contractBooked"
+              class="form-control form-control-sm"
+            >
+              <option value="Globally">Globally</option>
+              <option value="Location Wise">Location Wise</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- If Contract booked for Globally -->
+        <div id="contractBookedGlobally">
+          <div class="row">
+            <div class="col-lg-4 mb-3">
+              <label for="scNo">SC No Unique</label>
+              <input
+                type="text"
+                name="scNo"
+                id="scNo"
+                value="SC Number Unique"
+                class="form-control form-control-sm"
+              />
+            </div>
+            <div class="col-lg-4 mb-3">
+              <label for="productName">Product Name</label>
+              <select
+                name="productName"
+                id="productName"
+                class="form-control form-control-sm"
+              >
+                <option value="Product1">Product1</option>
+                <option value="Product2">Product2</option>
+                <option value="Product3">Product3</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="customerProductCode">Customer Product Code</label>
+              <select
+                name="customerProductCode"
+                id="customerProductCode"
+                class="form-control form-control-sm"
+              >
+                <option value="Customer Product Code1">
+                  Customer Product Code1
+                </option>
+                <option value="Customer Product Code2">
+                  Customer Product Code2
+                </option>
+                <option value="Customer Product Code3">
+                  Customer Product Code3
+                </option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="quantity">Quantity</label>
+              <input
+                type="text"
+                name="quantity"
+                class="form-control form-control-sm"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="rate">Rate</label>
+              <input
+                type="text"
+                name="rate"
+                class="form-control form-control-sm"
+                placeholder="Rate_$"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="supplyPeriod">Supply Period</label>
+              <input
+                type="date"
+                name="supplyPeriod"
+                class="form-control form-control-sm"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- If Contract booked for Location wise -->
+        <div id="contractBookedLocally" style="display: none">
+          <div class="row">
+            <div class="col-lg-4 mb-3">
+              <label for="supplyLocation">Supply Location</label>
+              <input
+                type="text"
+                name="supplyLocation"
+                id="supplyLocation"
+                value="Supply Location"
+                class="form-control form-control-sm"
+              />
+            </div>
+            <div class="col-lg-4 mb-3">
+              <label for="scNo">SC No Unique</label>
+              <input
+                type="text"
+                name="scNo"
+                id="scNo"
+                value="SC Number Unique"
+                class="form-control form-control-sm"
+              />
+            </div>
+            <div class="col-lg-4 mb-3">
+              <label for="productName">Product Name</label>
+              <select
+                name="productName"
+                id="productName"
+                class="form-control form-control-sm"
+              >
+                <option value="Product1">Product1</option>
+                <option value="Product2">Product2</option>
+                <option value="Product3">Product3</option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="customerProductCode">Customer Product Code</label>
+              <select
+                name="customerProductCode"
+                id="customerProductCode"
+                class="form-control form-control-sm"
+              >
+                <option value="Customer Product Code1">
+                  Customer Product Code1
+                </option>
+                <option value="Customer Product Code2">
+                  Customer Product Code2
+                </option>
+                <option value="Customer Product Code3">
+                  Customer Product Code3
+                </option>
+              </select>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="quantity">Quantity</label>
+              <input
+                type="text"
+                name="quantity"
+                class="form-control form-control-sm"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="rate">Rate</label>
+              <input
+                type="text"
+                name="rate"
+                class="form-control form-control-sm"
+                placeholder="Rate_$"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-3">
+              <label for="supplyPeriod">Supply Period</label>
+              <input
+                type="date"
+                name="supplyPeriod"
+                class="form-control form-control-sm"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <button class="btn btn-warning px-4">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="my-4">
+        <h4 class="mb-4">Purchase Order entry</h4>
+        <% if(enquiry !== null){ %>
+        <form action="/admin/po/process" method="POST">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="customerName">Customer Name</label>
+              <input
+                type="text"
+                name="customerName"
+                class="form-control form-control-sm"
+                placeholder="Customer Name"
+                value="<%= enquiry.customer %>"
+                readonly
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="Inquiry or Contract">Inquiry or Contract</label>
+              <select
+                name="inquiryOrContract"
+                id="inquiryOrContract"
+                class="form-control form-control-sm"
+              >
+                <option value="Inquiry">Inquiry</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="poDate">PO Date</label>
+              <input
+                type="date"
+                name="poDate"
+                class="form-control form-control-sm"
+              />
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="poNumber">PO Number</label>
+              <input
+                type="text"
+                name="poNumber"
+                class="form-control form-control-sm"
+                placeholder="Po Number"
+              />
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <label for="billingAddress">Billing Address</label>
+              <textarea
+                type="textarea"
+                name="billingAddress"
+                class="form-control form-control-sm"
+                placeholder="Billing Address"
+                readonly
+              ><%= enquiry.customerName %></textarea>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <label for="shippingAddress">Shipping address</label>
+              <textarea
+                type="textarea"
+                name="shippingAddress"
+                class="form-control form-control-sm"
+                placeholder="Shipping address"
+                readonly
+              ><%= enquiry.address %></textarea>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="quantity">Quantity</label>
+              <div class="input-group">
+                  <input type="text"
+                  name="quantity"
+                  class="form-control form-control-sm"
+                  placeholder="Quantity"
+                  value="<%= enquiry.quantity %>" aria-describedby="basic-addon1">
+                  <div class="input-group-prepend py-0">
+                    <span class="input-group-text py-0" id="basic-addon1"><%= enquiry.weight %> </span>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="rate">Rate</label>
+              <input
+                type="text"
+                name="rate"
+                class="form-control form-control-sm"
+                placeholder="Rate"
+                value="<%= enquiry.rateQuoted %>"
+              />
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="shipmentPeriod">Shipment period</label>
+              <input
+                type="date"
+                name="shipmentPeriod"
+                class="form-control form-control-sm"
+                placeholder="Shipment period"
+              />
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="incoterm">Incoterm</label>
+              <select
+                name="incoterm"
+                class="form-control form-control-sm"
+                placeholder="Incoterm"
+              >
+                <option value="CIF">CIF</option>
+                <option value="DDP">DDP</option>
+                <option value="New">New</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="paymentTerm">Payment Term</label>
+              <select
+                type="date"
+                name="paymentTerm"
+                class="form-control form-control-sm"
+                placeholder="Payment Term"
+              >
+                <option value="100% in Advance">100% in Advance</option>
+                <option value="New Term">New Term</option>
+              </select>
+            </div>
+
+            <div class="col-lg-3 col-md-4 mb-3">
+              <label for="sampleRequired">Sample Required</label>
+              <select
+                name="sampleRequired"
+                class="form-control form-control-sm"
+                placeholder="Payment Term"
+              >
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12 pl-0">
+            <button class="btn btn-warning btn-sm px-3">Submit</button>
+          </div>
+        </form>
+        <% }else{ %>
+            <form action="/admin/po/process" method="POST">
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="customerName">Customer Name</label>
+                    <input
+                      type="text"
+                      name="customerName"
+                      class="form-control form-control-sm"
+                      placeholder="Customer Name"
+                    />
+                  </div>
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="Inquiry or Contract">Inquiry or Contract</label>
+                    <select
+                      name="inquiryOrContract"
+                      id="inquiryOrContract"
+                      class="form-control form-control-sm"
+                    >
+                      <option value="Contract">Contract</option>
+                    </select>
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="poDate">PO Date</label>
+                    <input
+                      type="date"
+                      name="poDate"
+                      class="form-control form-control-sm"
+                    />
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="poNumber">PO Number</label>
+                    <input
+                      type="text"
+                      name="poNumber"
+                      class="form-control form-control-sm"
+                      placeholder="Po Number"
+                    />
+                  </div>
+      
+                  <div class="col-md-6 mb-3">
+                    <label for="billingAddress">Billing Address</label>
+                    <textarea
+                      type="textarea"
+                      name="billingAddress"
+                      class="form-control form-control-sm"
+                      placeholder="Billing Address"
+                    ></textarea>
+                  </div>
+      
+                  <div class="col-md-6 mb-3">
+                    <label for="shippingAddress">Shipping address</label>
+                    <textarea
+                      type="textarea"
+                      name="shippingAddress"
+                      class="form-control form-control-sm"
+                      placeholder="Shipping address"
+                    ></textarea>
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="quantity">Quantity</label>
+                    <input
+                      type="text"
+                      name="quantity"
+                      class="form-control form-control-sm"
+                      placeholder="Quantity"
+                    />
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="rate">Rate</label>
+                    <input
+                      type="text"
+                      name="rate"
+                      class="form-control form-control-sm"
+                      placeholder="Rate"
+                    />
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="shipmentPeriod">Shipment period</label>
+                    <input
+                      type="date"
+                      name="shipmentPeriod"
+                      class="form-control form-control-sm"
+                      placeholder="Shipment period"
+                    />
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="incoterm">Incoterm</label>
+                    <select
+                      name="incoterm"
+                      class="form-control form-control-sm"
+                      placeholder="Incoterm"
+                    >
+                      <option value="CIF">CIF</option>
+                      <option value="DDP">DDP</option>
+                      <option value="New">New</option>
+                    </select>
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="paymentTerm">Payment Term</label>
+                    <select
+                      type="date"
+                      name="paymentTerm"
+                      class="form-control form-control-sm"
+                      placeholder="Payment Term"
+                    >
+                      <option value="100% in Advance">100% in Advance</option>
+                      <option value="New Term">New Term</option>
+                    </select>
+                  </div>
+      
+                  <div class="col-lg-3 col-md-4 mb-3">
+                    <label for="sampleRequired">Sample Required</label>
+                    <select
+                      name="sampleRequired"
+                      class="form-control form-control-sm"
+                      placeholder="Payment Term"
+                    >
+                      <option value="No">No</option>
+                      <option value="Yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 pl-0">
+                    <button class="btn btn-warning btn-sm px-3">Submit</button>
+                  </div>
+              </form>
+            <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let val = document.getElementById("contractBooked");
+  val.addEventListener("change", function () {
+    if (val.value === "Location Wise") {
+      document.getElementById("contractBookedGlobally").style.display = "none";
+      document.getElementById("contractBookedLocally").style.display = "block";
+    } else {
+      document.getElementById("contractBookedGlobally").style.display = "block";
+      document.getElementById("contractBookedLocally").style.display = "none";
+    }
+  });
+</script>

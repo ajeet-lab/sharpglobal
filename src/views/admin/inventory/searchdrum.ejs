@@ -1,0 +1,61 @@
+<div class="card border-0">
+    <div class="card-header mb-0 pb-0 border-2 border-warning border-bottom">
+        <h4>Search Drum</h4>
+    </div>
+    <div class="card-body">
+        <form action="/admin/search/drum" class="row g-3" method="POST">
+            <div class="col-lg-8 col-md-10 col-12 form-group">
+
+                <label for="drumNo">Drum No</label>
+                <div class="d-flex">
+                    <input type="text" class="form-control mr-3" name="drumNo" id="drumNo" placeholder="Enter Drum No."
+                        required>
+                    <button class="btn btn-warning">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h4>Drum Data</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-sm">
+            <thead class="bg-warning align-center">
+                <tr class="align-middle" style="background-color: #ffc107 !important;">
+                    <th scope="col">UIN</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Drum No.</th>
+                    <th scope="col">Zone</th>
+                    <th scope="col">Floor</th>
+                    <th scope="col">Row</th>
+                    <th scope="col">Column</th>
+                    <th scope="col">Last Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- if(movementData) -->
+                <% if(movementData != ""){ %>
+                <% movementData.forEach(data => { %>
+                <tr class="align-middle">
+                    <td><%= data.uin %> </td>
+                    <td><%= data.name %></td>
+                    <td><%= data.drumNo %></td>
+                    <td><%= data.zone %></td>
+                    <td><%= data.floor %></td>
+                    <td><%= data.row %></td>
+                    <td><%= data.column %></td>
+                    <td><%= data.updatedAt.toLocaleString() %></td>
+                </tr>
+                <%  }) %>
+                <% }else{ %>
+                <tr class="align-middle">
+                    <td colspan="8" class="text-danger">Data not found</td>
+                </tr>
+                <% } %>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

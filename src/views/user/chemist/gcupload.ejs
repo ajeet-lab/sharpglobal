@@ -1,0 +1,67 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="mb-4" style="text-decoration: underline; font-weight: 600;">GC Upload</h4>
+        <form action="/user/gc/upload" method="POST" class="row" enctype="multipart/form-data">
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="productName" class="form-label">Product Name</label>
+                <input type="text" class="form-control" name="productName" id="productName" placeholder="Product Name">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="datePackingOrder" class="form-label">Date of packing order</label>
+                <input type="date" class="form-control" name="datePackingOrder" id="datePackingOrder"
+                    placeholder="Date of packing order">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="batchNo" class="form-label">Batch No</label>
+                <input type="text" class="form-control" name="batchNo" id="batchNo" placeholder="Batch No">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="batchSize" class="form-label">Batch Size</label>
+                <input type="text" class="form-control" name="batchSize" id="batchSize" placeholder="Batch Size">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="dispatchSize" class="form-label">Dispatch Size</label>
+                <input type="text" class="form-control" name="dispatchSize" id="dispatchSize"
+                    placeholder="Dispatch Size">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="invoiceNo" class="form-label">Invoice No</label>
+                <input type="text" class="form-control" name="invoiceNo" id="invoiceNo" placeholder="Invoice No">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+                <label for="sharpProductCode" class="form-label">Sharp Product Code</label>
+                <input type="text" class="form-control" name="sharpProductCode" id="sharpProductCode"
+                    placeholder="Sharp Product Code">
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-10 offset-sm-0 offset-1 mb-3">
+
+                <label for="image_url">Upload</label>
+                <input type="file" class="form-control" name="image_url" id="image_url">
+
+
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFileLangHTML">
+                    <label class="custom-file-label" for="customFileLangHTML" data-browse="Bestand kiezen">Voeg je document toe</label>
+                  </div>
+
+
+                <!-- <label class="form-label" for="image_url">Upload</label>
+                <input type="file" class="form-control" name="image_url" id="image_url"> -->
+            </div>
+
+
+
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-warning mx-auto">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

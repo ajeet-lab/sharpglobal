@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header mb-0 pb-0 border-2 border-warning border-bottom">
+        <h4>Gate Attendance</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="">
+                    <div class="table-responsive py-3 pe-2">
+                        <h4>Attendance Lists</h4>
+                        <table class="table table-sm table-bordered" id="myTable">
+
+                            <thead>
+                                <tr class="align-middle bg-warning">
+                                    <th>Name (UIN)</th>
+                                    <th>Father Name</th>
+                                    <th>Mark In</th>
+                                    <th>Mark Out</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(empLists != ""){ %>
+                                <% empLists.forEach(emplist=>{ %>
+                                <tr class="align-middle">
+                                    <td>
+                                        <%= emplist.name %> (<%= emplist.uin %>)
+                                    </td>
+                                    <td>
+                                        <%= emplist.father %>
+                                    </td>
+                                    <td>
+                                        <a href="/gatekeeper/gate/markIn/<%= emplist.uin %>"
+                                            class="btn btn-warning btn-sm me-2">Mark In</a>
+                                    </td>
+                                    <td>
+                                        <a href="/gatekeeper/gate/markOut/<%= emplist.uin %>" class="btn btn-warning btn-sm">Mark
+                                            Out</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                <% } %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

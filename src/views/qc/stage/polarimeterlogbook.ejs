@@ -1,0 +1,138 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h4 class="card-title font-weight-bold">Polarimeter Log Book</h4>
+        <div class="mt-2">
+          <form action="/qc/material/stage/polarimeter" method="POST">
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="codeNo" class="form-label"> Code No. </label>
+                <input type="text" class="form-control" id="codeNo" placeholder="Code No." name="codeNo" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="date" class="form-label"> Date </label>
+                <input type="date" class="form-control" id="date" placeholder="date" name="date" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="startTime" class="form-label"> Start Time </label>
+                <input type="time" class="form-control" id="" placeholder="Start Time" name="startTime" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="stopTime" class="form-label"> Stop Time </label>
+                <input type="time" class="form-control" id="stopTime" placeholder="Stop Time" name="stopTime" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for=oprationDetail"" class="form-label"> Opration Detail </label>
+                <input type="text" class="form-control" id="oprationDetail" placeholder="Opration Detail" name="oprationDetail" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="product" class="form-label"> Product </label>
+                <select name="product" id="product" class="form-control">
+                  <option value="Crude Mentha Oil">Crude Mentha Oil</option>
+                  <option value="Peppermint Oil">Peppermint Oil</option>
+                  <option value="Spearmint Oil">Spearmint Oil</option>
+  
+                  <option value="DMO">DMO</option>
+                  <option value="Menthol">Menthol</option>
+                  <option value="Menthone">Menthone</option>
+  
+                  <option value="DFMO">DFMO</option>
+                  <option value="DFPO">DFPO</option>
+                  <option value="DFSO">DFSO</option>
+  
+                  <option value="Basil Oil">Basil Oil</option>
+                  <option value="Cineole">Cineole</option>
+                  <option value="Terpene">Terpene</option>
+  
+                  <option value="Alpha Terpineol">Alpha Terpineol</option>
+                  <option value="L-Carvone">L-Carvone</option>
+                  <option value="β-Caryophyllene">β-Caryophyllene</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="batchNo_identification" class="form-label">
+                  Batch No./Identification
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="batchNo_identification" placeholder="Batch No./Identification" name="batchNo_identification"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="stage" class="form-label"> Stage </label>
+                <select id="stage" name="stage" id="" class="form-control">
+                  <option value="FG">FG</option>
+                  <option value="RM">RM</option>
+                  <option value="WIP">WIP</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="firstReading" class="form-label">
+                  1<sup>st</sup> Reading
+                </label>
+                <input type="text" id="firstReading" placeholder="1st Reading" name="firstReading" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="firstReadingTemp" class="form-label"> Temp. </label>
+                <input
+                  type="text"
+                  id="firstReadingTemp" placeholder="First Reading Temp" name="firstReadingTemp"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="secondReading" class="form-label">
+                  2<sup>nd</sup> Reading
+                </label>
+                <input type="text" id="secondReading" placeholder="2nd Reading" name="secondReading" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="secondReadingTemp" class="form-label"> Temp. </label>
+                <input
+                  type="text"
+                  id="secondReadingTemp" placeholder="Second Reading Temp" name="secondReadingTemp"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="thirdReading" class="form-label">
+                  3<sup>nd</sup> Reading
+                </label>
+                <input type="text" id="thirdReading" placeholder="3nd Reading" name="thirdReading" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="thirdReadingTemp" class="form-label"> Temp. </label>
+                <input
+                  type="text"
+                  id="thirdReadingTemp" placeholder="Third Reading Temp" name="thirdReadingTemp"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="averageReading" class="form-label"> Average Reading </label>
+                <input type="text" id="averageReading" placeholder="Average Reading" name="averageReading" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="performedBy" class="form-label"> Performed By </label>
+                <input type="text" id="performedBy" placeholder="Performed By" name="performedBy" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="signatureBy" class="form-label"> Signature </label>
+                <input type="text" id="signatureBy" placeholder="Signature" name="signatureBy" class="form-control" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="verifiedBy" class="form-label"> Verified By </label>
+                <input type="text" id="verifiedBy" placeholder="Verified By" name="verifiedBy" class="form-control" />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning px-3">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

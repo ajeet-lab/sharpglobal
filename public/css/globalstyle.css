@@ -1,0 +1,79 @@
+.bg-lightgreen {
+  background-color: lightgreen !important;
+}
+
+.bg-lightdanger {
+  background-color: rgb(255, 112, 112) !important;
+}
+
+.sidenavbar_unorderlist {
+  height: 100vh;
+}
+
+
+th,
+td {
+  font-size: .8rem;
+  text-align: center;
+}
+
+tbody,
+tr:nth-child(odd) {
+  background: white;
+}
+
+tbody,
+tr:nth-child(even) {
+  background: rgb(248, 248, 227);
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #000 !important;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+  display: none;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: .85em;
+  display: none;
+}
+
+
+input,
+select,
+label,
+option,
+::placeholder {
+  font-size: 0.9rem !important;
+}
+
+
+
+@media (max-width: 768px) {
+
+  #navbarSupportedContent .navbar-nav {
+    display: flex !important;
+  }
+
+  #admin_side_Navbar {
+    position: relative !important;
+  }
+
+  .admin_toggler {
+    position: absolute;
+    top: -55px !important;
+    right: 0 !important;
+  }
+
+  .sidenavbar_unorderlist {
+    height: auto;
+  }
+}

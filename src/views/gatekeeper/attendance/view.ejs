@@ -1,0 +1,48 @@
+  <div class="table-responsive py-3 pe-2">
+      <h4>Attendance</h4>
+      <table class="table table-sm table-bordered" id="myTable">
+
+          <thead>
+              <tr class="align-middle bg-warning">
+                  <th scope="col">UIN</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Mark In</th>
+                  <th scope="col">Mark Out</th>
+                  <th scope="col">Remark</th>
+                  <th scope="col">No. Of Hours</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% if(attenDBD != ""){ %>
+              <% attenDBD.forEach(atten=>{ %>
+              <tr class="align-middle">
+                  <td><%= atten.uin %></td>
+                  <td>
+                      <%= atten.name %>
+                  </td>
+                  <td>
+                      <%= atten.timeIn %>
+                  </td>
+                  <td>
+                      <%= atten.timeOut %>
+                  </td>
+
+                  <td>
+                      <%= atten.remark %>
+                  </td>
+
+                  <td>
+                      <% let milisecond = new Date(atten.timeOut) - new Date(atten.timeIn) %>
+                      <%= Math.floor(milisecond / 3600000) < 10 ? "0"+Math.floor(milisecond / 3600000) : Math.floor(milisecond / 3600000) %>
+                      H
+                      :
+                      <%= Math.floor((milisecond / 60000) % 60) < 10 ? "0"+Math.floor((milisecond / 60000) % 60) : Math.floor((milisecond / 60000) % 60) %>
+                      M
+                  </td>
+              </tr>
+              <% }) %>
+              <% } %>
+
+          </tbody>
+      </table>
+  </div>

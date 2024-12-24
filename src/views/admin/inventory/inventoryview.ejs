@@ -1,0 +1,170 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-sm" id="viewpoTable">
+        <thead class="bg-warning align-center">
+            <tr class="align-middle" style="background-color: #ffc107 !important;">
+               <th scope="col">Description</th>
+                <th scope="col">Location Code</th>
+                <th scope="col">Filled By GC</th>
+                <th scope="col">RcvdFrmTank (PlantNo)</th>
+                <th scope="col">Material Charged</th>
+
+                <th scope="col">Used In Batch No</th>
+                <th scope="col">Tanks No/PlantNo</th>
+                <th scope="col">Batch No.</th>
+                <th scope="col">PlantNo</th>
+                <th scope="col">Drum No</th>
+
+                <th scope="col">Pro Date</th>
+                <th scope="col">Ageing Days</th>
+                <th scope="col">CutTime Ends</th>
+                <th scope="col">No Of Drums</th>
+                <th scope="col">Drum WT.</th>
+
+                <th scope="col">Sample</th>
+                <th scope="col">RI</th>
+                <th scope="col">Batch No/LotNo</th>
+                <th scope="col">Mixtures Of Odoriferous Substances</th>
+                <th scope="col">Category For B Form</th>
+
+                <th scope="col">A Pinene</th>
+                <th scope="col">B Pinene</th>
+                <th scope="col">Sebanine</th>
+                <th scope="col">Mercine</th>
+                <th scope="col">Limonine</th>
+
+                <th scope="col">Cineole</th>
+                <th scope="col">CIS Isomer</th>
+                <th scope="col">CIS</th>
+                <th scope="col">I Octonal</th>
+                <th scope="col">Menthone</th>
+
+                <th scope="col">ISO Menthone</th>
+                <th scope="col">Menthyl Acetate</th>
+                <th scope="col">IP Isopulegol</th>
+                <th scope="col">Neo Menthol</th>
+                <th scope="col">PCB Beta Caryophyllene</th>
+
+                <th scope="col">Neo ISO Pulegol</th>
+                <th scope="col">Neo ISO Menthol</th>
+                <th scope="col">lm</th>
+                <th scope="col">ISO Menthol</th>
+                <th scope="col">Pu</th>
+
+                <th scope="col">Pip</th>
+                <th scope="col">Carvone</th>
+                <th scope="col">A Terpineols</th>
+                <th scope="col">Menthofuran</th>
+                <th scope="col">Sebanine Hydrate</th>
+
+                <th scope="col">Germacrene D</th>
+                <th scope="col">Viridifloral</th>
+                <th scope="col">DiHydro Carvone</th>
+                <th scope="col">Terpenene-1,4-ol</th>
+                <th scope="col">Beta Farnacene</th>
+
+                <th scope="col">Beta Bourbonene</th>
+                <th scope="col">D Menthol</th>
+                <th scope="col">Only L Menthol</th>
+                <th scope="col">Linalool</th>
+                <th scope="col">Methyl Chavi</th>
+
+                <th scope="col">CIS2</th>
+                <th scope="col">tt</th>
+                <th scope="col">TMC</th>
+                <th scope="col">HB</th>
+                <th scope="col">Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <% if(inventory){ %>
+            <% inventory.forEach(data =>{  %>
+                <tr class="align-middle">
+                    <td> <%= data.description %></td>
+                     <td><%= data.locationCode %></td>
+                     <td><%= data.filledByGC %></td>
+                     <td> <%= data.rcvdFrmTank_PlantNo %> </td>
+                     <td> <%= data.materialCharged %></td>
+
+                     <td> <%= data.usedInBatchNo %></td>
+                     <td> <%= data.tanksNo_PlantNo %></td>
+                     <td> <%= data.batchNo %> </td>
+                     <td> <%= data.plantNo %></td>
+                     <td> <%= data.drumNo %> </td>
+
+                     <td> <%= data.proDate %></td>
+                     <td> <%= data.ageingDays %></td>
+                     <td> <%= data.CutTimeEnds %></td>
+                     <td> <%= data.noOfDrums %></td>
+                     <td> <%= data.drum_wt %></td>
+
+                     <td> <%= data.sample %></td>
+                     <td> <%= data.ri %> RI</td>
+                     <td> <%= data.batchNo_LotNo %></td>
+                     <td> <%= data.mixturesOfOdoriferousSubstances %></td>
+                     <td> <%= data.CategoryforBForm %></td>
+
+                     <td> <%= data.a_Pinene %></td>
+                     <td> <%= data.b_Pinene %></td>
+                     <td> <%= data.sebanine %></td>
+                     <td> <%= data.mercine %></td>
+                     <td> <%= data.limonine %></td>
+
+                     <td> <%= data.cineole %></td>
+                     <td> <%= data.cisIsomer %></td>
+                     <td> <%= data.cis %></td>
+                     <td> <%= data.i_Octonal %></td>
+                     <td> <%= data.menthone %></td>
+
+                     <td> <%= data.isoMenthone %></td>
+                     <td> <%= data.menthylAcetate %></td>
+                     <td> <%= data.ip_isopulegol %></td>
+                     <td> <%= data.neoMenthol %></td>
+                     <td> <%= data.pcbBetaCaryophyllene %></td>
+
+                     <td> <%= data.neoIsoPulegol %></td>
+                     <td> <%= data.neoIsoMenthol %></td>
+                     <td> <%= data.lm %></td>
+                     <td> <%= data.isoMenthol %></td>
+                     <td> <%= data.pu %> </td>
+
+                     <td> <%= data.pip %></td>
+                     <td> <%= data.carvone %></td>
+                     <td> <%= data.aTerpineols %> </td>
+                     <td> <%= data.menthofuran %> </td>
+                     <td> <%= data.sebanineHydrate %> </td>
+
+                     <td> <%= data.germacreneD %> </td>
+                     <td> <%= data.viridifloral %> </td>
+                     <td> <%= data.diHydroCarvone %></td>
+                     <td> <%= data.terpenene_1_4_ol %></td>
+                     <td> <%= data.betaFarnacene %></td>
+
+                     <td> <%= data.betaBourbonene %> </td>
+                     <td> <%= data.dMenthol %> </td>
+                     <td> <%= data.only_L_Menthol %> </td>
+                     <td> <%= data.linalool %></td>
+                     <td> <%= data.methylChavi %></td>
+
+                     <td> <%= data.cis2 %></td>
+                     <td> <%= data.tt %></td>
+                     <td> <%= data.tmc %></td>
+                     <td> <%= data.hb %></td>
+                     <td> <%= data.total %></td>
+
+                 </tr>
+            <%  }) %>
+            <%  }else{ %>
+            <tr class="align-middle">
+                <td scope="col">PO Recived Date</td>
+                <td scope="col">Customer Name</td>
+                <td scope="col">Country</td>
+                <td scope="col">Customer Address</td>
+                <td scope="col">Po For Where</td>
+                <td scope="col">Customer Po No</td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

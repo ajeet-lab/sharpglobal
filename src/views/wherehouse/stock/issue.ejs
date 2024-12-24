@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h5 class="card-title font-weight-bold mb-4">
+          ISSUE SLIP (WH004-F02-00)
+        </h5>
+        <form action="/wherehouse/stock/issue" method="POST">
+          <div class="row align-items-center">
+            <div class="col-md-8">To,</div>
+            <div class="col-md-4 text-sm-right text-left">
+              <div class="d-flex align-items-center p-2">
+                <label
+                  for="sNo"
+                  class="mr-1 pt-2 text-left"
+                  style="display: inline-block; width: 100px"
+                  >S No</label
+                >
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  name="sNo"
+                />
+              </div>
+            </div>
+            <div class="ml-auto col-md-4 px-4 d-flex align-items-center">
+              <label
+                for="Date"
+                class="mr-1 pt-2"
+                style="display: inline-block; width: 100px"
+                >Date</label
+              >
+              <input
+                type="date"
+                class="form-control form-control-sm"
+                name="date"
+              />
+            </div>
+          </div>
+          <div class="row align-items-center mb-3">
+            <div class="col-md-8">
+              Production Incharge<br />
+              The Following material required vide Requistion Slip No -
+            </div>
+            <div class="col-md-4">
+              <div class="d-flex align-items-center p-2">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  name="slipNo"
+                  placeholder="Slip No"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-8">Date -</div>
+            <div class="col-md-4">
+              <div class="d-flex align-items-center p-2">
+                <input
+                  type="date"
+                  class="form-control form-control-sm"
+                  name="slipNoDate"
+                />
+              </div>
+            </div>
+            <div class="col-md-12">
+              has been delivered to Production department.
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="sNo" class="form-label font-weight-bold">S.No</label>
+              <input
+                  type="text"
+                  name="sNo"
+                  id="sNo"
+                  value="1"
+                  class="form-control"
+                  readonly
+                />
+            </div>
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="materialDetails" class="form-label font-weight-bold">Material Details</label>
+              <input
+                  type="text"
+                  placeholder="Material Details" id="materialDetails"
+                  name="materialDetails"
+                  class="form-control"
+                />
+            </div>
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="lotNo" class="form-label font-weight-bold">Lot No. / Batch No.</label>   
+              <input type="text" placeholder="Lot No. / Batch No." id="lotNo" name="lotNo" class="form-control" />
+            </div>
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="quantity" class="form-label font-weight-bold">Quantity</label>
+              <input type="text" placeholder="Quantity" id="quantity" name="quantity" class="form-control" />
+            </div>
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="noOfDrums" class="form-label font-weight-bold">No of Drums / Tank No</label>
+              <input type="text" placeholder="No of Drums / Tank No" id="noOfDrums" name="noOfDrums" class="form-control" />
+            </div>
+            <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+              <label for="listAttached" class="form-label font-weight-bold">List Attached (Y/N)</label>
+              <input type="text" placeholder="List Attached (Y/N)" id="listAttached" name="listAttached" class="form-control" />
+            </div>
+            <div class="col-12">
+                <button class="btn btn-warning px-3">
+                    Submit
+                </button>
+            </div>
+          </div>   
+        </form>
+    </div>
+  </div>
+</div>

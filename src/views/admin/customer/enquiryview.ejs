@@ -1,0 +1,136 @@
+<style>
+  a {
+    text-transform: capitalize;
+  }
+</style>
+<div class="table-responsive">
+  <h3 class="mb-0">Enquiry View</h3>
+  
+      <table class="table table-sm table-hover table-bordered" id="myTable">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" name="checkbox" disabled />
+            </td>
+            <th>Date</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Aging</th>
+            <th>Specification</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <% let date = new Date(); %> <% let d = date.getDate(); %> <% let m =
+        date.getMonth() + 1; %> <% let y = date.getFullYear(); %> <% d = d <= 9 ?
+        "0"+d : d %> <% m = m <= 9 ? "0"+m : m %> <% let cDate = y+''+m+''+d %>
+    
+        <tbody>
+          <% enquiry.forEach((data, index)=>{ %>
+         <% if(data.status !== 'Closed'){ %>
+            <tr class="align-middle">
+              <td>
+              <form action="/admin/customer/confirmorders" method="POST">
+                <input type="checkbox" name="checkbox" class="check" value="<%= data._id %>" />
+              </form>
+            </td>
+            <td><%= data.date %></td>
+            <td><%= data.customer %></td>
+            <td><%= data.productName %></td>
+            <td><%= data.quantity %></td>
+            <td>
+              <% let diff = Number(cDate) - Number(data.date) %>
+              <%# let diff2 = Number(data.negotiationDate) - Number(data.date) %> 
+              <span
+                class="rounded-pill <%= diff > 7 ? 'badge badge-danger' : 'badge badge-success' %>"
+              >
+                <%= diff %> day ago</span
+              >
+            </td>
+            <td ><%= data.specification %></td>
+            <td class="d-flex align-items-center justify-content-center">
+              <a
+                href="/admin/customer/confirmorder/<%= data._id %>"
+                class="btn btn-sm mr-2 btn-success"
+                >Order Confirmed</a
+              >
+              <a
+                href="/admin/customer/negotiation/<%= data._id %>"
+                class="btn mr-2 btn-sm btn-primary"
+                >Add Negotiation</a
+              >
+              <form
+                action="/admin/enquiry/close/<%= data._id %>"
+                method="POST"
+                style="display: none"
+                id="closeReason<%= index %>"
+                class="mr-2"
+              >
+                <select
+                  name="closeReason"
+                  class="form-control form-control-sm mb-2"
+                >
+                  <option value="Price to heigh">Price to heigh</option>
+                  <option value="Location not possible">
+                    Location not possible
+                  </option>
+                  <option value="Schedule very tight">Schedule very titght</option>
+                  <option value="Product not available">
+                    Product not available
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+    
+                <button
+                  class="btn btn-sm btn-danger mr-2"
+                  onclick="return confirm('Are you sure!')"
+                >
+                  Close Enquiry
+                </button>
+              </form>
+              <span
+                class="btn btn-sm btn-danger mr-2"
+                onclick="closeEnquiry('<%= index %>')"
+                id="closeBtn<%= index %>"
+              >
+                Close Enquiry
+              </span>
+    
+              <a
+                href="/admin/enquiry/viewdetail/<%= data._id %>"
+                class="btn btn-sm btn-warning"
+                >View Enquiry</a
+              >
+            </td>
+          </tr>
+        <% } %> 
+          <% }) %>
+        </tbody>
+        <tfoot>
+          <tr>          
+            <td colspan="8">
+              <button onclick="checkbox()" class="btn btn-info btn-sm">Confirmed</button>
+            </td>          
+          </tr>
+        </tfoot>
+      </table>
+</div>
+
+<script>
+  function closeEnquiry(id) {
+    document.getElementById(`closeReason${id}`).style.display = "block";
+    document.getElementById(`closeBtn${id}`).style.display = "none";
+  }
+
+  function checkbox(){
+    let check = document.querySelectorAll('.check');
+    let ids=[];
+    check.forEach(c=> {
+      if(c.checked === true){
+        ids.push(c.value);
+      }
+    });
+    
+    window.location.href = `/admin/customer/confirmorders/${ids}`;
+  }
+</script>

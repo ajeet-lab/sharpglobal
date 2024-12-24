@@ -1,0 +1,233 @@
+<style>
+  .form-select {
+    border: 1px solid lightgray;
+    border-radius: 0px 3px 3px 0px;
+    color: rgb(100, 100, 100);
+  }
+
+  .form-select:focus {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+    outline: 1px solid #ffe180;
+    z-index: 99;
+  }
+
+  .form-select:blur {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+  }
+</style>
+
+<% let date = new Date(); %> <% let d = date.getDate() %> <% let m =
+date.getMonth()+1 %> <% let y = date.getFullYear() %> <% currDate = y+"-"+(m <=
+9 ? '0'+m : m)+'-'+(d <= 9 ? '0'+d : d) %>
+
+<div class="card">
+  <div class="card-body">
+    <div class="my-4">
+      <h4 class="mb-4">Purchase Order entry</h4>
+      <% if(enquiry !== null){ %>
+      <form action="/admin/po/entry" method="POST">
+        <div class="row">
+          <input type="hidden" name="productName" value="<%= enquiry && enquiry.productName %>" />
+          <input type="hidden" name="enquiryId" value="<%= enquiry._id %>" />
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="customerName">Customer Name</label>
+            <input type="text" name="customerName" class="form-control form-control-sm" placeholder="Customer Name"
+              value="<%= enquiry.customer %>" readonly />
+          </div>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="Inquiry or Contract">Enquiry or Contract</label>
+            <input type="text" name="inquiryOrContract" id="inquiryOrContract" class="form-control form-control-sm" value="<%= enquiry.enquiryType %>" readonly />
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="poDate">PO Date</label>
+            <input type="date" name="poDate" value="<%= currDate %>" class="form-control form-control-sm" />
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="poNumber">PO Number</label>
+            <input type="text" name="poNumber" class="form-control form-control-sm" placeholder="Po Number" required />
+          </div>
+
+          <div class="col-lg-6 mb-3">
+            <label for="billingAddress">Billing Address</label>
+            <textarea type="textarea" name="billingAddress" class="form-control form-control-sm"
+              placeholder="Billing Address" readonly>
+<%= enquiry.customerName %></textarea>
+          </div>
+
+          <div class="col-lg-6 mb-3">
+            <label for="shippingAddress">Shipping address</label>
+            <textarea type="textarea" name="shippingAddress" class="form-control form-control-sm"
+              placeholder="Shipping address" readonly>
+<%= enquiry.address %></textarea>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="quantity">Quantity</label>
+            <div class="input-group">
+              <input type="number" name="quantity" placeholder="Qty in No." class="form-control form-control-sm"
+                required>
+              <select class="form-select form-select-sm" name="weight" style="width: 100px !important;">
+                <option value="Matric Ton">Matric Ton</option>
+                <option value="Ton">Ton</option>
+                <option value="Kg">Kg</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-3">
+            <label for="rate">Rate</label>
+            <input type="text" name="rate" class="form-control form-control-sm" placeholder="Rate" readonly
+              value="<%= enquiry.rateQuoted %>" />
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-3">
+            <label for="additionRate">Addtional Rate</label>
+            <input type="text" name="additionRate" class="form-control form-control-sm" placeholder="Addtional Rate" />
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="shipmentPeriod">Shipment period</label>
+            <input type="date" name="shipmentPeriod" class="form-control form-control-sm" placeholder="Shipment period"
+              value="<%= currDate %>" />
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-3">
+            <label for="incoterm">Incoterm</label>
+            <select name="incoterm" class="form-control form-control-sm" placeholder="Incoterm">
+              <option value="CIF" selected>CIF</option>
+              <option value="DDP">DDP</option>
+              <option value="New">New</option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="paymentTerm">Payment Term</label>
+            <select type="date" name="paymentTerm" class="form-control form-control-sm" placeholder="Payment Term">
+              <% paymentTerms.forEach(data=>{ %>
+              <option value="<%= data.paymentTerm %>"><%= data.paymentTerm %></option>
+              <% }); %>
+              
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="sampleRequired">Sample Required</label>
+            <select name="sampleRequired" class="form-control form-control-sm" placeholder="Payment Term">
+              <option value="No" selected>No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 pl-0">
+          <button class="btn btn-warning btn-sm px-3">Submit</button>
+        </div>
+      </form>
+      <% }else{ %>
+      <form action="/admin/po/entry?" method="POST">
+        <input type="hidden" name="contractorId" value="<%= contractor && contractor._id %>" />
+        <input type="hidden" name="productName" value="<%= contractor && contractor.productName %>" />
+        <div class="row">
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="customerName">Customer Name</label>
+            <input type="text" name="customerName" class="form-control form-control-sm" placeholder="Customer Name"
+              value="<%= contractor && contractor.customerName %>" readonly />
+          </div>
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="Inquiry or Contract">Inquiry or Contract</label>
+            <select name="inquiryOrContract" id="inquiryOrContract" class="form-control form-control-sm" readonly>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="poDate">PO Date</label>
+            <input type="date" value="<%= currDate %>" name="poDate" class="form-control form-control-sm" />
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="poNumber">PO Number</label>
+            <input type="text" name="poNumber" class="form-control form-control-sm" placeholder="Po Number" required />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="billingAddress">Billing Address</label>
+            <textarea type="textarea" name="billingAddress" class="form-control form-control-sm"
+              placeholder="Billing Address">
+<%= contractor && contractor.billingAddress %></textarea>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="shippingAddress">Shipping address</label>
+            <textarea type="textarea" name="shippingAddress" class="form-control form-control-sm"
+              placeholder="Shipping address">
+<%= contractor && contractor.shippingAddress %></textarea>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="quantity">Quantity</label>
+            <div class="input-group">
+              <input type="number" name="quantity" placeholder="Qty in No." class="form-control form-control-sm"
+                required>
+              <select class="form-select form-select-sm" name="weight" style="width: 100px !important;">
+                <option value="Matric Ton">Matric Ton</option>
+                <option value="Ton">Ton</option>
+                <option value="Kg">Kg</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <label for="rate">Rate</label>
+            <input type="text" name="rate" class="form-control form-control-sm" placeholder="Rate"
+              value="<%= contractor && contractor.rate %>" readonly />
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 mb-3">
+            <label for="additionRate">Addtional Rate</label>
+            <input type="text" name="additionRate" class="form-control form-control-sm" placeholder="Addtional Rate" />
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="shipmentPeriod">Shipment period</label>
+            <input type="date" name="shipmentPeriod" class="form-control form-control-sm" placeholder="Shipment period"
+              value="<%= currDate %>" />
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-3">
+            <label for="incoterm">Incoterm</label>
+            <select name="incoterm" class="form-control form-control-sm" placeholder="Incoterm">
+              <option value="CIF" <%= contractor.incoterm === 'CIF' ? 'selected': '' %>>CIF</option>
+              <option value="DDP" <%= contractor.incoterm === 'DDP' ? 'selected': '' %>>DDP</option>
+              <option value="New" <%= contractor.incoterm === 'New' ? 'selected': '' %>>New</option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="paymentTerm">Payment Term</label>
+            <select type="date" name="paymentTerm" class="form-control form-control-sm" placeholder="Payment Term"
+              readonly>
+              <option value="<%= contractor && contractor.paymentTerm %>"><%= contractor && contractor.paymentTerm %>
+              </option>
+            </select>
+          </div>
+
+          <div class="col-lg-3 col-md-4 mb-3">
+            <label for="sampleRequired">Sample Required</label>
+            <select name="sampleRequired" class="form-control form-control-sm" placeholder="Payment Term">
+              <option value="No" selected>No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 pl-0">
+          <button class="btn btn-warning btn-sm px-3">Submit</button>
+        </div>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</div>

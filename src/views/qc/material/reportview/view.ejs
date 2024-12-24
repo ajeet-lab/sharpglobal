@@ -1,0 +1,2773 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title font-weight-bold mb-4">View Reports</h3>
+
+                <div class="accordion" id="material_Row_Report">
+                    <!-- CMO -->
+                    <div class="card">
+                        <div class="card-header" id="cmo">
+                            <h2 class="mb-0">
+                                <button class="btn  btn-block text-left font-weigth-bold" data-toggle="collapse"
+                                    data-target="#cmoOne" aria-expanded="true" aria-controls="cmoOne">
+                                    CMO (QC003-F02-04)
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="cmoOne" class="collapse" aria-labelledby="cmo" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+                                            <td>Injection Volume</td>
+                                            <td>Column Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Flow Rate</td>
+                                            <td>Split Ratio</td>
+                                            <td>Programming Ratio</td>
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>SpecificOptical Rotation</td>
+                                            <td>Total Terpenes</td>
+
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>Report</td>
+
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Head Quality</td>
+                                        </tr>
+
+                                        <% if(cmo.length> 0) { %>
+                                        <% cmo.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.columnTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumFlowRate %>
+                                            </td>
+                                            <td>
+                                                <%= item.splitRatio %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRatio %>
+                                            </td>
+                                            <td>
+                                                <%= item.description %>
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.specificOpticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.headQuality %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!-- PO -->
+                    <div class="card">
+                        <div class="card-header" id="po">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#poTwo" aria-expanded="false" aria-controls="poTwo">
+                                    PO (QC003-F03-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="poTwo" class="collapse" aria-labelledby="po" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>Menthofuran</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Head Quality</td>
+                                        </tr>
+
+                                        <% if(po.length> 0) { %>
+                                        <% po.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthofuran %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SO -->
+                    <div class="card">
+                        <div class="card-header" id="so">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#soTwo" aria-expanded="false" aria-controls="soTwo">
+                                    SO (QC003-F04-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="soTwo" class="collapse" aria-labelledby="so" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>Menthofuran</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Head Quality</td>
+                                        </tr>
+
+                                        <% if(so.length> 0) { %>
+                                        <% so.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthofuran %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DMO -->
+                    <div class="card">
+                        <div class="card-header" id="dmo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#dmoTwo" aria-expanded="false" aria-controls="dmoTwo">
+                                    DMO (QC003-F05-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="dmoTwo" class="collapse" aria-labelledby="dmo" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>Menthofuran</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(dmo.length> 0) { %>
+                                        <% dmo.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthofuran %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Menthol -->
+                    <div class="card">
+                        <div class="card-header" id="menthol">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#mentholTwo" aria-expanded="false" aria-controls="mentholTwo">
+                                    Menthol (QC003-F06-02)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="mentholTwo" class="collapse" aria-labelledby="menthol" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Column Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Flow Rate</td>
+                                            <td>Split Ratio</td>
+                                            <td>Programming Ratio</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Specific Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>L-Menthol</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(menthol.length> 0) { %>
+                                        <% menthol.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.columnTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumFlowRate %>
+                                            </td>
+                                            <td>
+                                                <%= item.splitRatio %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRatio %>
+                                            </td>
+                                            <td>
+                                                <%= item.description %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.specificOpticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Menthone -->
+                     <div class="card">
+                        <div class="card-header" id="menthone">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#menthoneTwo" aria-expanded="false" aria-controls="menthoneTwo">
+                                    Menthone (QC003-F07-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="menthoneTwo" class="collapse" aria-labelledby="menthone" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(menthone.length> 0) { %>
+                                        <% menthone.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- DFMO -->
+                     <div class="card">
+                        <div class="card-header" id="dfmo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#dfmoTwo" aria-expanded="false" aria-controls="dfmoTwo">
+                                    DFMO (QC003-F08-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="dfmoTwo" class="collapse" aria-labelledby="dfmo" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(dfmo.length> 0) { %>
+                                        <% dfmo.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DFPO -->
+                    <div class="card">
+                        <div class="card-header" id="dfpo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#dfpoTwo" aria-expanded="false" aria-controls="dfpoTwo">
+                                    DFPO (QC003-F09-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="dfpoTwo" class="collapse" aria-labelledby="dfpo" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+                                            <td>Menthyl Acetate</td>
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>Menthofuran</td>
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(dfpo.length> 0) { %>
+                                        <% dfpo.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthylAcetate %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthofuran %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DFSO -->
+                    <div class="card">
+                        <div class="card-header" id="dfso">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#dfsoTwo" aria-expanded="false" aria-controls="dfsoTwo">
+                                    DFSO (QC003-F09-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="dfsoTwo" class="collapse" aria-labelledby="dfso" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+                                            <!-- <td>Menthyl Acetate</td> -->
+                                            <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>L-Carvone</td>
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(dfso.length> 0) { %>
+                                        <% dfso.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.neoMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lMenthol %>
+                                            </td>
+                                            <td>
+                                                <%= item.lCarvone %>
+                                            </td>
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BASIL OIL (QC003-F11-01) -->
+                    <div class="card">
+                        <div class="card-header" id="basiloil">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#basiloilTwo" aria-expanded="false" aria-controls="basiloilTwo">
+                                    BASIL OIL (QC003-F11-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="basiloilTwo" class="collapse" aria-labelledby="basiloil" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <!-- <td>Total Terpenes</td> -->
+                                            <td>linalool</td>
+                                            <td>Menthone</td>
+                                            <td>Methyl Chavicol</td>
+                                            <!-- <td>Neo Menthol</td>
+                                            <td>L-Menthol</td>
+                                            <td>L-Carvone</td> -->
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(basiloil.length> 0) { %>
+                                        <% basiloil.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.linalool %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+                                            <td>
+                                                <%= item.methylChavicol %>
+                                            </td>
+                                            
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- CINEOLE (QC003-F11-01) -->
+                     <div class="card">
+                        <div class="card-header" id="cineole">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#cineoleTwo" aria-expanded="false" aria-controls="cineoleTwo">
+                                    CINEOLE (QC003-F11-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="cineoleTwo" class="collapse" aria-labelledby="cineole" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Specific Optical Rotation</td>
+                                            <td>Euclyptol/1,8-cineole</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(cineole.length> 0) { %>
+                                        <% cineole.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.specificOpticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.euclyptolCineole %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TP (QC003-F11-01) -->
+                    <div class="card">
+                        <div class="card-header" id="tp">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#tpTwo" aria-expanded="false" aria-controls="tpTwo">
+                                    TP (QC003-F13-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="tpTwo" class="collapse" aria-labelledby="tp" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>Total Terpenes</td>
+                                            <td>Menthone</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(tp.length> 0) { %>
+                                        <% tp.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.totalTerpenes %>
+                                            </td>
+                                            <td>
+                                                <%= item.menthone %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ALPHA TERPINEOL (QC003-F15-01) -->
+                    <div class="card">
+                        <div class="card-header" id="at">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#atTwo" aria-expanded="false" aria-controls="atTwo">
+                                    ALPHA TERPINEOL (QC003-F15-01)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="atTwo" class="collapse" aria-labelledby="at" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Specific Optical Rotation</td>
+                                            <td>Alpha Terpineol</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(at.length> 0) { %>
+                                        <% at.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.specificOpticalRotation %>
+                                            </td>
+                                            <td>
+                                                <%= item.alphaTerpineol %>
+                                            </td>
+                                        
+
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LC (QC003-F16-00) -->
+                    <div class="card">
+                        <div class="card-header" id="lc">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#lcTwo" aria-expanded="false" aria-controls="lcTwo">
+                                    LC (QC003-F16-00)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="lcTwo" class="collapse" aria-labelledby="lc" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Initial Oven Temperature</td>
+                                            <td>Final Oven Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Pressure</td>
+                                            <td>Hydrogen Pressure</td>
+                                            <td>Zero Air Pressure</td>
+                                            <td>Programming Rate</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Optical Rotation</td>
+                                            <td>L-Carvone</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Incharge Quality</td>
+                                        </tr>
+
+                                        <% if(lc.length> 0) { %>
+                                        <% lc.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.initialOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.finalOvenTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.hydrogenPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.zeroAirPressure %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRate %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description
+                                                        %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.opticalRotation %>
+                                            </td>
+                                        
+                                            <td>
+                                                <%= item.lCarvone %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.inchargeQc %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PC (QC003-F16-00) -->
+                    <div class="card">
+                        <div class="card-header" id="pc">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                    data-target="#pcTwo" aria-expanded="false" aria-controls="pcTwo">
+                                    β-CARYOPHYLLENE (QC003-F17-00)
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="pcTwo" class="collapse" aria-labelledby="pc" data-parent="#material_Row_Report">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <tr class="font-weight-bold table-warning">
+                                            <td>Specification Number</td>
+                                            <td>Material Code</td>
+                                            <td>Plant Origin</td>
+                                            <td>Storage Condition</td>
+                                            <td>Report No</td>
+                                            <td>Date</td>
+                                            <td>Invoice No</td>
+                                            <td>Invoice Date</td>
+                                            <td>Supplier Name</td>
+                                            <td>Identification No</td>
+                                            <td>Net Weight</td>
+                                            <td>No Of Drums</td>
+                                            <td>Sample Amount</td>
+                                            <td>Sampled By</td>
+                                            <td>Method</td>
+                                            <td>Equipment ID</td>
+
+                                            <td>Injection Volume</td>
+                                            <td>Column Temperature</td>
+                                            <td>Injector Temperature</td>
+                                            <td>Detector Temperature</td>
+                                            <td>Helium Flow Rate</td>
+                                            <td>Split Ratio</td>
+                                            <td>Programming Ratio</td>
+
+
+                                            <td>Description</td>
+                                            <td>Odour</td>
+                                            <td>Acidity</td>
+                                            <td>Specific Optical Rotation</td>
+                                            <td>β-Caryophyllene</td>
+
+                                            <td>Report</td>
+                                            <td>Report Date</td>
+                                            <td>Chemist Quality Control</td>
+                                            <td>Head Quality</td>
+                                        </tr>
+
+                                        <% if(pc.length> 0) { %>
+                                        <% pc.forEach(item=>{ %>
+                                        <tr>
+                                            <td>
+                                                <%= item.specificationNumber %>
+                                            </td>
+                                            <td>
+                                                <%= item.materialCode %>
+                                            </td>
+                                            <td>
+                                                <%= item.plantOrigin %>
+                                            </td>
+                                            <td>
+                                                <%= item.storageCondition %>
+                                            </td>
+                                            <td>
+                                                <%= item.reportNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.date %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.invoiceDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.supplierName %>
+                                            </td>
+                                            <td>
+                                                <%= item.identificationNo %>
+                                            </td>
+                                            <td>
+                                                <%= item.netWeight %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.noOfDrums %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampleAmount %>
+                                            </td>
+                                            <td>
+                                                <%= item.sampledBy %>
+                                            </td>
+                                            <td>
+                                                <%= item.method %>
+                                            </td>
+                                            <td>
+                                                <%= item.equipmentID %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectionVolume %>
+                                            </td>
+                                            <td>
+                                                <%= item.columnTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.injectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.detectorTemperature %>
+                                            </td>
+                                            <td>
+                                                <%= item.heliumFlowRate %>
+                                            </td>
+                                            <td>
+                                                <%= item.splitRatio %>
+                                            </td>
+                                            <td>
+                                                <%= item.programmingRatio %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.description %>
+
+                                            </td>
+                                            <td>
+                                                <%= item.odour %>
+                                            </td>
+                                            <td>
+                                                <%= item.acidity %>
+                                            </td>
+                                            <td>
+                                                <%= item.specificOpticalRotation %>
+                                            </td>
+                                        
+                                            <td>
+                                                <%= item.bCaryophyllene %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.report %>
+                                            </td>
+
+                                            <td>
+                                                <%= item.reportDate %>
+                                            </td>
+                                            <td>
+                                                <%= item.chemistQualityControl %>
+                                            </td>
+                                            <td>
+                                                <%= item.headQuality %>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                        <% }; %>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

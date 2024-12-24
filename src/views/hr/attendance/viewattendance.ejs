@@ -1,0 +1,157 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4>View Attendance Lists</h4>
+
+            <a href="/hr/export/attendance" class="btn btn-success mb-2 me-2 fw-bold py-1">
+                <i class="bi bi-file-earmark-excel fs-6 py-0"></i>
+                Export
+            </a>
+
+        </div>
+
+        <div class="">
+            <% let allAttendance = {} %>
+            <% if(attenDBD){ %>
+
+            <% attenDBD.forEach(atten=>{  %>
+            <% let uin = atten.uin;  %>
+            <% let date = new Date(atten.timeIn).getDate() + 1 %>
+            <% let sAtten = allAttendance[uin] %>
+            <% if(sAtten == null){ %>
+            <% let newArr = [] %>
+            <% for(let i = 0; i <=30 ; i++){ %>
+            <%  newArr.push(""); %>
+            <% } %>
+            <% let name = [atten.name, atten.unit] %>
+            <% sAtten = name.concat(newArr) %>
+            <%  } %>
+
+            <% let inTime = new Date(atten.timeIn).toLocaleTimeString() %>
+            <% let outTime = new Date(atten.timeOut).toLocaleTimeString() %>
+
+            <%# let inTime = new Date(atten.timeIn) %>
+            <%# let outTime = new Date(atten.timeOut) %>
+
+            <% let milisecond = new Date(atten.timeOut) - new Date(atten.timeIn) %>
+            <% let hours = Math.floor(milisecond / 3600000) < 10 ? "0"+Math.floor(milisecond / 3600000) : Math.floor(milisecond / 3600000) %>
+
+            <% let minutes = Math.floor((milisecond / 60000) % 60) < 10 ? "0"+Math.floor((milisecond / 60000) % 60) : Math.floor((milisecond / 60000) % 60) %>
+
+            <% if(new Date(atten.timeIn) > new Date("September 25, 2021 11:59 PM")){ %>
+            <% sAtten[date] = sAtten[date]+" "+inTime+"-"+outTime+"-"+hours+"H :"+minutes+"M" %>
+
+            <%# sAtten[date] = sAtten[date]+" "+inTime+" "+outTime %>
+
+            <%  } %>
+
+            <%  allAttendance[uin] = sAtten %>
+
+            <% }) %>
+
+            <% } %>
+
+            
+            <div class="table-responsive py-1 pe-2">
+                <table class="table table-sm table-bordered" id="myTable">
+                    <thead>
+                        <tr class="align-middle bg-warning">
+                            <th scope="col">UIN</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Unit</th>
+                            <% let date = new Date();  %>
+                            <% let lastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate(); %>
+                            <% for(let i=1; i <= lastDay; i++){ %>
+                            <th scope="col" id="nestedTable">
+                                <%= i %>
+                                <table>
+                                    <thead>
+                                        <tr class="bg-warning d-flex">
+                                            <th>In</th>
+                                            <th>Out</th>
+                                            <th>Hours</th>
+                                            <th>Remark</th>
+                                            <th>Overtime</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </th>
+                            <%  } %>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                        <% for(let lData in allAttendance){  %>
+                        <% let sData = allAttendance[lData] %>
+                        <tr class="align-middle">
+                            <td><%= lData %> </td>
+                            <td>
+                                <%= sData[0] %>
+                            </td>
+
+                            <td> <%= sData[1] %></td>
+
+                            <% for(let i=1; i <= lastDay; i++){ %>
+                            <td class="px-2" height="40" id="nestedTable">
+                                <table>
+                                    <tbody>
+                                        <% let newTime = String(sData[i+1]) %>
+                                        <tr class="d-flex <%= newTime ? 'bg-lightgreen' : 'bg-lightdanger' %>">
+
+                                            <% let time = String(newTime).split("-") %>
+                                            <td>
+                                                <%= time[0] ? time[0] : "-" %>
+                                            </td>
+                                            <td>
+                                                <%= time[1] ? time[1] : "-" %>
+                                            </td>
+                                            <td>
+                                                <%= time[2] ? time[2] : "-" %>
+                                            </td>
+                                            <td>
+                                                <%= newTime != "" ? "P" : "A" %>
+                                            </td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <%  } %>
+
+                            <% } %>
+
+                            <% for(let i=1; i <= 31; i++){ %>
+                            <!-- <td class="px-2" height="40" id="nestedTable">
+                                    <table>
+                                        <tbody>
+                                            <tr class="d-flex">
+                                                <td>
+                                                    10:49:00 am
+                                                </td>
+                                                <td>
+                                                    1:56:00 am
+                                                </td>
+                                                <td>
+                                                    15H :07M
+                                                </td>
+                                                <td>P</td>
+                                                <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td> -->
+                            <%  } %>
+                        </tr>
+                    </tbody>
+
+
+
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

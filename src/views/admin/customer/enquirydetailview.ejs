@@ -1,0 +1,76 @@
+<style>
+    li{
+        color: rgb(88, 88, 88);
+    }  
+</style>
+<div class="card shadow">
+  <div class="card-body">
+      <h3 class="">Enquiry Detail</h3>
+      <hr />
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <ul class="list-unstyled">
+                
+                <li class="my-3 mx-0"><b>Customer Name:</b> <%= enquiry && enquiry.customerName %></li>
+                <li class="my-3 mx-0"><b>Address:</b> <%= enquiry && enquiry.address %></li>
+                <li class="my-3 mx-0">
+                    <b>Reference:</b> <%= enquiry && enquiry.reference %>
+                </li>
+                <li class="my-3 mx-0"><b>Status:</b> <span class="px-2 rounded-pill <%= enquiry.status != "Approved" ? 'badge badge-danger' : 'badge badge-success'  %>"><%= enquiry && enquiry.status %></span></li>
+              </ul>
+        </div>
+        <div class="col-md-6 col-12">
+            <ul class="list-unstyled">
+                <li class="my-3 mx-0"><b>Enquiry Date:</b> <%= enquiry && enquiry.date %></li>
+                
+                <li class="my-3 mx-0"><b>Product:</b> <%= enquiry && enquiry.productName %></li>
+                <li class="my-3 mx-0"><b>
+                    Quantity:</b> <%= enquiry && enquiry.quantity %> <%= enquiry &&
+                    enquiry.weight %>
+                  </li>
+                
+                <li class="my-3 mx-0"><b>Specification:</b> <%= enquiry && enquiry.specification %></li>
+                
+                <li class="my-3 mx-0 <%= enquiry.reason ? '' : 'd-none' %>"  ><b>Reason:</b> <span class="rounded-pill <%= enquiry.reason ? 'badge badge-danger' : '' %>"><%= enquiry && enquiry.reason %></span></li>
+              </ul>
+        </div>      
+    </div>
+    <div class="row border py-3 mb-3">
+        <div class="col-12">
+            <h3 class="text-center mb-4">Negotiation</h3>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Negotiation Date</th>
+                            <th>Rate Quoted</th>
+                            <th>Comments By Client</th>
+                            <th>Reply By Sharp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% negotiation.forEach(data=> {  %>
+                            <tr>
+                                <td> <%= data.negotiationDate %> </td>
+                                <td> <%= data.rateQuoted %> </td>
+                                <td> <%= data.commentsByClient %> </td>
+                                <th> <%= data.replyBySharp %> </th>
+                            </tr>
+                            <% }) %> 
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+    </div>
+    <div class="col-12 text-center">
+        <button class="btn btn-warning btn-sm px-4 font-weight-bold" onclick="goBack()"><i class="bi bi-arrow-left"></i> Go Back</button>
+    </div>
+  </div>
+</div>
+<script>
+   function goBack(){
+    history.back();
+   }
+</script>

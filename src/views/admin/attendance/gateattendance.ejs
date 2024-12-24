@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-lg-10 col-md-9 pt-3">
+        <div class="card">
+            <div class="card-header mb-0 pb-0 border-2 border-warning border-bottom">
+                <h4>Gate Attendance</h4>
+            </div>
+            <div class="card-body">
+                <form action="/admin/gateattendance" class="row g-3" method="POST">
+                    <div class="col-md-4">
+                        <label for="locationCode">Location Code</label>
+                        <select name="locationCode" id="locationCode" class="form-control">
+                            <option value="" <%= user.locationCode === "" ? "selected" : "" %>>Select Location Code</option>
+                            <option value="C-03" <%= user.locationCode === "C-03" ? "selected" : "" %> >C-03</option>
+                            <option value="C-15" <%= user.locationCode === "C-15" ? "selected" : "" %>>C-15</option>
+                            <option value="Bhiwadi" <%= user.locationCode === "Bhiwadi" ? "selected" : "" %> >Bhiwadi</option>
+                            <option value="Barabanki" <%= user.locationCode === "Barabanki" ? "selected" : "" %>>Barabanki</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="department">Department</label>
+                        <select name="department" id="department" class="form-control">
+                            <option value="" <%= department == "" ? "selected" : "" %> >Select Department</option>
+                            <option value="Gate Keeper" <%= department == "Gate Keeper" ? "selected" : "" %>>Gate Keeper</option>
+                            <option value="Guard" <%= department == "Guard" ? "selected" : "" %>>Guard</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 flex-">
+                        <label for="" class="d-block" style="opacity: 0">sljsfl</label>
+                        <button class="btn btn-warning">
+                            Search
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="">
+                            <div class="table-responsive py-3 pr-2">
+                                <h4>Attendance Lists</h4>
+                                <table class="table table-sm table-bordered" id="myTable">
+
+                                    <thead>
+                                        <tr class="align-middle bg-warning">
+                                            <th scope="col">Name (UIN)</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if(empLists != ""){ %>
+                                        <% empLists.forEach(emplist=>{ %>
+                                        <tr class="align-middle">
+                                            <td><%= emplist.name %> (<%= emplist.uin %>)</td>
+                                            <td>
+                                                <button class="btn btn-warning btn-sm me-2">Mark In</button>
+                                                <button class="btn btn-warning btn-sm">Mark Out</button>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                        <% } %>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+          
+
+

@@ -1,0 +1,92 @@
+<div class="card">
+    <div class="card-header mb-0 pb-0 border-bottom border-2 border-warning">
+        <h4>Move Inventory</h4>
+    </div>
+    <div class="card-body">
+        <form action="/admin/move/inventory" class="row g-3" method="POST">
+            <div class="col-md-4 mb-3">
+                <label for="drumNo">Production Drum No</label>
+                <input type="text" class="form-control" name="drumNo" id="drumNo" placeholder="Enter Drum No" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="zone">Zone Name</label>
+                <select class="form-control" name="zone" id="zone">
+                    <option value="" <%= lMoment.zone == "" ? "selected": "" %>>Select Zone
+                    </option>
+
+                    <option value="Cis-Zone" <%= lMoment.zone == "Cis-Zone" ? "selected": "" %>>
+                        Cis-Zone</option>
+
+                    <option value="HC-Zone" <%= lMoment.zone == "HC-Zone" ? "selected": "" %>>
+                        HC-Zone</option>
+                    <option value="Other Cuts Zone" <%= lMoment.zone == "Other Cuts Zone" ? "selected": "" %>>Other Cuts
+                        Zone</option>
+
+                    <option value="Terpene Zone" <%= lMoment.zone == "Terpene Zone" ? "selected": "" %>>
+                        Terpene Zone</option>
+
+                    <option value="BC/HC Zone (Natural)" <%= lMoment.zone == "BC/HC Zone (Natural)" ? "selected": "" %>>
+                        BC/HC
+                        Zone (Natural)</option>
+
+                    <option value="H2 Zone" <%= lMoment.zone == "H2 Zone" ? "selected": "" %>>H2
+                        Zone</option>
+
+                    <option value="MTI-Zone" <%= lMoment.zone == "MTI-Zone" ? "selected": "" %>>
+                        MTI-Zone</option>
+
+                    <option value="DMM Zone" <%= lMoment.zone == "DMM Zone" ? "selected": "" %>>
+                        DMM Zone</option>
+
+                    <option value="M-Zone" <%= lMoment.zone == "M-Zone" ? "selected": "" %>>
+                        M-Zone</option>
+
+                    <option value="F-71 Zone" <%= lMoment.zone == "F-71 Zone" ? "selected": "" %>>F-71 Zone</option>
+
+                </select>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="flor">Floor</label>
+                <select class="form-control" name="floor" id="floor">
+                    <option value="" selected>Select Flooor</option>
+                    <% for(let i=1; i <= 8; i++){ %>
+                    <option value="Floor-<%= i %>" <%= lMoment.floor == "Floor-"+i ? "selected": "" %>>Floor-<%= i %>
+                    </option>
+                    <% } %>
+                </select>
+            </div>
+
+
+            <div class="col-md-4 mb-3">
+                <label for="row">Row</label>
+                <select class="form-control" name="row" id="row">
+                    <option value="" selected>Select Row</option>
+                    <% for(let i=1; i <= 100; i++){ %>
+                    <option value="Row-<%= i %>" <%= lMoment.row == "Row-"+i ? "selected": "" %>>Row-<%= i %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="column">Column</label>
+                <select class="form-control" name="column" id="column">
+                    <option value="" selected>Select Column</option>
+                    <% for(let i=1; i <= 100; i++){ %>
+                    <option value="Column-<%= i %>" <%= lMoment.column == "Column-"+i ? "selected": "" %>>
+                        Column-<%= i %>
+                    </option>
+                    <% } %>
+                </select>
+            </div>
+
+
+
+            <div class="col-12 text-center">
+                <button class="btn btn-warning px-3 btn-sm">
+                    Add
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

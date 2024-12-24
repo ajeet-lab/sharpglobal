@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    Pending Gate Entry List
+                </h5>
+                <div class="table-responsive p-2">
+                    <table class="table table-bordered">
+                        <tr class="font-weight-bold bg-warning">
+                            <td>SNo</td>
+                            <td>Date of Receipt</td>
+                            <td>Time</td>
+                            <td>Invoice NO /Challan no & Date</td>
+                            <td>PO No. & Date</td>
+                            <td>Name And Address of Seller/Consignor/Dispatcher/Sender/Party</td>
+                            <td>Name/Details of Articles/Material</td>
+                            <td>Material Type</td>
+                            <td>Quantity of drums</td>
+                            <td>Quantity</td>
+                            <td>Rate(Rs.)</td>
+                            <td>Amount(Rs.)</td>
+                            <td>Number of Pack</td>
+                            <td>Name Of Deliverer</td>
+                            <td>Pic Of Deliverer</td>
+                            <td>Drive of Number</td>
+                            <td>Vehicle No. & Type of Vehicle</td>
+                            <td>Sign Of Security</td>
+                            <td>Remarks</td>
+                            <td>Action</td>
+                        </tr>
+                        <% if(gateEntry.length > 0){ %>
+                        <% gateEntry.forEach((item, index) =>{  %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= item.dateofReceipt %></td>
+                            <td><%= item.time %></td>
+                            <td>
+                                <%= item.invoiceNo %>
+                                <br><%= item.invoiceNo_date %>
+                            </td>
+                            <td>
+                                <%= item.poNo %><br>
+                                <%= item.poNo_date %>
+                            </td>
+                            <td><%= item.nameAndAddress %></td>
+                            <td><%= item.nameDetailsOfArticles %></td>
+                            <td><%= item.materialType %></td>
+                            <td><%= item.quantityOfDrums %></td>
+                            <td><%= item.quantity %></td>
+                            <td><%= item.rate %></td>
+                            <td><%= item.amount %></td>
+                            <td><%= item.numberOfPack %></td>
+                            <td><%= item.nameOfDeliverer %></td>
+                            <td><%= item.picOfDeliverer %></td>
+                            <td><%= item.driverNo %></td>
+                            <td><%= item.vehicleNo %></td>
+                            <td><%= item.signOfSecurity %></td>
+                            <td><%= item.remarks %></td>
+                            <td>
+                                <a href="/wherehouse/material/checklist/<%= item._id %>" class="btn btn-success btn-sm">Approve</a>
+                            </td>
+                        </tr>
+                        <%  }) %>
+                        <%   } %>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

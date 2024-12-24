@@ -1,0 +1,24 @@
+<div class="card">
+    <% let ldrumNo = drums[drums.length-1] %>
+    <div class="card-header border-bottom border-warning border-2 mb-0 pb-0">
+        <h4>Issue Drum for New Production</h4>
+    </div>
+    <div class="card-body">
+        <form action="/admin/issue/drumno" class="row g-3" method="POST">
+            <div class="col-md-4 mb-3">
+                <label for="drumNo">Drum No.</label>
+                <input type="text" name="drumNo" id="drumNo" placeholder="Enter Drum No" value="<%= ldrumNo ? ldrumNo.drumNo : ""%>" class="form-control" <%= ldrumNo ? "readonly" : ""%>>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="wt">Qty</label>
+                <input type="Number" name="qty" id="qty" class="form-control" placeholder="Enter Qty" required>
+            </div>
+
+
+            <div class="col-12 text-center ">
+                <button type="submit" class="btn btn-warning me-3 btn-sm px-3">Issue Drum No</button>
+            </div>
+        </form>
+    </div>
+</div>

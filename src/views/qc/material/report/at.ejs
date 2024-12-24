@@ -1,0 +1,349 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    INCOMING RAW MATERIAL REPORT(ALPHA TERPINEOL) (QC003-F15-01)
+                </h5>
+                <div class="table-responsive p-2">
+                    <form action="/qc/materialreport/at" method="POST" class="pr-3">
+
+                        <table class="table table-bordered table-sm mb-4">
+                            <tr>
+                                <td><b>Specification Number</b></td>
+                                <td colspan="3">
+                                    <b>RM-6013</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Material Code</b></td>
+                                <td colspan="3">
+                                    <b>AT</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Plant Origin</b></td>
+                                <td colspan="3">
+                                    <b>Mentha Arvensis</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Storage Condition</b></td>
+                                <td colspan="3">
+                                    <b>Protected from Light and Moisture</b>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered table-sm mb-4">
+                            <tr>
+                                <td><b>Report No.</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="reportNo" placeholder="Report No">
+                                </td>
+                                <td><b>Date</b></td>
+                                <td>
+                                    <input type="date" class="form-control" name="date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Invoice No.</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="invoiceNo" placeholder="Invoice No">
+                                </td>
+                                <td><b>Invoice Date</b></td>
+                                <td>
+                                    <input type="date" class="form-control" name="invoiceDate">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Supplier’s name</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="supplierName"
+                                        placeholder="Supplier’s name">
+                                </td>
+                                <td><b>Identification No.</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="identificationNo"
+                                        placeholder="Identification No.">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Net Weight ( Kg ).</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="netWeight"
+                                        placeholder="Net Weight ( Kg ).">
+                                </td>
+                                <td><b>Number of drums</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="noOfDrums"
+                                        placeholder="Number of drums">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Sample amount</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="sampleAmount"
+                                        placeholder="Sample amount">
+                                </td>
+                                <td><b>Sampled by</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="sampledBy"
+                                        placeholder="Sampled by">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4"><b>GC Parameters (QC005)</b></td>
+                            </tr>
+
+                            <tr>
+                                <td><b><i> Method</i></b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="method" placeholder="Method">
+                                </td>
+                                <td><b><i>Equipment ID</i></b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="equipmentID"
+                                        placeholder="Equipment ID">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Parameters</b></td>
+                                <td colspan="2">
+                                    <b>Parameters Actual parameters</b>
+                                </td>
+                                <td><b>Desirable parameters</b></td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Injection volume</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="injectionVolume"
+                                        placeholder="Injection volume">
+                                </td>
+                                <td>
+                                    0.15 µl./0.2µl
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Initial Oven Temperature</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="initialOvenTemperature"
+                                        placeholder="Initial Oven Temperature">
+                                </td>
+                                <td>
+                                    120oC/60°C/70°C
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Final Oven Temperature</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="finalOvenTemperature"
+                                        placeholder="Final Oven Temperature">
+                                </td>
+                                <td>
+                                    240oC/220°C
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Injector  temperature</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="injectorTemperature"
+                                        placeholder="Injector temperature">
+                                </td>
+                                <td>
+                                    230oC
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Detector temperature</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="detectorTemperature"
+                                        placeholder="Detector temperature">
+                                </td>
+                                <td>
+                                    240oC
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Nitrogen/Helium Pressure</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="heliumPressure"
+                                        placeholder="Nitrogen/Helium Pressure">
+                                </td>
+                                <td>
+                                    3.7 to 4.3 kg/cm2 or 25ml/min or 20ml/min
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Hydrogen Pressure</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="hydrogenPressure" placeholder="Hydrogen Pressure">
+                                </td>
+                                <td>
+                                    0.7 to 1.3 kg/ cm2 or 35ml/min
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Zero air pressure</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="zeroAirPressure"
+                                        placeholder="Zero air pressure">
+                                </td>
+                                <td>
+                                    0.7 to 1.3 kg/ cm2 or 350ml/min or 300ml/min 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Programming rate</b></td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="programmingRate"
+                                        placeholder="Programming rate">
+                                </td>
+                                <td>
+                                    2oC/min. or 5°C/min
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered table-sm mb-4">
+
+                            <tr>
+                                <td>
+                                    <b>Sr. No.</b>
+                                </td>
+                                <td>
+                                    <b>Test</b>
+                                </td>
+                                <td>
+                                    <b>Test Result</b>
+                                </td>
+                                <td>
+                                    <b>Acceptable Limits</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>1.</b></td>
+                                <td colspan="3"><b>Physical Observations</b></td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td><b>1.1</b></td>
+                                <td><b>Description</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="description"
+                                        placeholder="Description">
+                                </td>
+                                <td>
+                                    Clear colourless liquid 
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><b>1.2</b></td>
+                                <td><b>Odour</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="odour"
+                                        placeholder="Odour">
+                                </td>
+                                <td>
+                                    Characteristic
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>2.</b></td>
+                                <td><b>Specific Optical Rotation</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="specificOpticalRotation"
+                                        placeholder="Specific Optical Rotation">
+                                </td>
+                                <td>
+                                    -10.0˚ to +10.0˚  
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>3.</b></td>
+                                <td colspan="3"><b>Assay by GC</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>3.1</b></td>
+                                <td><b>Alpha Terpineol</b></td>
+                                <td>
+                                    <input type="text" class="form-control" name="alphaTerpineol"
+                                        placeholder="Total Terpenes">
+                                </td>
+                                <td>
+                                    Min. 80.0 %
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <table class="table table-bordered table-sm">
+
+                            <tr>
+                                <td colspan="6">
+                                    <b>Report:</b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6">
+                                    The above lot sample of raw material is passed/not passed. It can be/cannot be used for further process.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6">
+                                    <textarea type="text" name="report" class="form-control" row="3"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <b>Date:</b>
+                                </td>
+                                <td>
+                                   <input type="date" class="form-control" name="reportDate">
+                                </td>
+                                <td>
+                                    <b>Chemist – Quality Control </b>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="chemistQualityControl">
+                                 </td>
+                                <td>
+                                    <b>Incharge-QC </b>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="inchargeQc">
+                                 </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6">
+                                    <button class="btn btn-warning px-5">Submit</button>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

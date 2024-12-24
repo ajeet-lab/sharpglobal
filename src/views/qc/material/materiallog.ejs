@@ -1,0 +1,189 @@
+<div class="row">
+  <div class="col-12 attendance">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h5 class="card-title font-weight-bold mb-4">
+          RAW MATERIAL LOG (QC002-F01-01)
+        </h5>
+        <form action="/qc/materiallog" method="POST" class="pr-3">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="data" class="form-label"> Date of Receipt </label>
+              <input type="date" class="form-control" name="dateOfReciept" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="nameOfMaterial" class="form-label">
+                Name of the Material
+              </label>
+              <!-- <input
+                type="text"
+                class="form-control"
+                name="nameOfMaterial"
+                id="nameOfMaterial"
+                placeholder="Name of the Material"
+              /> -->
+
+              <select name="nameOfMaterial" class="form-control" id="nameOfMaterial" >
+                <option value="Crude Mentha Oil">Crude Mentha Oil</option>
+                <option value="Peppermint Oil">Peppermint Oil</option>
+                <option value="Spearmint Oil">Spearmint Oil</option>
+
+                <option value="DMO">DMO</option>
+                <option value="Menthol">Menthol</option>
+                <option value="Menthone">Menthone</option>
+
+                <option value="DFMO">DFMO</option>
+                <option value="DFPO">DFPO</option>
+                <option value="DFSO">DFSO</option>
+
+                <option value="Basil Oil">Basil Oil</option>
+                <option value="Cineole">Cineole</option>
+                <option value="Terpene">Terpene</option>
+
+                <option value="Alpha Terpineol">Alpha Terpineol</option>
+                <option value="L-Carvone">L-Carvone</option>
+                <option value="β-Caryophyllene">β-Caryophyllene</option>
+              </select>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="nameOfSupplier" class="form-label">
+                Name of the Supp./ Manufacturer
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                name="nameOfSupplier"
+                id="nameOfSupplier"
+                placeholder="Name of the Supplier/ Manufacturer"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="invoiceNo" class="form-label">Invoice Number </label>
+              <input
+                type="text"
+                class="form-control"
+                name="invoiceNo"
+                placeholder="Invoice Number"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="qtyReceived" class="form-label">
+                Quantity Received
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                name="qtyReceived"
+                id="qtyReceived"
+                placeholder="Quantity Received"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="totalNoOfDrums" class="form-label">
+                Total number of drums
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                name="totalNoOfDrums"
+                id="totalNoOfDrums"
+                placeholder="Total number of drums"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="lotNoAllocated" class="form-label"
+                >Lot No Allocated</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="lotNoAllocated"
+                id="lotNoAllocated"
+                placeholder="Lot No Allocated"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="lotNoIdentification" class="form-label"
+                >Lot No Identification</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="lotNoIdentification"
+                id="lotNoIdentification"
+                placeholder="Lot No Identification"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <label for="mfdDate" class="form-label">Mfd. Date </label>
+              <input
+                type="date"
+                class="form-control"
+                name="mfdDate"
+                id="mfdDate"
+                placeholder="Mfd. Date"
+              />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <label for="sampledBy" class="form-label">Sampled By</label>
+              <input type="text" class="form-control" name="sampledBy" id="sampledBy" placeholder="Sampled By" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <label for="analysedBy" class="form-label">Analysed By</label>
+              <input type="text" class="form-control" name="analysedBy" id="analysedBy" placeholder="Analysed By" />
+            </div>
+            <div class="col-12">
+              <button class="btn btn-warning px-5">Submit</button>
+            </div>
+          </div>
+
+          <!-- <tr>
+                                <td>
+                                    <input type="date" class="form-control" name="dateOfReciept">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="nameOfMaterial">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NameOfSupplier">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="invoiceNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="qtyReceived">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="totalNoOfDrums">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="lotNoAllocated">
+                                </td>
+
+
+                                <td>
+                                    <input type="text" class="form-control" name="lotNoIdentification">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="mfdDate">
+                                </td> <td>
+                                    <input type="text" class="form-control" name="sampledBy">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="analysedBy">
+                                </td>
+                            </tr> -->
+
+          <!-- <tr>
+                                <td colspan="11">
+                                    <button class="btn btn-warning px-5">Submit</button>
+                                </td>
+                            </tr>
+
+
+                        </table> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,234 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4>Attendance Summery</h4>
+            <a href="/hr/export/summery" class="btn btn-success mb-2 me-2 fw-bold py-1"><i
+                    class="bi bi-file-earmark-excel fs-6 py-0"></i>
+                Export
+            </a>
+        </div>
+            <% let allAttendance = {} %>
+            <% appAtten.forEach(atten=>{  %>
+            <% let uin = atten.uin;  %>
+            <% let date = new Date(atten.timeIn).getDate() + 1 %>
+            <% let sAtten = allAttendance[uin] %>
+            <% if(sAtten == null){ %>
+            <% let newArr = [] %>
+            <% for(let i = 0; i <=30 ; i++){ %>
+            <%  newArr.push(""); %>
+            <% } %>
+            <% let name = [atten.name, atten.unit] %>
+            <% sAtten = name.concat(newArr) %>
+            <%  } %>
+
+
+            <% if(new Date(atten.timeIn) > new Date("September 25, 2021 11:59 PM")){ %>
+
+            <% let inTime = new Date(atten.timeIn).toLocaleTimeString() %>
+            <% let outTime = new Date(atten.timeOut).toLocaleTimeString() %>
+
+            <% let milisecond = new Date(atten.timeOut) - new Date(atten.timeIn) %>
+            <% let hours = Math.floor(milisecond / 3600000) < 10 ? "0"+Math.floor(milisecond / 3600000) : Math.floor(milisecond / 3600000) %>
+
+            <% let minutes = Math.floor((milisecond / 60000) % 60) < 10 ? "0"+Math.floor((milisecond / 60000) % 60) : Math.floor((milisecond / 60000) % 60) %>
+
+
+
+
+            <% sAtten[date] = sAtten[date]+hours+":"+minutes %>
+            <%  } %>
+
+
+            <%  allAttendance[uin] = sAtten %>
+
+            <% }) %>
+            <div class="table-responsive py-1 pe-2">
+                <table class="table table-sm table-bordered" id="myTable">
+
+                    <thead>
+                        <tr class="align-middle bg-warning">
+                            <th scope="col">UIN</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Unit</th>
+                            <% for(let i=1; i <= 31; i++){ %>
+                            <th scope="col"><%= i %> </th>
+                            <% } %>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let lData in allAttendance){  %>
+                        <% let sData = allAttendance[lData] %>
+                        <tr class="align-middle">
+                            <td><%= lData %> </td>
+                            <td>
+                                <%= sData[0] %>
+                            </td>
+                            <td>
+                                <%= sData[1] %>
+                            </td>
+
+                            <td
+                                class="<%= sData[2] > '04:00' ? 'bg-lightgreen' : sData[2] <= '04:00' && sData[2] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[2] > '04:00' ? 'P' : sData[2] <= '04:00' && sData[2] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[3] > '04:00' ? 'bg-lightgreen' : sData[3] <= '04:00' && sData[3] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[3] > '04:00' ? 'P' : sData[3] <= '04:00' && sData[3] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[4] > '04:00' ? 'bg-lightgreen' : sData[4] <= '04:00' && sData[4] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[4] > '04:00' ? 'P' : sData[4] <= '04:00' && sData[4] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[5] > '04:00' ? 'bg-lightgreen' : sData[5] <= '04:00' && sData[5] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[5] > '04:00' ? 'P' : sData[5] <= '04:00' && sData[5] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[6] > '04:00' ? 'bg-lightgreen' : sData[6] <= '04:00' && sData[6] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[6] > '04:00' ? 'P' : sData[6] <= '04:00' && sData[6] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[7] > '04:00' ? 'bg-lightgreen' : sData[7] <= '04:00' && sData[7] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[7] > '04:00' ? 'P' : sData[7] <= '04:00' && sData[7] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[8] > '04:00' ? 'bg-lightgreen' : sData[8] <= '04:00' && sData[8] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[8] > '04:00' ? 'P' : sData[8] <= '04:00' && sData[8] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[9] > '04:00' ? 'bg-lightgreen' : sData[9] <= '04:00' && sData[9] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[9] > '04:00' ? 'P' : sData[9] <= '04:00' && sData[9] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[10] > '04:00' ? 'bg-lightgreen' : sData[10] <= '04:00' && sData[10] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[10] > '04:00' ? 'P' : sData[10] <= '04:00' && sData[10] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[11] > '04:00' ? 'bg-lightgreen' : sData[11] <= '04:00' && sData[11] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[11] > '04:00' ? 'P' : sData[11] <= '04:00' && sData[11] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+
+                            <td
+                                class="<%= sData[12] > '04:00' ? 'bg-lightgreen' : sData[12] <= '04:00' && sData[12] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[12] > '04:00' ? 'P' : sData[12] <= '04:00' && sData[12] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[13] > '04:00' ? 'bg-lightgreen' : sData[13] <= '04:00' && sData[13] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[13] > '04:00' ? 'P' : sData[13] <= '04:00' && sData[13] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[14] > '04:00' ? 'bg-lightgreen' : sData[14] <= '04:00' && sData[14] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[14] > '04:00' ? 'P' : sData[14] <= '04:00' && sData[14] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[15] > '04:00' ? 'bg-lightgreen' : sData[15] <= '04:00' && sData[15] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[15] > '04:00' ? 'P' : sData[15] <= '04:00' && sData[15] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[16] > '04:00' ? 'bg-lightgreen' : sData[16] <= '04:00' && sData[16] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[16] > '04:00' ? 'P' : sData[16] <= '04:00' && sData[16] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[17] > '04:00' ? 'bg-lightgreen' : sData[17] <= '04:00' && sData[17] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[17] > '04:00' ? 'P' : sData[17] <= '04:00' && sData[17] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[18] > '04:00' ? 'bg-lightgreen' : sData[18] <= '04:00' && sData[18] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[18] > '04:00' ? 'P' : sData[18] <= '04:00' && sData[18] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[19] > '04:00' ? 'bg-lightgreen' : sData[19] <= '04:00' && sData[19] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[19] > '04:00' ? 'P' : sData[19] <= '04:00' && sData[19] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[20] > '04:00' ? 'bg-lightgreen' : sData[20] <= '04:00' && sData[20] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[20] > '04:00' ? 'P' : sData[20] <= '04:00' && sData[20] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[21] > '04:00' ? 'bg-lightgreen' : sData[21] <= '04:00' && sData[21] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[21] > '04:00' ? 'P' : sData[21] <= '04:00' && sData[21] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[22] > '04:00' ? 'bg-lightgreen' : sData[22] <= '04:00' && sData[22] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[22] > '04:00' ? 'P' : sData[22] <= '04:00' && sData[22] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[23] > '04:00' ? 'bg-lightgreen' : sData[23] <= '04:00' && sData[23] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[23] > '04:00' ? 'P' : sData[23] <= '04:00' && sData[23] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[24] > '04:00' ? 'bg-lightgreen' : sData[24] <= '04:00' && sData[24] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[24] > '04:00' ? 'P' : sData[24] <= '04:00' && sData[24] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[25] > '04:00' ? 'bg-lightgreen' : sData[25] <= '04:00' && sData[25] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[25] > '04:00' ? 'P' : sData[25] <= '04:00' && sData[25] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[26] > '04:00' ? 'bg-lightgreen' : sData[26] <= '04:00' && sData[26] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[26] > '04:00' ? 'P' : sData[26] <= '04:00' && sData[26] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[27] > '04:00' ? 'bg-lightgreen' : sData[27] <= '04:00' && sData[27] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[27] > '04:00' ? 'P' : sData[27] <= '04:00' && sData[27] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[28] > '04:00' ? 'bg-lightgreen' : sData[28] <= '04:00' && sData[28] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[28] > '04:00' ? 'P' : sData[28] <= '04:00' && sData[28] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[29] > '04:00' ? 'bg-lightgreen' : sData[29] <= '04:00' && sData[29] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[29] > '04:00' ? 'P' : sData[29] <= '04:00' && sData[29] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[30] > '04:00' ? 'bg-lightgreen' : sData[30] <= '04:00' && sData[30] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[30] > '04:00' ? 'P' : sData[30] <= '04:00' && sData[30] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                            <td
+                                class="<%= sData[31] > '04:00' ? 'bg-lightgreen' : sData[31] <= '04:00' && sData[31] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[31] > '04:00' ? 'P' : sData[31] <= '04:00' && sData[31] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+                            <td
+                                class="<%= sData[32] > '04:00' ? 'bg-lightgreen' : sData[32] <= '04:00' && sData[32] >= '00:00' ? 'bg-warning' : 'bg-lightdanger' %>">
+                                <%= sData[32] > '04:00' ? 'P' : sData[32] <= '04:00' && sData[32] >= '00:00' ? 'H' : 'A' %>
+                            </td>
+
+                        </tr>
+                        <% } %>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

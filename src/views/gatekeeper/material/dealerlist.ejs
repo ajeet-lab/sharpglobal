@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title font-weight-bold mb-4">
+                    Approved Dealer Lists
+                </h3>
+
+                <ul class="list-unstyled">
+
+                    <% if(vendors.length>0){ %>
+                    <% vendors.forEach(data=>{ %>
+                    <li class="m-2 p-3 border shadow-sm">
+                        <a href="/gatekeeper/dealer/<%= data._id %>" class="nav-link text-dark">
+                            <%= data.nameOfSuppliers %> (<%= data.suppliersCode %>)<br />
+                            <small>
+                                <%= data.address %>
+                            </small><br />
+                            <small class="text-primary">
+                                <b>
+                                    Audit Date : <%= data.auditDate %>
+                                </b>
+                            </small><br />
+                            <small class="text-success">
+                                <b>
+                                    Next Audit Due Date : <%= data.nextAuditDueDate %>
+                                </b>
+                            </small>
+                        </a>
+                    </li>
+                    <% }); %>
+
+                    <% } %>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,214 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h4 class="card-title font-weight-bold">Melting Point</h4>
+        <div class="mt-2">
+            <form action="/qc/material/fg/melting-point" method="POST">
+
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="codeNo" class="form-label"> Code No. </label>
+                    <input type="text" class="form-control" id="codeNo" placeholder="Code No." name="codeNo" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="date" class="form-label"> Date </label>
+                    <input type="date" class="form-control" id="date" placeholder="date" name="date" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="startTime" class="form-label"> Start Time </label>
+                    <input type="time" class="form-control" id="" placeholder="Start Time" name="startTime" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="stopTime" class="form-label"> Stop Time </label>
+                    <input type="time" class="form-control" id="stopTime" placeholder="Stop Time" name="stopTime" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for=oprationDetail"" class="form-label"> Opration Detail </label>
+                    <input type="text" class="form-control" id="oprationDetail" placeholder="Opration Detail" name="oprationDetail" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="product" class="form-label"> Product </label>
+                    <input type="text" class="form-control" id="product" placeholder="Product" name="product" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="batchNo_identification" class="form-label">
+                      Batch No./Identification
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="batchNo_identification" placeholder="Batch No./Identification" name="batchNo_identification"
+                    />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="stage" class="form-label"> Stage </label>
+                    <select id="stage" name="stage" id="" class="form-control">
+                      <option value="FG">FG</option>
+                      <option value="RM">RM</option>
+                      <option value="WIP">WIP</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="firstReading" class="form-label">
+                      1<sup>st</sup> Reading
+                    </label>
+                    <input type="text" id="firstReading" placeholder="1st Reading" name="firstReading" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="secondReading" class="form-label">
+                      2<sup>nd</sup> Reading
+                    </label>
+                    <input type="text" id="secondReading" placeholder="2nd Reading" name="secondReading" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="thirdReading" class="form-label">
+                      3<sup>nd</sup> Reading
+                    </label>
+                    <input type="text" id="thirdReading" placeholder="3nd Reading" name="thirdReading" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="averageReading" class="form-label"> Average Reading </label>
+                    <input type="text" id="averageReading" placeholder="Average Reading" name="averageReading" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="performedBy" class="form-label"> Performed By </label>
+                    <input type="text" id="performedBy" placeholder="Performed By" name="performedBy" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="signatureBy" class="form-label"> Signature </label>
+                    <input type="text" id="signatureBy" placeholder="Signature" name="signatureBy" class="form-control" />
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <label for="verifiedBy" class="form-label"> Verified By </label>
+                    <input type="text" id="verifiedBy" placeholder="Verified By" name="verifiedBy" class="form-control" />
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-warning px-3">Submit</button>
+                  </div>
+                </div>
+                <!-- <thead>
+                  <tr class="table-warning font-weight-bold">
+                    <th>Code No.</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>Stop Time</th>
+                    <th>Opration Detail</th>
+                    <th>Product</th>
+                    <th>Batch No./Identification</th>
+                    <th>Stage</th>
+                    <th>1<sup>st</sup> Reading</th>
+                    <th>2<sup>nd</sup> Reading</th>
+                    <th>3<sup>rd</sup> Reading</th>
+                    <th>Average Reading</th>
+                    <th>Performed By</th>
+                    <th>Signature</th>
+                    <th>Verified By</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control" name="codeNo" />
+                    </td>
+                    <td>
+                      <input type="date" class="form-control" name="date" />
+                    </td>
+                    <td>
+                      <input
+                        type="time"
+                        class="form-control"
+                        name="startTime"
+                      />
+                    </td>
+                    <td>
+                      <input type="time" class="form-control" name="stopTime" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="oprationDetail"
+                      />
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" name="product" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="batchNo_identification"
+                      />
+                    </td>
+                    <td>
+                      <select name="stage" id="" class="form-control">
+                        <option value="FG">FG</option>
+                        <option value="RM">RM</option>
+                        <option value="WIP">WIP</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="firstReading"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="secondReading"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="thirdReading"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="averageReading"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="performedBy"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="signatureBy"
+                        class="form-control"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        name="verifiedBy"
+                        class="form-control"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="15">
+                      <button class="btn btn-warning">Submit</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> -->
+            </form>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

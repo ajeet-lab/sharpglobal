@@ -1,0 +1,39 @@
+<% let date = new Date(); %> <% let d = date.getDate() %> <% let m =
+date.getMonth()+1 %> <% let y = date.getFullYear() %> <% currDate = y+"-"+(m <=
+9 ? '0'+m : m)+'-'+(d <= 9 ? '0'+d : d) %>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body"> 
+                <h4 class="mb-3">Offer and Negotiation</h4>
+                <form action="/admin/customer/negotiation" method="POST" class="row">
+                    <div class="col-md-4 col-12 mb-3">
+                        <label for="enquiryId">Enquiry id</label>
+                        <input type="text" name="enquiryId" readOnly value="<%= enquiry && enquiry._id %>" class="form-control">
+                    </div>
+                    <div class="col-md-4 col-12 mb-3">
+                        <label for="negotiationDate">Negotiation Date</label>
+                        <input type="date" name="negotiationDate" value="<%= currDate %>" class="form-control">
+                    </div>
+                    <div class="col-md-4 col-12 mb-3">
+                        <label for="rateQuoted">Rate quoted</label>
+                        <input type="text" name="rateQuoted" class="form-control" placeholder="Rate quoted..">
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="commentsByClient">Comments by client</label>
+                        <textarea type="textarea" name="commentsByClient" class="form-control" placeholder="Comments by client.." rows="4"></textarea>
+                    </div>
+                    <div class="col-md-6 col-12 mb-3">
+                        <label for="replyBySharp">Reply by sharp</label>
+                        <textarea type="textarea" name="replyBySharp" class="form-control" placeholder="Reply by sharp.." rows="4"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-warning px-4">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

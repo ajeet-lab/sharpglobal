@@ -1,0 +1,198 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    INCOMING RAW MATERIAL WEIGHT CHART (PD001-F01-01)
+                </h5>
+                <div class="table-responsive">
+                    <form action="/wherehouse/material/incoming" method="POST" class="pr-3">
+                        
+                        <table class="table table-bordered">
+                            <tr>
+                                <td colspan="2">Lot Number</td>
+                                <td colspan="3">
+                                    <input type="text" name="lotNumber" id="lotNumber" class="form-control" value="<%= physical ? physical.identificationNoLotByQC : "" %>" readOnly >
+                                </td>
+                                <td>Date</td>
+                                <td>
+                                    <input type="date" name="date" id="date" class="form-control" value="<%= physical ? physical.date : "" %>" readOnly>
+                                </td>
+                                <td>Weight Chart</td>
+                                <td>
+                                    <input type="text" name="weightChart" id="weightChart" class="form-control">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    S. No.
+                                </td>
+                                <td>
+                                    Sharp S. No.
+                                </td>
+                                <td>
+                                    Supplier S. No.
+                                </td>
+                                <td>
+                                    Gross WT.
+                                </td>
+                                <td>
+                                    Tare WT.
+                                </td>
+                                <td>
+                                    Net WT.
+                                </td>
+                                <td>
+                                    S. No.
+                                </td>
+                                <td>
+                                    Rechecked  Tare WT.
+                                </td>
+                                <td>
+                                    Difference
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="sNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sharpSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="supplierSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="grossWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="tareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="netWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sNo2">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="recheckedTareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="difference">
+                                </td>
+                            </tr>
+
+                            <!-- <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="s.no">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sharpSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="SupplierSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="grossWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="tareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="netWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sNo2">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="recheckedTareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="difference">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="s.no">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sharpSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="SupplierSNo">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="grossWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="tareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="netWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="sNo2">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="recheckedTareWt">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="difference">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Total WT.
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="totalWt">
+                                </td>
+                                <td>
+                                    Supplier Wt.
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="supplierWt">
+                                </td>
+                                <td>
+                                    Shortage/Excess
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" class="form-control" name="shortageExcess">
+                                </td>
+                                
+                            </tr> -->
+
+                            <tr>
+                                <td>
+                                    Date
+                                </td>
+                                <td colspan="4">
+                                    <input type="date" class="form-control" name="date2">
+                                </td>
+                                <td>
+                                    Supervisor Signature
+                                </td>
+                                <td colspan="4">
+                                    <input type="text" class="form-control" name="supervisorSign">
+                                </td>                              
+                            </tr>
+
+                            <tr>
+                                <td colspan="9">
+                                    <button class="btn btn-warning px-5">Submit</button>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

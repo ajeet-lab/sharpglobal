@@ -1,0 +1,62 @@
+
+<div>
+    <h4 class="mt-4">View</h4>
+   <div class="table-responsive">
+        <table class="table table-bordered table-responsive-sm" id="myTable">
+            <thead>
+            <tr class="table-warning">
+                <th scope="col">UIN</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Plant No.</th>
+                <th scope="col">Batch No</th>
+                <th scope="col">Objective </th>
+
+                <th scope="col">Plant Start Time</th>
+                <th scope="col">Batch Complete Time</th>
+                <th scope="col">Batch Time Taken
+                </th>
+
+                <th scope="col">Feed Item</th>
+                <th scope="col">Feed Qty</th>
+                <th scope="col">Qty Objective</th>
+
+                <th scope="col">Inter Cut Qty</th>
+                <th scope="col">Bottom</th>
+                <th scope="col">Water</th>
+                <th scope="col">Loss</th>
+                
+                <th scope="col">Update At</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(distillations != ""){ %>
+                <% distillations.forEach(data=>{ %>
+                    <tr class="align-middle">
+                        <td><%= data.uin %></td>
+                        <td><%= data.unit %></td>
+                        <td><%= data.plantNo %></td>
+                        <td><%= data.batchNo %></td>
+                        <td><%= data.objective %></td>
+                        <td><%= data.plantStartTime %></td>
+                        <td><%= data.batchCompleteTime %></td>
+                        <td><%= data.batchTimeTaken %></td>
+                        <td><%= data.feedItem %></td>
+                        <td><%= data.feedQty %></td>
+                        <td><%= data.qtyObjective %></td>
+                        <td><%= data.interCutQty %></td>
+                        <td><%= data.bottom %></td>
+                        <td><%= data.water %></td>
+                        <td><%= data.loss %></td>
+                        <td><%= data.update_At %></td>
+                    </tr>
+                <% }) %>
+            
+            <% } %>
+
+
+            </tbody>
+        </table>
+   </div>
+</div>
+
+

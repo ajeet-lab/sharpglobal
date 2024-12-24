@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    Gate Entry Lists
+                </h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm" id="myTable">
+                       <thead>
+                        <tr class="table-warning">
+                            <td><b>S.No</b></td>
+                            <td><b>Date of Receipt</b></td>
+                            <td><b>Time</b></td>
+                            <td><b>Invoice No</b></td>
+                            <td><b>Invoice No Date</b></td>
+                            <td><b>PO No</b></td>
+                            <td><b>PO No Date</b></td>
+                            <td><b>Name And Address</b></td>
+                            <td><b>Name Details Of Articles</b></td>
+                            <td><b>Material Type</b></td>
+                            <td><b>Quantity Of Drums/Number Of Pack</b></td>
+                            <td><b>Quantity</b></td>
+                            <td><b>Rate</b></td>
+                            <td><b>Amount</b></td>
+                            <td><b>Name Of Deliverer</b></td>
+                            <td><b>Pic Of Deliverer</b></td>
+                            <td><b>Driver of number</b></td>
+                            <td><b>Vehicle No</b></td>
+                            <td><b>Sign Of Security</b></td>
+                            <td><b>Remarks</b></td>
+                        </tr>
+                       </thead>
+                        <% if(gateEntry.length > 0){ %>
+                        <% gateEntry.forEach(item=>{ %>
+                        <tr>
+                            <td>
+                                <%= item.sNo %>
+                            </td>
+                            <td>
+                                <%= item.dateofReceipt %>
+                            </td>
+                            <td>
+                                <%= item.time %>
+                            </td>
+                            <td>
+                                <%= item.invoiceNo %>
+                            </td>
+                            <td>
+                                <%= item.invoiceNo_date %>
+                            </td>
+                            <td>
+                                <%= item.poNo %>
+                            </td>
+                            <td>
+                                <%= item.poNo_date %>
+                            </td>
+                            <td>
+                                <%= item.nameAndAddress %>
+                            </td>
+                            <td>
+                                <%= item.nameDetailsOfArticles %>
+                            </td>
+                            <td>
+                                <%= item.materialType %>
+                            </td>
+                            <td>
+                                <%= item.quantityOfDrums %>
+                            </td>
+                            <td>
+                                <%= item.quantity %>
+                            </td>
+                            <td>
+                                <%= item.rate %>
+                            </td>
+                            <td>
+                                <%= item.amount %>
+                            </td>
+                            <td>
+                                <%= item.nameOfDeliverer %>
+                            </td>
+                            <td>
+                                <%= item.picOfDeliverer %>
+                            </td>
+                            <td>
+                                <%= item.driverNo %>
+                            </td>
+                            <td>
+                                <%= item.vehicleNo %>
+                            </td>
+                            <td>
+                                <%= item.signOfSecurity %>
+                            </td>
+                            <td>
+                                <%= item.remarks %>
+                            </td>
+
+
+
+
+                        </tr>
+                        <% }) %>
+                        <% } %>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,183 @@
+<style>
+  .form-select {
+    border: 1px solid lightgray;
+    border-radius: 0px 3px 3px 0px;
+    color: rgb(100, 100, 100);
+  }
+
+  .form-select:focus {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+    outline: 1px solid #ffe180;
+    z-index: 99;
+  }
+
+  .form-select:blur {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+  }
+</style>
+<div class="card">
+  <div class="card-body">
+    <h4 class="mb-3">Contract</h4>
+    <form action="/admin/po/create-contractor" method="POST">
+      <input type="hidden" name="billingAddress" value="<%= customer && customer.billingAddress %>" />
+      <input type="hidden" name="shippingAddress" value="<%= customer && customer.shippingAddress %>" />
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <label for="enquiryClosedWith">Enquiry closed with</label>
+            <input type="text" name="enquiryClosedWith" id="" class="form-control form-control-sm" value="Contract" readonly />
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <label for="customerName">Custmer name</label>
+          <input type="text" name="customerName" id="customerName" placeholder="Customer Name"
+            value="<%= customer && customer.customer %>" class="form-control form-control-sm" readonly />
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <label for="contractBooked">Contract Booked for</label>
+          <select name="contractBooked" id="contractBooked" class="form-control form-control-sm">
+            <option value="Globally">Globally</option>
+            <option value="Location Wise">Location Wise</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- If Contract booked for Globally -->
+
+      <div class="row">
+        <div class="col-lg-4 mb-3" id="contractBookedLocally" style="display: none">
+          <label for="supplyLocation">Supply Location</label>
+          <input type="text" name="supplyLocation" id="supplyLocation" class="form-control form-control-sm" />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="scNo">SC No Unique</label>
+          <input type="text" name="scNo" id="scNo" placeholder="SC Number Unique"
+            class="form-control form-control-sm" required />
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="productName">Product Name</label>
+          <select name="productName" id="productName" class="form-control form-control-sm" readonly>
+            <% products.forEach(product=>{ %>
+            <option value="<%= product.productName %>" <%= product.productName == customer.productName ? 'selected' : '' %> ><%= product.productName %></option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="col-lg-4 mb-3">
+          <label for="customerProductCode">Customer Product Code</label>
+          <input type="text" value="<%= customer.customerCode %>" name="customerProductCode" id="customerProductCode" class="form-control form-control-sm" readonly required />
+        </div>
+
+        <div class="col-lg-4 mb-3">
+          <!-- <label for="quantity">Quantity</label>
+                          <input
+                            type="text"
+                            name="quantity"
+                            class="form-control form-control-sm"
+                            placeholder="quantity"
+                          /> -->
+
+          <label for="quantity">Quantity</label>
+          <div class="input-group">
+            <input type="text" name="quantity" class="form-control form-control-sm" placeholder="Quantity"
+              aria-describedby="basic-addon1" />
+            <select class="form-select form-select-sm" name="weight" style="width: 100px !important">
+              <option value="Matric Ton">Matric Ton</option>
+              <option value="Ton">Ton</option>
+              <option value="Kg">Kg</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 mb-3">
+          <label for="rate">Rate</label>
+          <input type="text" name="rate" class="form-control form-control-sm" placeholder="Rate_$" />
+        </div>
+
+        <div class="col-lg-5 mb-3">
+          <label for="supplyPeriod">Supply Period</label>
+          <div class="d-flex">
+            <input type="month" min="2022-04" value="2022-04" name="supplyPeriodStart"
+              class="form-control form-control-sm" style="width: 50%;" required />
+            <input type="month" min="2023-03" value="2023-03" name="supplyPeriodEnd"
+              class="form-control form-control-sm ml-1" style="width: 50%;" required />
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 mb-3">
+          <label for="incoterm">Incoterm</label>
+          <select
+            name="incoterm"
+            class="form-control form-control-sm"
+            placeholder="Incoterm"
+          >
+            <option value="CIF">CIF</option>
+            <option value="DDP">DDP</option>
+            <option value="New">New</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-md-4 mb-3">
+          <label for="paymentTerm">Payment Term</label>
+          <select
+            name="paymentTerm"
+            id="paymentTerm"
+            class="form-control form-control-sm"
+            placeholder="Payment Term"
+          >
+            <!-- <option value="100% in Advance">100% in Advance</option>
+            <option value="New Term">New Term</option> -->
+
+            <% paymentTerms.forEach(data=>{ %>
+              <option value="<%= data.paymentTerm %>"><%= data.paymentTerm %></option>
+            <% }) %> 
+            <option value="New Term">New Term</option>
+          </select>
+        </div>
+
+        <div class="col-lg-3 col-md-4 mb-3" id="newTerm" style="display: none;">
+          <label for="newTerm">New Term</label>
+          <input
+            type="text"
+            name="newTerm"
+            class="form-control form-control-sm"
+            placeholder="New Term"
+          />
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 ">
+          <button class="btn btn-warning btn-sm px-4">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+<script>
+  let val = document.getElementById("contractBooked");
+  val.addEventListener("change", function () {
+    if (val.value === "Location Wise") {
+      document.getElementById("contractBookedLocally").style.display = "block";
+    } else {
+      document.getElementById("contractBookedLocally").style.display = "none";
+    }
+  });
+
+  let paymentTerm = document.getElementById('paymentTerm');
+  paymentTerm.addEventListener('change', function(){
+    if (paymentTerm.value === "New Term") {
+      document.getElementById("newTerm").style.display = "block";
+    } else {
+      document.getElementById("newTerm").style.display = "none";
+    }
+  })
+</script>

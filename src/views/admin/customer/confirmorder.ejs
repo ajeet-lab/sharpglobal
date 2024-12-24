@@ -1,0 +1,224 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">Confirm Order</h4>
+                <form action="/admin/customer/confirmorder/<%= enquiry && enquiry._id %>" method="POST" class="">
+                    <div class="row">
+                        <div class="col-md-6 col-12 mb-3">
+                            <label for="enquiryType">Enquiry Close width</label>
+                            <select name="enquiryType" id="enquiryType" class="form-control form-control-sm" required>
+                                <option value="Immediate PO">Immediate PO</option>
+                                <option value="Contract">Contract</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="immediatePo"></div>
+
+                    <div id="contractPo">
+
+                    </div>
+
+
+                    <div class="col-12">
+                        <button class="btn btn-warning px-4">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const immPo = ` <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                                <label for="rateQuoted">Final Price</label>
+                                <input type="text" name="rateQuoted" value="<%= enquiry && enquiry.rateQuoted %>"
+                                    class="form-control form-control-sm" placeholder="Final Price" required>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                                <label for="quantity">Final Quantity</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm" name="quantity"
+                                        value="<%= enquiry && enquiry.quantity %>" placeholder="Enter Final Qty..."
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text py-0"
+                                            id="basic-addon2"><%= enquiry && enquiry.weight %> </span>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                                <label for="productName">Product</label>
+                                <select name="productName" class="form-control form-control-sm">
+                                    <% products.forEach(data=> {  %>
+                                    <option value="<%= data.productName %>"
+                                        <%= enquiry.productName === data.productName ? 'selected' : '' %>>
+                                        <%= data.productName %></option>
+                                    <%  }) %>
+                                </select>
+    
+                            </div>
+    
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                                <label for="customerCode">Customer Code</label>
+                                <input type="text" name="customerCode" class="form-control form-control-sm"
+                                    placeholder="Enter customer code" required />
+    
+                            </div>
+    
+    
+    
+                            <div class="col-12 mb-3">
+                                <label for="specification">Specification</label>
+                                <textarea type="text" name="specification" class="form-control"
+                                    placeholder="Specification"><%= enquiry && enquiry.specification  %></textarea>
+                            </div>
+                        </div>`;
+
+
+    const cont = ` <div class="row">
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="scNo">SC No Unique</label>
+        <input type="text" name="scNo" id="scNo" placeholder="SC Number Unique"
+            class="form-control form-control-sm" required />
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="quantity">Final Quantity</label>
+        <div class="input-group">
+            <input type="text" class="form-control form-control-sm" name="quantity"
+                value="<%= enquiry && enquiry.quantity %>" placeholder="Enter Final Qty..."
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <span class="input-group-text py-0"
+                    id="basic-addon2"><%= enquiry && enquiry.weight %> </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="rateQuoted">Final Price</label>
+        <input type="text" name="rateQuoted" value="<%= enquiry && enquiry.rateQuoted %>"
+            class="form-control form-control-sm" placeholder="Final Price" required>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="productName">Product</label>
+        <select name="productName" class="form-control form-control-sm">
+            <% products.forEach(data=> {  %>
+            <option value="<%= data.productName %>"
+                <%= enquiry.productName === data.productName ? 'selected' : '' %>>
+                <%= data.productName %></option>
+            <%  }) %>
+        </select>
+
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="customerCode">Customer Code</label>
+        <input type="text" name="customerCode" class="form-control form-control-sm"
+            placeholder="Enter customer code" required />
+
+    </div>
+    <div class="col-lg-6 mb-3">
+        <label for="supplyPeriod">Supply Period</label>
+        <div class="d-flex">
+            <input type="month" min="2022-04" value="2022-04" name="supplyPeriodStart"
+                class="form-control form-control-sm" style="width: 50%;" required />
+            <input type="month" min="2023-03" value="2023-03" name="supplyPeriodEnd"
+                class="form-control form-control-sm ml-1" style="width: 50%;" required />
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mb-3">
+        <label for="incoterm">Incoterm</label>
+        <select name="incoterm" class="form-control form-control-sm" placeholder="Incoterm">
+            <option value="CIF">CIF</option>
+            <option value="DDP">DDP</option>
+            <option value="New">New</option>
+        </select>
+    </div>
+    <div class="col-12 mb-3">
+        <label for="specification">Specification</label>
+        <textarea type="text" name="specification" class="form-control"
+            placeholder="Specification"><%= enquiry && enquiry.specification  %></textarea>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+        <label for="contractBooked">Contract Booked for</label>
+        <select name="contractBooked" id="contractBooked" class="form-control form-control-sm">
+            <option value="Globally">Globally</option>
+            <option value="Location Wise">Location Wise</option>
+        </select>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-3" id="contractBookedLocally"
+        style="display: none">
+        <label for="supplyLocation">Supply Location</label>
+        <input type="text" name="supplyLocation" id="supplyLocation"
+            placeholder="Supply Location" class="form-control form-control-sm" />
+    </div>
+    <div class="col-lg-3 col-md-4 mb-3">
+        <label for="paymentTerm">Payment Term</label>
+        <select name="paymentTerm" id="paymentTerm" class="form-control form-control-sm"
+            placeholder="Payment Term">
+
+            <% paymentTerms.forEach(data=>{ %>
+            <option value="<%= data.paymentTerm %>"><%= data.paymentTerm %></option>
+            <% }) %>
+            <option value="New Term">New Term</option>
+        </select>
+    </div>
+    <div class="col-lg-3 col-md-4 mb-3" id="newTerm" style="display: none;">
+        <label for="newTerm">New Term</label>
+        <input type="text" name="newTerm" class="form-control form-control-sm"
+            placeholder="New Term" />
+    </div>
+    </div>`;
+
+    let enqType = document.getElementById('enquiryType');
+    document.getElementById('immediatePo').innerHTML = immPo;
+    enqType.addEventListener('change', function () {
+        if (enqType.value === "Contract") {
+            let removeImmed = document.getElementById('immediatePo');
+            removeImmed.removeChild(removeImmed.firstElementChild);
+            document.getElementById('contractPo').innerHTML = cont;
+        } else {
+            document.getElementById('immediatePo').innerHTML = immPo;
+            let conPO = document.getElementById('contractPo');
+            conPO.removeChild(conPO.firstElementChild)
+        }
+    });
+
+
+
+    // Contract Booked 
+    let val = document.getElementById("contractBooked");
+        console.log("val", val);
+        if(val !== null){
+            console.log("null")
+        }
+    //     val.addEventListener("change", function () {
+    //     if (val.value === "Location Wise") {
+    //         document.getElementById("contractBookedLocally").style.display = "block";
+    //     } else {
+    //         document.getElementById("contractBookedLocally").style.display = "none";
+    //     }
+    // });
+
+
+    // Payment Booked
+    // let paymentTerm = document.getElementById('paymentTerm');
+    // console.log('paymentTerm', paymentTerm)
+    // if(paymentTerm){
+    //     console.log("Payment Term", paymentTerm);
+    // paymentTerm.addEventListener('change', function () {
+    //     console.log("paymentTerm.value")
+    //     if (paymentTerm.value === "New Term") {
+    //         document.getElementById("newTerm").style.display = "block";
+    //     } else {
+    //         document.getElementById("newTerm").style.display = "none";
+    //     }
+    // })
+    // }
+</script>

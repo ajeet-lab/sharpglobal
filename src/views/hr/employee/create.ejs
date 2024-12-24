@@ -1,0 +1,450 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header mb-0 pb-0 border-bottom border-warning border-2">
+                <h4>Create User</h4>
+            </div>
+            <div class="card-body">
+                <form action="/hr/employee/create" class="row" method="post">
+                    <div class="col-md-4 mb-3">
+                        <label for="uin">UIN</label>
+                        <input type="number" class="form-control" name="uin" id="uin" value="<%= luser.uin+1 %>"
+                            readonly>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="designation">Designation</label>
+                        <input type="text" class="form-control" name="designation" id="designation"
+                            placeholder="Enter designation" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="depart">Depart</label>
+                        <input type="text" class="form-control" name="depart" id="depart"
+                            placeholder="Enter depart" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="state">State</label>
+                        <select class="form-control" name="state" id="state" required>
+                            <option value="" selected>Select State</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="RAJASTHAN">RAJASTHAN</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="city">City</label>
+                        <select class="form-control" name="city" id="city" required>
+                            <option value="" selected>Select City</option>
+                            <option value="Barabanki">Barabanki</option>
+                            <option value="BHIWADI">BHIWADI</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="empType">Employee Type</label>
+                        <select class="form-control" name="empType" id="empType" required>
+                            <option value="" selected>Select Employee Type</option>
+                            <option value="Consultant">Consultant</option>
+                            <option value="ON ROLL">ON ROLL</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="vertical">Vertical</label>
+                        <select class="form-control" name="vertical" id="vertical" required>
+                            <option value="" selected>Select Vertical</option>
+                            <option value="Barabanki">Barabanki</option>
+                            <option value="BHIWADI">BHIWADI</option>
+                            <option value="C-03">C-03</option>
+                            <option value="C-15">C-15</option>
+                            <option value="H.O">H.O</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="funding">Funding</label>
+                        <select class="form-control" name="funding" id="funding" required>
+                            <option value="" selected>Select Funding</option>
+                            <option value="Sharp Mint Ltd BBK">Sharp Mint Ltd BBK</option>
+                            <option value="Sharp Mint Ltd Bhw">Sharp Mint Ltd Bhw</option>
+                            <option value="Sharp Mint Ltd C-03">Sharp Mint Ltd C-03</option>
+                            <option value="Sharp Mint Ltd HO">Sharp Mint Ltd HO</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="unit">Unit</label>
+                        <select class="form-control" name="unit" id="unit" required>
+                            <option value="" selected>Select Unit</option>
+                            <option value="Barabanki">Barabanki</option>
+                            <option value="BHIWADI">BHIWADI</option>
+                            <option value="C-03">C-03</option>
+                            <option value="C-15">C-15</option>
+                            <option value="H.O">H.O</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="shift">Shift</label>
+                        <select class="form-control" name="shift" id="shift" required>
+                            <option value="" selected>Select Shift</option>
+                            <option value="Both">Both</option>
+                            <option value="Day">Day</option>
+                            <option value="Night">Night</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name"
+                            placeholder="Enter name" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="agencyid">Agency Id</label>
+                        <input type="text" class="form-control" name="agencyid" id="agencyid"
+                            placeholder="Enter Agency id">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="outletcode">Outlet Code</label>
+                        <input type="text" class="form-control" name="outletcode" id="outletcode"
+                            placeholder="Enter Outlet Code">
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="hoid">hoid</label>
+                        <input type="text" class="form-control" name="hoid" id="hoid"
+                            placeholder="Enter hoid" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="outletname">Outlet Name</label>
+                        <input type="text" class="form-control" name="outletname" id="outletname"
+                            placeholder="Enter Outlet Name">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="outlettype">Outlet Type</label>
+                        <input type="text" class="form-control" name="outlettype" id="outlettype"
+                            placeholder="Enter Outlet Type">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="maritalstatus">Marital Status</label>
+                        <select class="form-control" name="maritalstatus" id="maritalstatus" required>
+                            <option value="" selected>Select Marital Status</option>
+                            <option value="Married">Married</option>
+                            <option value="Unmarried">Unmarried</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="mobile">Mobile</label>
+                        <input type="Number" class="form-control" name="mobile" id="mobile"
+                            placeholder="Enter Mobile" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="Enter Email" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="asmpid">Asmp Id</label>
+                        <input type="asmpid" class="form-control" name="asmpid" id="asmpid"
+                            placeholder="Enter Asmp Id">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" name="gender" id="gender" required>
+                            <option value="" selected>Select Gender</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="reportingManager">Reporting Manager</label>
+                        <input type="reportingManager" class="form-control" name="reportingManager"
+                            id="reportingManager" placeholder="Enter Reporting Manager" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="education">Education</label>
+                        <input type="education" class="form-control" name="education" id="education"
+                            placeholder="Enter Education" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="experience">Experience</label>
+                        <input type="experience" class="form-control" name="experience" id="experience"
+                            placeholder="Enter Experience">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="dob">DOB</label>
+                        <input type="date" class="form-control" name="dob" id="dob" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="doj">DOJ</label>
+                        <input type="date" class="form-control" name="doj" id="doj" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="tluin">TL UIN</label>
+                        <input type="text" class="form-control" name="tluin" id="tluin"
+                            placeholder="Enter TL UIN">
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="tsmuin">TSM UIN</label>
+                        <input type="text" class="form-control" name="tsmuin" id="tsmuin"
+                            placeholder="Enter TSM UIN">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="asmuin">ASM UIN</label>
+                        <input type="text" class="form-control" name="asmuin" id="asmuin"
+                            placeholder="Enter ASM UIN">
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="rsmuin">RSM UIN</label>
+                        <input type="text" class="form-control" name="rsmuin" id="rsmuin"
+                            placeholder="Enter RSM UIN">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="zsmuin">ZSM UIN</label>
+                        <input type="text" class="form-control" name="zsmuin" id="zsmuin"
+                            placeholder="Enter ZSM UIN">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="kamid">KAM Id</label>
+                        <input type="text" class="form-control" name="kamid" id="kamid"
+                            placeholder="Enter KAM Id">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="houin">HO UIN</label>
+                        <input type="text" class="form-control" name="houin" id="houin"
+                            placeholder="Enter HO UIN">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="status">Status</label>
+                        <input type="text" class="form-control" name="status" id="status"
+                            placeholder="Enter Status">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="fatherage">Father Age</label>
+                        <input type="text" class="form-control" name="fatherage" id="fatherage"
+                            placeholder="Enter Father Age">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="motherName">Mother Name</label>
+                        <input type="text" class="form-control" name="motherName" id="motherName"
+                            placeholder="Enter Mother Name" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="father">Father Name</label>
+                        <input type="text" class="form-control" name="father" id="father"
+                            placeholder="Enter Father Name" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="insurance">Insurance</label>
+                        <input type="text" class="form-control" name="insurance" id="insurance"
+                            placeholder="Enter Insurance">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="esi">ESI</label>
+                        <input type="text" class="form-control" name="esi" id="esi"
+                            placeholder="Enter ESI">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="pfnumber">PF Number</label>
+                        <input type="text" class="form-control" name="pfnumber" id="pfnumber"
+                            placeholder="Enter PF Number">
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="nameInBank">Name In Bank</label>
+                        <input type="text" class="form-control" name="nameInBank" id="nameInBank"
+                            placeholder="Enter Name In Bank" required>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="bankName">Bank Name</label>
+                        <input type="text" class="form-control" name="bankName" id="bankName"
+                            placeholder="Enter Bank Name" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="Number" class="form-control" name="accountNumber"
+                            id="accountNumber" placeholder="Enter Account Number" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="ifsc">IFSC</label>
+                        <input type="text" class="form-control" name="ifsc" id="ifsc"
+                            placeholder="Enter IFSC" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="dol">DOL</label>
+                        <input type="text" class="form-control" name="dol" id="dol"
+                            placeholder="Enter DOL" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="aadhar">Aadhar No.</label>
+                        <input type="number" class="form-control" name="aadhar" id="aadhar"
+                            placeholder="Enter Aadhar No." required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="uan">UAN No.</label>
+                        <input type="number" class="form-control" name="uan" id="uan"
+                            placeholder="Enter UAN No." required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="panCard">PAN No.</label>
+                        <input type="text" class="form-control" name="panCard" id="panCard"
+                            placeholder="Enter PAN No.">
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="offeredSalary">Offered Salary</label>
+                        <input type="text" class="form-control" name="offeredSalary" id="offeredSalary"
+                            placeholder="Enter Offered Salary">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="tierSalary">Tier Salary</label>
+                        <input type="text" class="form-control" name="tierSalary" id="tierSalary"
+                            placeholder="Enter Tier Salary">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="modifiedtime">Modified Time</label>
+                        <input type="text" class="form-control" name="modifiedtime" id="modifiedtime"
+                            placeholder="Enter Modified Time">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="detailsPendency">Details Pendency</label>
+                        <input type="text" class="form-control" name="detailsPendency"
+                            id="detailsPendency" placeholder="Enter Details Pendency">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="referenceBy">Reference By</label>
+                        <input type="text" class="form-control" name="referenceBy" id="referenceBy"
+                            placeholder="Enter Reference By">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="recruitedBy">Recruited By</label>
+                        <input type="text" class="form-control" name="recruitedBy" id="recruitedBy"
+                            placeholder="Enter Recruited By">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="appointmentBy">Appointment By</label>
+                        <input type="text" class="form-control" name="appointmentBy" id="appointmentBy"
+                            placeholder="Enter Appointment By">
+                    </div>
+
+
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="ctc">CTC</label>
+                        <input type="number" class="form-control" name="ctc" id="ctc"
+                            placeholder="Enter CTC" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="grossSalary">Gross Salary</label>
+                        <input type="number" class="form-control" name="grossSalary" id="grossSalary"
+                            placeholder="Enter Gross Salary" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="basicSalary">Basic Salary</label>
+                        <input type="number" class="form-control" name="basicSalary" id="basicSalary"
+                            placeholder="Enter Basic Salary" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="hra">HRA</label>
+                        <input type="number" class="form-control" name="hra" id="hra"
+                            placeholder="Enter HRA" required>
+                    </div>
+
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="medical">Medical</label>
+                        <input type="text" class="form-control" name="medical" id="medical"
+                            placeholder="Enter Medical">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="conveyance">Conveyance</label>
+                        <input type="Number" class="form-control" name="conveyance" id="conveyance"
+                            placeholder="Enter Conveyance">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="splAllowances">Spl. Allowances</label>
+                        <input type="Number" class="form-control" name="splAllowances"
+                            id="splAllowances" placeholder="Enter Spl. Allowances">
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <label for="lta">Lta</label>
+                        <input type="Number" class="form-control" name="lta" id="lta"
+                            placeholder="Enter Lta">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="personalAllowance">Personal Allowance</label>
+                        <input type="Number" class="form-control" name="personalAllowance"
+                            id="personalAllowance" placeholder="Enter Personal Allowance">
+                    </div>
+
+
+                    <div class="col-12 text-center">
+                        <button class="btn btn-warning">Create</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

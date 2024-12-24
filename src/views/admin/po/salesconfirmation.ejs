@@ -1,0 +1,150 @@
+<div class="container-fluid">
+ 
+    <div class="table-responsive py-2 pt-5"  id="sales_confirmation">
+        <div class="d-flex align-items-center bg-warn border">
+            <img src="/img/slogo.png" alt="" width="150">
+            <span class="w-100 text-center fw-22 text-dark font-weight-bold pt-1">SHARP MINT LIMITED</span>
+        </div>
+        <table class="table table-bordered caption-top table-sm">
+            <!-- <caption class="bg-warning">List of users</caption> -->
+            <tbody>
+                <tr>
+                    <th colspan="6" class="text-center fw-20">Sales Confirmation</td>
+                </tr>
+                <tr>
+                    <td class="text-center">Sales Confirmation No.</td>
+                    <td class="text-center">SML/21-22/0437</td>
+                    <td class="text-center"></td>
+                    <td class="text-center">DATE:</td>
+                    <td class="text-center" colspan="2">8-Mar-21</td>
+                </tr>
+                <tr>
+                    <td>Office address</td>
+                    <td colspan="5">
+                       <span  style="display: inline-block;width: 230px;">
+                        Sharp Mint Limited<br />
+                        Sharp House Plot No. 9, LSC
+                        Gujranwala Town Part-1, Delhi-110009
+                        Tel: 011-42290700
+                       </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>The Buyer Name</td>
+                    <td colspan="5">NANTE KIMYA</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td colspan="5">
+                        Cumhuriyet Mahallesi D-100 Karayolu Caddesi No: 374/81 (İstanbul
+                        Outlet Park) Buyukcekmece/  ISTANBUL ZIP/POST CODE: 34500
+                    </td>
+                </tr>
+                <tr>
+                    <td>Buyers Reference</td>
+                    <td colspan="5">PO. NO. VSP01902</td>
+                </tr>
+                <tr class="bg-warn">
+                    <th class="text-center">Description of Goods</th>
+                    <th class="text-center">Quantity (in Kg)</th>
+                    <th class="text-center">Price/kg</th>
+                    <th class="text-center">Currency</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Packaging</th>
+                </tr>
+                <tr>
+                    <td class="text-center">Menthol Crystal Large</td>
+                    <td class="text-center">15500</td>
+                    <td class="text-center">17.50</td>
+                    <td class="text-center">USD</td>
+                    <td class="text-center">271,250.00</td>
+                    <td class="text-center">25 KGS FIBER DRUMS</td>
+                </tr>
+
+                <tr>
+                    <th class="text-center fw-20" colspan="3">Total</th>
+                    <td class="text-center">USD</td>
+                    <th class="text-center fw-20">271,250.00</th>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Incoterms</td>
+                    <td colspan="5">CIF</td>
+                </tr>
+
+                <tr>
+                    <td>Place Of Discharge</td>
+                    <td colspan="5">CIF / AMBARLI / ISTANBUL</td>
+                </tr>
+
+                <tr>
+                    <td>Shipment</td>
+                    <td colspan="5">1-Aug-22</td>
+                </tr>
+
+                <tr>
+                    <td>Payment Terms</td>
+                    <td colspan="5">CAD</td>
+                </tr>
+
+                <tr>
+                    <td>Documents Required</td>
+                    <td colspan="5">
+                        • Invoice<br>
+                        • Full set of Bill of Lading<br>
+                        • Packing list<br>
+                        • Certificate of Analysis<br>
+                        • Certificate of Origin<br>
+                        • Certificate of Insurance
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="">
+                        <p>Duly signed and acknowledged by both the Parties:</p>
+                        <div class="imgBox w-100 pl-4">
+                            <img src="/img/sign.png" alt="" width="100">
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                            <p class="font-weight-bold ml-4 pl-4">SELLER</p>
+                            <p class="font-weight-bold mr-4">BUYER</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <button type="button" id="download" class="btn btn-warning btn-sm px-3"><i class="fas fa-print"></i> Print</button>
+    </div>
+</div>
+
+<script>
+
+    // Download Salary slip
+    window.onload = function () {
+        document.getElementById("download").addEventListener("click", () => {
+            const salesConfirmation = this.document.getElementById("sales_confirmation");
+            let opt = {
+                margin: .2,
+                filename: "Sales Confirmation.pdf",
+                image: {
+                    type: 'jpeg',
+                    quality: 1
+                },
+                html2canvas: {
+                    scale: 4
+                },
+                jsPDF: {
+                    unit: 'in',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
+            };
+            html2pdf().set(opt).from(salesConfirmation).save()
+        });
+    }
+
+</script>

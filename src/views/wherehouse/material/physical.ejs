@@ -1,0 +1,166 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    PHYSICAL MATERIAL RECEIPT NOTE (WH003-F01-00)
+                </h5>
+                <div class="table-responsive p-2">
+                    <form action="/wherehouse/material/physical" method="POST" class="pr-3">
+                        <div class="row mb-3 align-items-center">
+                            <label for="date" class="col-2">Date</label>
+                            <div class="col-10">
+                                <input type="date" name="date" class="ml-3 form-control" id="date" value="<%= checkList ?  checkList.date : "" %>" readOnly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 align-items-center">
+                            <label for="nameOfSupplier" class="col-2">Name of Supplier</label>
+                            <div class="col-10">
+                                <input type="text" class="ml-3 form-control" id="nameOfSupplier" name="nameOfSupplier" value="<%= checkList ? checkList.supplierName: "" %>" <%= checkList ? "readOnly": "" %>
+                                    placeholder="Name of Supplier " required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 align-items-center">
+                            <label for="Invoice No. & Date" class="col-2">Invoice No. & Date</label>
+                            <div class="col-10">
+                                <input type="text" name="invoiceNoDate" class="ml-3 form-control" id="invoiceNoDate" value="<%= checkList ? checkList.invoiceNo+ ", " + checkList.date : "" %>" readOnly
+                                    placeholder="Invoice No. & Date" required>
+                            </div>
+                        </div>
+
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Description</th>
+                                <th>Qty. as per Invoice</th>
+                                <th>Weight Shortage /Excess</th>
+                                <th>No. of packing</th>
+                                <th>Identification No Lot No. By QC </th>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="sNo" value="<%= checkList ? checkList.sNo: "" %>" <%= checkList ? "readOnly": "" %>>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="description" value="<%= checkList ? checkList.material: "" %>" <%= checkList ? "readOnly": "" %>>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="quantityPerInvoice" value="<%= checkList ? checkList.weightOfMaterial: "" %>" <%= checkList ? "readOnly": "" %> >
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="weightShortageExcess" value="<%= checkList ? checkList.weightMaterialChecked: "" %>" <%= checkList ? "readOnly": "" %>>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="noOfpacking" value="<%= checkList ? checkList.quantityInDrums : "" %>" readOnly>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" value="<%= checkList ? checkList.identificationNoLotByQC : "" %>" readOnly name="identificationNoLotByQC">
+                                </td>
+                            </tr>
+
+                            <!--<tr>
+                                <td>
+                                    <input type="text" class="form-control" name="s.no">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="description">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="quantityPerInvoice">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="weightShortageExcess">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfDrums">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfpacking">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="IdentNoLotByQC">
+                                </td>
+                            </tr>
+
+                             <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="s.no">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="description">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="quantityPerInvoice">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="weightShortageExcess">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfDrums">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfpacking">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="IdentNoLotByQC">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" name="s.no">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="description">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="quantityPerInvoice">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="weightShortageExcess">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfDrums">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="NoOfpacking">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="IdentNoLotByQC">
+                                </td>
+                            </tr> -->
+
+                            <tr>
+                                <td colspan="2">
+                                    Ware House Incharge (Signature)
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" disabled class="form-control" name="inchargeSign">
+                                </td>
+                                <td>
+                                    QC. (Sign.)
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" disabled class="form-control" name="qcSign">
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td colspan="7">
+                                    <button class="btn btn-warning px-5">Submit</button>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

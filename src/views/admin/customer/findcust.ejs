@@ -1,0 +1,128 @@
+<style>
+  .form-select {
+    border: 1px solid lightgray;
+    border-radius: 0px 3px 3px 0px;
+    color: rgb(100, 100, 100);
+  }
+
+  .form-select:focus {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+    outline: 1px solid #ffe180;
+    z-index: 99;
+  }
+
+  .form-select:blur {
+    box-shadow: 0 0 0 .1rem rgba(255, 187, 0, 0.767);
+    border-color: #ffe180;
+  }
+</style>
+
+<% let date = new Date(); %>
+<% let d = date.getDate() %>
+<% let m = date.getMonth()+1 %>
+<% let y = date.getFullYear() %>
+<% currDate = y+"-"+(m <= 9 ? '0'+m : m)+'-'+(d <= 9 ? '0'+d : d) %>
+<div class="card">
+  <div class="card-header py-2">
+    <h5 class="mb-0">Customer Enquiry <%= customer ? '#'+customer._id : "" %> </h5>
+  </div>
+  <div class="card-body">
+    <form action="/admin/customer/findcust" class="row" method="POST">
+      <input type="hidden" name="customerId" value="<%= customer ? customer._id : '' %>">
+      <div class="col-lg-3 col-md-6 mb-3">
+        <label for="date">Date</label>
+        <input type="date" name="date" value="<%= currDate %>" class="form-control form-control-sm" required>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-3">
+        <label for="customer">Customer</label>
+        <input type="text" name="customer" readOnly value="<%= customer ?
+        customer.customer : '' %>" class="form-control form-control-sm" />
+      </div>
+
+      <div class="col-lg-6 col-12 mb-3">
+        <label for="customerName">Customer Name</label>
+        <input type="text" name="customerName" value="<%= customer ?
+        customer.customerName : '' %>" readOnly class="form-control form-control-sm" />
+      </div>
+
+
+
+      <div class="col-12 mb-3">
+        <label for="address">Location</label>
+        <textarea type="textarea" name="address" value="<%= customer ?
+        customer.address : "" %>" readOnly class="form-control form-control-sm"><%= customer ?
+        customer.address : "" %> </textarea>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6 mb-3">
+        <label for="productName">Product Name</label>
+        <select name="productName" id="" class="form-control form-control-sm">
+          <% products.forEach(product => { %>
+          <option value="<%= product.productName %>">
+            <%= product.productName %>
+          </option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-3">
+        <label for="quantity">Quantity</label>
+        <div class="input-group">
+          <input type="number" name="quantity" placeholder="Qty in No." class="form-control form-control-sm" required>
+          <select class="form-select form-select-sm" name="weight" style="width: 100px !important;">
+            <option value="Matric Ton">Matric Ton</option>
+            <option value="Ton">Ton</option>
+            <option value="Kg">Kg</option>
+          </select>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-5 mb-3">
+        <label for="specification">Specification</label>
+        <input type="textarea" name="specification" placeholder="Enter Specification"
+          class="form-control form-control-sm" />
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-3">
+        <label for="" class="d-block">Reference</label>
+        <div class="form-check form-check-inline mt-1">
+          <input class="form-check-input" type="radio" name="reference" value="Direct" onclick="direct()" checked>
+          <label class="form-check-label" for="inlineRadio1" checked>Direct</label>
+        </div>
+        <div class="form-check form-check-inline" >
+          <input class="form-check-input" type="radio" name="reference" value="Broker" onclick="broker()">
+          <label class="form-check-label" for="inlineRadio2" >Broker</label>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-2" style="display: none;" id="brokerRemark">
+        <label for="brokerRemark">Broker Remark</label>
+        <input type="text" name="brokerRemark" placeholder="Enter Remark"
+          class="form-control form-control-sm" />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-warning px-4">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+
+  function broker(){
+    document.getElementById('brokerRemark').style.display = 'block'
+  }
+
+  function direct(){
+    console.log("direct")
+    document.getElementById('brokerRemark').style.display = 'none'
+  }
+
+  
+</script>

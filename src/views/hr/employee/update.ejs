@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header mb-0 pb-0 border-bottom border-warning border-2">
+                <h4>Update User</h4>
+            </div>
+            <div class="card-body">
+                <form action="/hr/find/employee" class="row" method="GET">
+                    <div class="col-md-6">
+                        <label for="uin">UIN</label>
+
+                        <div class="d-flex">
+                            <input type="number" class="form-control mr-3" name="uin" id="uin" placeholder="Enter UIN"
+                                required>
+                            <button class="btn btn-warning">Search</button>
+                        </div>
+                    </div>
+                </form>
+
+                <hr />
+
+                <form action="/hr/employee/update?_method=PUT" class="row" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="col-md-4 mb-3">
+                        <label for="uin">UIN</label>
+                        <input type="uin" class="form-control" name="uin"
+                            value="<%= findUser ? findUser.uin : '' %>" id="uin" placeholder="Enter uin" <%= findUser ? "readonly" : '' %> >
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email"
+                            value="<%= findUser ? findUser.email : '' %>" id="email" placeholder="Enter Email" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="mobile">Phone</label>
+                        <input type="number" class="form-control" name="mobile"
+                            value="<%= findUser ? findUser.mobile : '' %>" id="mobile" placeholder="Enter mobile"
+                            required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="status">Status</label>
+
+                        <select name="status" class="form-control" id="status" required>
+                            <option value="">Select
+                                Status</option>
+
+                            <option value="Working">
+                                Working
+                            </option>
+
+                            <option value="Resigned">
+                                Resigned
+                            </option>
+
+                            <option value="Terminated">
+                                Terminated
+                            </option>
+
+
+                        </select>
+                    </div>
+
+
+
+                    <div class="col-12 text-center">
+                        <button class="btn btn-warning">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

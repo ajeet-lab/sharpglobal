@@ -1,0 +1,117 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h4 class="card-title font-weight-bold">Oven</h4>
+        <div class="mt-2">
+          <form action="/qc/material/fg/oven" method="POST">
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="codeNo" class="form-label"> Code No. </label>
+                <input type="text" class="form-control" name="codeNo" placeholder="Code No." id="codeNo" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="date" class="form-label"> Date </label>
+                <input type="date" class="form-control" name="date" placeholder="" id="date" />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="startTime" class="form-label"> Start Time </label>
+                <input
+                  type="time"
+                  class="form-control"
+                  name="startTime"
+                  placeholder="" id="startTime"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="stopTime" class="form-label"> Stop Time </label>
+                <input
+                  type="time"
+                  class="form-control"
+                  name="stopTime"
+                  placeholder="" id="stopTime"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="oprationDetail" class="form-label">
+                  Opration Detail
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="oprationDetail"
+                  placeholder=" Opration Detail" id="oprationDetail"
+                />
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="product" class="form-label"> Product </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="product"
+                  placeholder="Product" id="product"
+                />
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="batchNo_identification" class="form-label">
+                  Batch No./Identification
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="batchNo_identification"
+                  placeholder="Batch No./Identification" id="batchNo_identification"
+                />
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="stage" class="form-label"> Stage </label>
+                <select name="stage" class="form-control">
+                  <option value="FG">FG</option>
+                  <option value="RM">RM</option>
+                  <option value="WIP">WIP</option>
+                </select>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="performedBy" class="form-label">
+                  Performed By
+                </label>
+                <input
+                  type="text"
+                  name="performedBy"
+                  class="form-control"
+                  placeholder="Performed By" id="performedBy"
+                />
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="signatureBy" class="form-label"> Signature </label>
+                <input
+                  type="text"
+                  name="signatureBy"
+                  class="form-control"
+                  placeholder="Signature" id="signatureBy"
+                />
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="verifiedBy" class="form-label"> Verified By </label>
+                <input
+                  type="text"
+                  name="verifiedBy"
+                  class="form-control"
+                  placeholder="Verified By" id="verifiedBy"
+                />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning px-3">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light sidebar sidebar-light rounded-0 px-0"
+>
+  <div class="container-fluid px-0">
+    <button
+      class="navbar-toggler p-1 admin_toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sidebar"
+      aria-controls="sidebar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="sidebar">
+      <div class="sidebar-menu sidenavbar_unorderlist">
+        <ul class="list list-unstyled list-scrollbar">
+          <% if(admin){ %>
+          <li class="list-item">
+            <ul class="list-unstyled">
+              <li>
+                <a href="/admin/home" class="list-link"
+                  ><i class="fas fa-home"></i> Home</a
+                >
+              </li>
+
+             <% if(admin.enquiryAccess == "All") { %>
+              
+              <li>
+                <a href="#" class="list-link link-arrow">
+                  <span class="list-icon mr-0 pr-0"
+                    ><i class="fas fa-tasks"></i></span
+                  >Order Management
+                </a>
+                <ul class="list-unstyled list-hidden">
+                  <!-- <li>
+                    <a href="/admin/po/view" class="list-link">
+                      <i class="far fa-eye"></i> View</a
+                    >
+                  </li> -->
+                  <li>
+                    <a href="#" class="list-link link-arrow">
+                      <i class="far fa-user"></i> Customer</a
+                    >
+                    <ul class="list-unstyled list-hidden">
+                      <li>
+                        <a href="/admin/customer/enquiry" class="list-link">
+                          <i class="fas fa-search"></i> Enquiry
+                        </a>
+                      </li>
+                        <li>
+                          <a href="/admin/customer/enquiryview" class="list-link">
+                            <i class="fas fa-eye"></i> Enquiry view
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href="/admin/add/customer" class="list-link">
+                            <i class="fas fa-plus"></i> Create Customer</a
+                          >
+                        </li>
+                      
+                      <!-- <li>
+                        <a href="/admin/update/customer" class="list-link">
+                          <i class="fas fa-pen"></i> Update</a
+                        >
+                      </li> -->
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#" class="list-link link-arrow">
+                      <i class="fas fa-chart-bar"></i> Po</a
+                    >
+                    <ul class="list-unstyled list-hidden">
+                      
+                      <!-- <li>
+                        <a href="/admin/po/create-contractor" class="list-link">
+                          <i class="fas fa-edit"></i> Create Contract
+                        </a>
+                      </li> -->
+
+                      <li>
+                        <a href="/admin/po/pending" class="list-link">
+                          <i class="fas fa-blog"></i> Po Pending
+                        </a>
+                      </li>
+
+                      
+
+
+                      <!-- <li>
+                        <a href="/admin/po/entry" class="list-link">
+                          <i class="fas fa-edit"></i> Po Entry
+                        </a>
+                      </li> -->
+                     
+                    </ul>
+                  </li>
+<!--                   
+                  <li>
+                    <a href="/admin/order/entry" class="list-link">
+                      <i class="fas fa-plus"></i> Order Entry</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/admin/po/export" class="list-link">
+                      <i class="fas fa-file-export"></i> Export</a
+                    >
+                  </li> -->
+                </ul>
+              </li>
+              <% } %>  
+              
+
+              <!-- <li>
+                <a href="#" class="list-link link-arrow">
+                  <span class="list-icon"><i class="fas fa-pallet"></i></span>
+                  Inventory
+                </a>
+                <ul class="list-unstyled list-hidden">
+                  <li>
+                    <a href="/admin/new/production" class="list-link">
+                      <i class="fab fa-product-hunt"></i> New Production</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/admin/issue/drumno" class="list-link">
+                      <i class="far fa-sticky-note"></i> Issue Drum No</a
+                    >
+                  </li> -->
+
+                  <!-- <li>
+                    <a class="list-link" href="/admin/inventory/view">
+                      <i class="far fa-eye"></i> View
+                    </a>
+                  </li> -->
+                  <!-- <li>
+                    <a class="list-link" href="/admin/update/inventory">
+                      <i class="bi bi-pencil-square"></i> Update Inventory
+                    </a>
+                  </li> -->
+
+                  <!-- <li>
+                    <a class="list-link" href="/admin/move/inventory">
+                      <i class="bi bi-arrows-move"></i> Move Inventory
+                    </a>
+                  </li>
+                  <li>
+                    <a class="list-link" href="/admin/search/drum">
+                      <i class="bi bi-search"></i> Search Drum
+                    </a>
+                  </li>
+                </ul>
+              </li> -->
+
+              
+            </ul>
+          </li>
+
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- <ul class="list-unstyled" style="height: 100vh;" id="sideNavbar">
+    <li>
+      <a href="/admin/home" class="nav-link text-dark">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" data-bs-toggle="dropdown">
+        PO Management
+      </a>
+      <ul class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="/admin/viewpo">View</a></li>
+        <li><a class="dropdown-item" href="/admin/createpo">Create PO</a></li>
+        <li><a class="dropdown-item" href="/admin/exportpo">Export PO</a></li>
+      </ul>
+    </li>
+  </ul> -->

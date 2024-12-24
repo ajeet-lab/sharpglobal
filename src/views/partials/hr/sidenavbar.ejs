@@ -1,0 +1,184 @@
+<nav class="navbar navbar-expand-md navbar-light sidebar sidebar-light rounded-0 px-0">
+  <div class="container-fluid px-0">
+    <button class="navbar-toggler p-1 admin_toggler" type="button" data-toggle="collapse" data-target="#sidebar"
+      aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="sidebar">
+
+      <div class="sidebar-menu sidenavbar_unorderlist">
+        <ul class="list list-unstyled list-scrollbar">
+          <% if(hrUser){ %>
+          <% if(hrUser.designation == "HR EXECUTIVE"){ %>
+          <li class="list-item">
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="list-link link-arrow ">
+                  <span class="list-icon"><i class="fas fa-tasks"></i></span>
+                  Attendance
+                </a>
+                <ul class="list-unstyled list-hidden">
+                  <li>
+                    <a href="/hr/attendance/approve" class="list-link">
+                      <i class="fas fa-check-circle"></i> Approve</a>
+                  </li>
+                  <li>
+                    <a href="/hr/attendance/view" class="list-link">
+                      <i class="fas fa-eye"></i> View</a>
+                  </li>
+
+                  <li>
+                    <a href="/hr/attendance/summery" class="list-link">
+                      <i class="fas fa-chart-bar"></i> Summery</a>
+                  </li>
+                </ul>
+              </li>
+
+
+              <li>
+                <a href="/hr/employee/create" class="list-link">
+                  <i class="bi bi-person-plus fs-6"></i> Create User</a>
+              </li>
+
+            </ul>
+          </li>
+          <% }else if(hrUser.designation == "Reporting Manager"){ %>
+
+            <li class="list-item">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="list-link link-arrow ">
+                    <span class="list-icon"><i class="fas fa-tasks"></i></span>
+                    Attendance
+                  </a>
+                  <ul class="list-unstyled list-hidden">
+                    <li>
+                      <a href="/hr/attendance/approve" class="list-link">
+                        <i class="fas fa-check-circle"></i> Approve</a>
+                    </li>
+                    <li>
+                      <a href="/hr/attendance/view" class="list-link">
+                        <i class="fas fa-eye"></i> View</a>
+                    </li>
+  
+                    <li>
+                      <a href="/hr/attendance/summery" class="list-link">
+                        <i class="fas fa-chart-bar"></i> Summery</a>
+                    </li>
+                  </ul>
+                </li>
+  
+  
+                <li>
+                  <a href="#" class="list-link link-arrow ">
+                    <span class="list-icon"><i class="fas fa-chart-pie"></i></span>
+                    HR
+                  </a>
+                  <ul class="list-unstyled list-hidden">
+                    <li>
+                      <a href="/hr/employee/update" class="list-link">
+                        <i class="fas fa-edit"></i> Update</a>
+                    </li>
+                  </ul>
+                </li>
+  
+              </ul>
+            </li>
+
+          <% }else{ %>
+            <li class="list-item">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="list-link link-arrow ">
+                    <span class="list-icon"><i class="fas fa-tasks"></i></span>
+                    Attendance
+                  </a>
+                  <ul class="list-unstyled list-hidden">
+                    <li>
+                      <a href="/hr/attendance/approve" class="list-link">
+                        <i class="fas fa-check-circle"></i> Approve</a>
+                    </li>
+                    <li>
+                      <a href="/hr/attendance/view" class="list-link">
+                        <i class="fas fa-eye"></i> View</a>
+                    </li>
+  
+                    <li>
+                      <a href="/hr/attendance/summery" class="list-link">
+                        <i class="fas fa-chart-bar"></i> Summery</a>
+                    </li>
+                  </ul>
+                </li>
+  
+  
+                <li>
+                  <a href="#" class="list-link link-arrow ">
+                    <span class="list-icon"><i class="fas fa-chart-pie"></i></span>
+                    HR
+                  </a>
+                  <ul class="list-unstyled list-hidden">
+                    <li>
+                      <a href="/hr/employee/update" class="list-link">
+                        <i class="fas fa-edit"></i> Update</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="/hr/employee/create" class="list-link">
+                    <i class="bi bi-person-plus fs-6"></i> Create User</a>
+                </li>
+  
+              </ul>
+            </li>
+          <% } %>
+          <% } %>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ul class="list-unstyled" style="height: 100vh;" id="sideNavbar">
+    <li>
+      <a href="/admin/home" class="nav-link text-dark">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" data-bs-toggle="dropdown">
+        PO Management
+      </a>
+      <ul class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="/admin/viewpo">View</a></li>
+        <li><a class="dropdown-item" href="/admin/createpo">Create PO</a></li>
+        <li><a class="dropdown-item" href="/admin/exportpo">Export PO</a></li>
+      </ul>
+    </li>
+  </ul> -->

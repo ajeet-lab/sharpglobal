@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h5 class="card-title font-weight-bold mb-4">
+          REQUISTION SLIP (WH004-F01-00)
+        </h5>
+          <form action="/wherehouse/stock/request" method="POST">
+            <div class="row align-items-center">
+              <div class="col-md-8">To,</div>
+              <div class="col-md-4 text-right">
+                <div class="d-flex align-items-center p-2">
+                  <label
+                    for="sNo"
+                    class="mr-1 pt-2"
+                    style="display: inline-block; width: 100px"
+                    >S No.</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    name="sNo"
+                    placeholder="S No."
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center mb-3">
+              <div class="col-md-8">
+                The Wherehouse Incharge<br />
+                Please issue the following material for the production by the
+                date
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex align-items-center p-2">
+                  <input
+                    type="date"
+                    class="form-control form-control-sm"
+                    name="date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row pt-3">
+              <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+                <label for="sNo" class="form-label font-weight-bold">S.No</label>
+                <input
+                  type="text"
+                  name="sNo"
+                  placeholder="" id="sNo"
+                  value="1"
+                  class="form-control"
+                  readonly
+                />
+              </div>
+              <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+                <label for="materialDetails" class="form-label font-weight-bold">Material Details</label>
+                <input
+                  type="text"
+                  name="materialDetails"
+                  placeholder="Material Details" id="materialDetails"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+                <label for="quantity" class="form-label font-weight-bold">Quantity</label>
+                <input type="text" placeholder="Quantity" id="quantity" name="quantity" class="form-control" />
+              </div>
+              <div class="col-lg-3 mb-3 col-md-4 col-sm-6 col-12">
+                <label for="noOfDrums" class="form-label font-weight-bold"
+                  >No of Drums / Tank No</label
+                >
+                <input type="text" placeholder="No of Drums / Tank No" id="noOfDrums" name="noOfDrums" class="form-control" />
+              </div>
+              <div class="col-12">
+                  <button class="btn btn-warning px-3">Request Submit</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="card">
+    <div class="card-header border-2 border-bottom border-warning pb-0 mb-0">
+        <h4 class="font-weight-600">Distillation Update</h4>
+    </div>
+    <div class="card-body">
+
+
+        <form action="/user/factory/distillation" method="POST" class="row">
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="plantNo">Plant No</label>
+                <select name="plantNo" id="plantNo" class="form-control">
+                    <option value="">Select Plant No</option>
+                    <option value="P-16">P-16</option>
+                    <option value="P-17">P-17</option>
+                    <option value="P-18">P-18</option>
+                    <option value="P-19">P-19</option>
+                    <option value="P-20">P-20</option>
+                    <option value="P-18">P-18</option>
+                </select>
+            </div>
+
+
+
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="batchNo">Batch No</label>
+                <input type="text" name="batchNo" class="form-control" placeholder="Enter Batch No">
+            </div>
+
+
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="objective">Objective</label>
+                <input type="text" name="objective" class="form-control" placeholder="Enter Objective">
+            </div>
+
+
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="plantStartTime">Plant Start Time</label>
+                <input type="datetime-local" name="plantStartTime" id="plantStartTime" class="form-control"
+                    placeholder="Enter Plant Start Time">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="batchCompleteTime">Batch Complete Time</label>
+                <input type="datetime-local" name="batchCompleteTime" id="batchCompleteTime" class="form-control"
+                    placeholder="Enter Batch Complete Time">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="batchTimeTaken">Batch Time Taken</label>
+                <input type="text" name="batchTimeTaken" id="batchTimeTaken" class="form-control" value="0" readonly>
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="feedItem">Feed Item</label>
+                <input type="text" name="feedItem" class="form-control" placeholder="Enter Feed Item">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="feedQty">Feed Qty</label>
+                <input type="text" name="feedQty" class="form-control" placeholder="Enter Feed Qty">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="qtyObjective">Qty Objective</label>
+                <input type="text" name="qtyObjective" class="form-control" placeholder="Enter Qty Objective">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="interCutQty">Inter Cut Qty</label>
+                <input type="text" name="interCutQty" class="form-control" placeholder="Enter Inter Cut Qty">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="bottom">Bottom</label>
+                <input type="text" name="bottom" class="form-control" placeholder="Enter Bottom">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="water">Water</label>
+                <input type="text" name="water" class="form-control" placeholder="Enter Water">
+            </div>
+
+            <div class="col-md-3 col-sm-4 form-group">
+                <label for="Loss">Loss</label>
+                <input type="text" name="loss" class="form-control" placeholder="Enter Loss">
+            </div>
+
+
+
+            <div class="col-12">
+                <button class="btn btn-warning">Update</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+    let batchTimeTaken = document.getElementById('batchTimeTaken');
+    batchTimeTaken.addEventListener('click', function (e) {
+        let plantStartTime = document.getElementById('plantStartTime').value;
+        let batchCompleteTime = document.getElementById('batchCompleteTime').value;
+
+        let milisecond = new Date(batchCompleteTime) - new Date(plantStartTime)
+        let hours = Math.floor(milisecond / 3600000) < 10 ? "0" + Math.floor(milisecond / 3600000) : Math.floor(
+            milisecond / 3600000)
+
+        let minutes = Math.floor((milisecond / 60000) % 60) < 10 ? "0" + Math.floor((milisecond / 60000) % 60) :
+            Math.floor((milisecond / 60000) % 60)
+
+        document.getElementById("batchTimeTaken").value = `${hours}H : ${minutes}M`
+
+    });
+</script>

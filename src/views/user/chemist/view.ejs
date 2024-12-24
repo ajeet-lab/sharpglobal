@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+
+
+        <div class="table-responsive py-3 pe-2">
+            <h4 class="mb-4 text-decoration-underline">GC View</h4>
+            <table class="table table-sm table-bordered" id="viewpoTable">
+
+                <thead>
+                    <tr class="align-middle bg-warning">
+                        <th scope="col">UIN</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Packing Date</th>
+                        <th scope="col">Batch No</th>
+                        <th scope="col">Batch Size</th>
+                        <th scope="col">Dispatch Size</th>
+                        <th scope="col">Invoice No</th>
+                        <th scope="col">Sharp Product Code</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(chemists != ""){ %>
+                    <% chemists.forEach((data, index) =>{ %>
+                    <tr class="align-middle">
+                        <td><%= data.uin %></td>
+                        <td><%= data.productName %></td>
+                        <td><%= data.datePackingOrder %></td>
+                        <td><%= data.batchNo %></td>
+
+                        <td><%= data.batchSize %></td>
+                        <td><%= data.dispatchSize %></td>
+                        <td><%= data.invoiceNo %></td>
+                        <td><%= data.sharpProductCode %></td>
+                        <td><%= new Date(data.createdAt).toLocaleString() %></td>
+                        <td>
+                            <a href="<%= data.image_url %>" style="font-size: .8rem" class="btn btn-success btn-sm"
+                                title="Download"> <i class="far fa-file-pdf"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                    <%  } %>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+</div>

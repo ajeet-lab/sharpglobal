@@ -1,0 +1,183 @@
+<style>
+  a {
+    text-transform: capitalize;
+  }
+</style>
+
+<h3 class="mb-4 pl-3">PO Pending</h3>
+<div class="accordion" id="po_pending">
+  <div class="card">
+    <div class="card-header" id="enquiryPoPending">
+      <h2 class="mb-0">
+        <button
+          class="btn btn-link btn-block text-left"
+          type="button"
+          data-toggle="collapse"
+          data-target="#enquiryPending"
+          aria-expanded="true"
+          aria-controls="enquiryPending"
+        >
+          Enquiry PO Pending
+        </button>
+      </h2>
+    </div>
+
+    <div
+      id="enquiryPending"
+      class="collapse"
+      aria-labelledby="enquiryPoPending"
+      data-parent="#po_pending"
+    >
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-sm table-hover table-bordered" id="myTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Negotiation Date</th>
+                <th>Customer</th>
+                <th>Customer_Name/Address</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Aging</th>
+                <th>Status</th>
+                <th>Specification</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% poPending.forEach((data, index)=>{ %> <% if(data.enquiryType
+              === "Immediate PO"){ %>
+              <tr class="align-middle">
+                <% let date = Number(data.date); negotiationDate =
+                Number(data.negotiationDate) %>
+                <td><%= data.date %></td>
+                <td><%= data.negotiationDate ? data.negotiationDate : 0 %></td>
+                <td><%= data.customer %></td>
+                <td><%= data.customerName %><br /><%= data.address %></td>
+                <td><%= data.productName %></td>
+                <td><%= data.rateQuoted %></td>
+                <td><%= data.quantity %></td>
+                <td>
+                  <span
+                    class="px-2 rounded-pill badge badge-<%= negotiationDate - date < 7 ? 'success' : 'danger' %> <%= data.negotiationDate ? '' : 'invisible' %>"
+                  >
+                    <%= data.negotiationDate ? negotiationDate - date : 0 %> day
+                    ago
+                  </span>
+                </td>
+                <td>
+                  <span class="rounded-pill badge badge-warning p-1"
+                    ><%= data.status %></span
+                  >
+                </td>
+                <td><%= data.specification %></td>
+                <td>
+                  <a
+                    href="/admin/po/entry?id=<%= data._id %>"
+                    class="btn btn-sm mr-2 btn-success"
+                    style="width: 100px"
+                    >Create PO</a
+                  >
+                </td>
+              </tr>
+              <% } %> <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="contractPoPending">
+      <h2 class="mb-0">
+        <button
+          class="btn btn-link btn-block text-left collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          Contract PO Pending
+        </button>
+      </h2>
+    </div>
+    <div
+      id="collapseTwo"
+      class="collapse"
+      aria-labelledby="contractPoPending"
+      data-parent="#po_pending"
+    >
+      <div class="card-body">
+        <div class="table-responsive p-2">
+          <table
+            class="table table-sm table-hover table-bordered"
+            id="contractorTable"
+          >
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Negotiation Date</th>
+                <th>Customer</th>
+                <th>Customer_Name/Address</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Aging</th>
+                <th>Status</th>
+                <th>Specification</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <%# let date = new Date(); %> <%# let d = date.getDate(); %> <%# let
+            m = date.getMonth() + 1; %> <%# let y = date.getFullYear(); %> <%# d
+            = d <= 9 ? "0"+d : d %> <%# m = m <= 9 ? "0"+m : m %> <%# let cDate
+            = y+''+m+''+d %>
+            <tbody>
+              <% poPending.forEach((data, index)=>{ %> <% if(data.enquiryType
+              === "Contract"){ %>
+              <tr class="align-middle">
+                <% let date = Number(data.date); negotiationDate =
+                Number(data.negotiationDate) %>
+                <td><%= data.date %></td>
+                <td><%= data.negotiationDate ? data.negotiationDate : 0 %></td>
+                <td><%= data.customer %></td>
+                <td><%= data.customerName %><br /><%= data.address %></td>
+                <td><%= data.productName %></td>
+                <td><%= data.rateQuoted %></td>
+                <td><%= data.quantity %></td>
+                <td>
+                  <span
+                    class="px-2 rounded-pill badge badge-<%= negotiationDate - date < 7 ? 'success' : 'danger' %> <%= data.negotiationDate ? '' : 'invisible' %>"
+                  >
+                    <%= data.negotiationDate ? negotiationDate - date : 0 %> day
+                    ago
+                  </span>
+                </td>
+                <td>
+                  <span class="rounded-pill badge badge-warning p-1"
+                    ><%= data.status %></span
+                  >
+                </td>
+                <td><%= data.specification %></td>
+                <td>
+                  <a
+                    href="/admin/po/entry?id=<%= data._id %>"
+                    class="btn btn-sm mr-2 btn-success"
+                    style="width: 100px"
+                    >Create PO</a
+                  >
+                </td>
+              </tr>
+              <% } %> <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

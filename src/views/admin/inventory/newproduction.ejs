@@ -1,0 +1,150 @@
+<div class="row">
+    <% let lInventory =  inventory[inventory.length-1] %>
+    <div class="col-md-10 offset-md-1">
+        <div class="card">
+            <div class="card-header border-bottom border-warning border-2 mb-0 pb-0">
+                <h4>New Production</h4>
+            </div>
+            <div class="card-body">
+
+                <form action="/admin/new/production" class="row g-3" method="POST">
+                    <% if(lInventory){ %>
+                    <div class="col-md-4 mb-3">
+                        <label for="drumNo">Drum No.</label>
+                        <select name="drumNo" id="drumNo" class="form-control">
+                            <option value="" <%= lInventory.drumNo === "" ? "selected" : "" %>>Select
+                                Drum No</option>
+                            <% drumNumbers.forEach(drumNum=>{ %>
+                            <option value="<%= drumNum.drumNo %>"
+                                <%= lInventory.drumNo === drumNum.drumNo ? "selected" : "" %>>
+                                <%= drumNum.drumNo %> </option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="wt">WT.</label>
+                        <input type="number" name="wt" id="wt" class="form-control" placeholder="Enter Weight" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="plantNo">Plant No</label>
+                        <select name="plantNo" id="plantNo" class="form-control">
+                            <option value="" <%= lInventory.plantNo === "" ? "selected": "asd" %>>Select
+                                Plant No
+                            </option>
+                            <option value="M-06" <%= lInventory.plantNo === "M-06" ? "selected" : "" %>>
+                                M-06</option>
+                            <option value="P-08" <%= lInventory.plantNo === "P-08" ? "selected" : "" %>>
+                                P-08</option>
+                            <option value="P-09" <%= lInventory.plantNo === "P-09" ? "selected" : "" %>>
+                                P-09</option>
+                            <option value="P-10" <%= lInventory.plantNo === "P-10" ? "selected" : "" %>>
+                                P-10</option>
+                            <option value="P-13" <%= lInventory.plantNo === "P-13" ? "selected" : "" %>>
+                                P-13</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="batchNo">Batch No.</label>
+                        <input type="number" name="batchNo" id="batchNo"
+                            value="<%= lInventory.batchNo ? lInventory.batchNo : "" %>" class="form-control"
+                            placeholder="Enter Batch No.">
+                    </div>
+
+                    <% }else{ %>
+                    <div class="col-md-4 mb-3">
+                        <label for="drumNo">Drum No.</label>
+                        <select name="drumNo" id="drumNo" class="form-control">
+                            <option value="" selected>Select
+                                Drum No</option>
+                            <% drumNumbers.forEach(drumNum=>{ %>
+                            <option value="<%= drumNum.drumNo %>">
+                                <%= drumNum.drumNo %>
+                            </option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="wt">WT.</label>
+                        <input type="number" name="wt" id="wt" class="form-control" placeholder="Enter Weight" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="plantNo">Plant No</label>
+                        <select name="plantNo" id="plantNo" class="form-control">
+                            <option value="">Select Plant No</option>
+                            <option value="M-06">M-06</option>
+                            <option value="P-08">P-08</option>
+                            <option value="P-09">P-09</option>
+                            <option value="P-10">P-10</option>
+                            <option value="P-13">P-13</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <label for="batchNo">Batch No.</label>
+                        <input type="number" name="batchNo" id="batchNo" class="form-control"
+                            placeholder="Enter Batch No.">
+                    </div>
+                    <% } %>
+
+
+                    <div class="col-12 text-center">
+                        <button class="btn btn-warning me-3 btn-sm px-3">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10 offset-md-1 my-4">
+        <hr />
+    </div>
+
+    <div class="col-md-10 offset-md-1">
+
+        <h6 class="">View New Production List </h6>
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+                <thead class="bg-warning align-center">
+                    <tr class="align-middle" style="background-color: #ffc107 !important;">
+                        <th scope="col">Drum No.</th>
+                        <th scope="col">WT</th>
+                        <th scope="col">Plant No</th>
+                        <th scope="col">Batch No</th>
+                        <th scope="col">Location Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(inventory != ""){ %>
+                    <% inventory.forEach(data=>{ %>
+                    <% if(data.finalSubmitStatus === "Pending"){ %>
+                    <tr class="align-middle">
+                        <th><%= data.drumNo %> </th>
+                        <td><%= data.wt %></td>
+                        <td><%= data.plantNo %></td>
+                        <td><%= data.batchNo %></td>
+                        <td><%= data.locationCode %></td>
+                    </tr>
+                    <% } %>
+                    <% }) %>
+                    <% }else{ %>
+                    <tr class="align-middle">
+                        <th colspan="5" class="text-danger">No Record found.. </th>
+                    </tr>
+                    <% } %>
+
+                </tbody>
+            </table>
+
+            <div class="text-center">
+                <a href="/admin/new/production/finalsubmit" class="btn btn-warning btn-sm my-3">Final Submit</a>
+            </div>
+        </div>
+    </div>
+</div>

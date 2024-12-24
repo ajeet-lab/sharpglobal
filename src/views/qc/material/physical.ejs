@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-12 attendance">
+    <div class="card border-0">
+      <div class="card-body alert alert-warning">
+        <h5 class="card-title font-weight-bold mb-3">
+          PHYSICAL MATERIAL RECEIPT NOTE (WH003-F01-00)
+        </h5>
+          <form action="/qc/material/checklist" method="POST">
+            <div class="row align-items-center">
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="hidden" name="id" class="form-control" id="date"
+                value="<%= checkList ? checkList._id : '' %>" readOnly /> 
+                <input
+                type="date" name="date" class="form-control" id="date"
+                value="<%= checkList ? checkList.date : '' %>" readOnly />
+              </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+              <label for="nameOfSupplier" class="form-label">Name of Supplier</label>
+              <input type="text" class="form-control" id="nameOfSupplier"
+               name="nameOfSupplier" value="<%= checkList ?
+              checkList.supplierName: '' %>" placeholder="Name of Supplier" required readOnly >
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="invoiceNoDate" class="form-lable"
+                >Invoice No. & Date</label>
+                <input type="text" placeholder="Invoice No. & Date" name="invoiceNoDate" class="
+                form-control" id="invoiceNoDate" value="<%= checkList ?
+                checkList.invoiceNo+ ', ' + checkList.date : '' %>" readOnly
+                required>
+            </div>
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="sNo" class="form-lable"
+                >S.No</label>
+                <input type="text" class="form-control" placeholder="S.No" name="sNo" value="<%=
+                checkList ? checkList.sNo: '' %>" <%= checkList ? "readOnly":
+                "" %> />
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="description" class="form-lable"
+                >Description</label>
+                <input type="text" class="form-control" placeholder="Description" name="description"
+                value="<%= checkList ? checkList.material: '' %>" <%=
+                checkList ? "readOnly": "" %>>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="quantityPerInvoice" class="form-lable"
+                >Qty. as per Invoice</label>
+                <input type="text" class="form-control"
+                  placeholder="Qty. as per Invoice" name="quantityPerInvoice" value="<%= checkList ?
+                  checkList.weightOfMaterial: '' %>" <%= checkList ? "readOnly":
+                  '' %> >
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="weightShortageExcess" class="form-lable"
+                >Weight Shortage /Excess</label>
+                <input type="text" class="form-control"
+                  placeholder="Weight Shortage /Excess" name="weightShortageExcess" value="<%= checkList ?
+                  checkList.weightMaterialChecked: '' %>" <%= checkList ?
+                  "readOnly": "" %>>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="noOfpacking" class="form-lable"
+                >No. of packing</label>
+                <input type="text" class="form-control" placeholder="No. of packing" name="noOfpacking"
+                value="<%= checkList ? checkList.quantityInDrums : '' %>"
+                readOnly>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="identificationNoLotByQC" class="form-lable"
+                >Identification No Lot No. By QC</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Identification No Lot No. By QC" name="identificationNoLotByQC"
+                  />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="inchargeSign" class="form-lable"
+                >Ware House Incharge (Signature)</label>
+                <input
+                type="text"
+                disabled
+                class="form-control"
+                placeholder="Ware House Incharge (Signature)" name="inchargeSign"
+              />
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">    
+                <label for="qcSign" class="form-lable"
+                >QC. (Sign.)</label>
+                <input
+                    type="text"
+                    disabled
+                    class="form-control"
+                    placeholder="QC. (Sign.)" name="qcSign"
+                  />
+            </div>
+            <div class="col-12">
+                <button class="btn btn-warning px-5">Submit</button>
+            </div>
+             
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,251 @@
+ <div class="row">
+     <div class="col-12 attendance">
+         <div class="card">
+             <div class="card-body">
+                 <h5 class="card-title font-weight-bold mb-4">
+                     CHECKLIST OF RECIEPT OF MATERIAL (WH001-F01-00)
+                 </h5>
+                 <div class="table-responsive">
+                     <form action="/wherehouse/material/checklist/<%= gateEntry ? gateEntry._id: "" %>" method="POST">
+
+                         <table class="table table-bordered">
+                             <tr class="text-left">
+                                 <td>Invoice No.</td>
+                                 <td>
+                                    <input type="hidden" class="form-control" name="sNo" value="<%= gateEntry ? gateEntry.sNo: "" %>" >
+
+                                     <input type="text" class="form-control" name="invoiceNo" value="<%= gateEntry ? gateEntry.invoiceNo: "" %>" <%= gateEntry ? "readOnly" : "" %>
+                                         placeholder="Enter Invoice No">
+                                 </td>
+                                 <td>Date</td>
+                                 <td>
+                                     <input type="date" 
+                                     value="<%= gateEntry ? gateEntry.invoiceNo_date: "" %>" <%= gateEntry ? "readOnly" : "" %> class="form-control" name="date">
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>Supplier’s name</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="supplierName" value="<%= gateEntry ? gateEntry.nameAndAddress: "" %>" <%= gateEntry ? "readOnly" : "" %> 
+                                         placeholder="Supplier’s name" required>
+                                 </td>
+                                 <td>Material</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="material" value="<%= gateEntry ? gateEntry.nameDetailsOfArticles : "" %>" <%= gateEntry ? "readOnly" : "" %>  placeholder="Material" required>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>Weight of material (kg)</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="weightOfMaterial"
+                                         placeholder="Weight of material (kg)" value="<%= gateEntry ? gateEntry.quantity : "" %>" <%= gateEntry ? "readOnly" : "" %> >
+                                 </td>
+                                 <td>Quantity in Drums</td>
+                                 <td>
+
+                                     <input type="text" class="form-control" name="quantityInDrums" value="<%= gateEntry ? gateEntry.quantityOfDrums : "" %>" <%= gateEntry ? "readOnly" : "" %> 
+                                         placeholder="Quantity in Drums" required>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td colspan="3">Supply as per Approved Vendor list.</td>
+                                 <td>
+                                     <select name="supplyAsPerApproved" id="supplyAsPerApproved" class="form-control">
+                                         <option value="Yes">Yes</option>
+                                         <option value="No">No</option>
+                                     </select>
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td rowspan="7" colspan="2">
+                                     Vehicle condition<br><br>
+                                     <input type="text" name="vehicleCondition" class="form-control" placeholder="Vehicle condition">
+                                 </td>
+                             </tr>
+
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     Leaked Drum
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="leakedDrum"
+                                         placeholder="Leaked Drum">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     Any Evidence of Broken seals
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="evidenceBrokenSeals"
+                                         placeholder="Any Evidence of Broken seals">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     Damaged containers
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="damagedContainers"
+                                         placeholder="Damaged containers">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     Wet containers
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="wetContainers"
+                                         placeholder="wet containers">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     Rodent/ Insect infestations
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="rodentInsectInfestations"
+                                         placeholder="rodent/ insect infestations">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>
+                                     wrong labeling
+                                 </td>
+                                 <td>
+                                     <input type="text" class="form-control" name="wrongLabeling"
+                                         placeholder="wrong labeling">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>Is there any leakage</td>
+                                 <td>
+                                     <select name="leakage" id="leakage" class="form-control">
+                                         <option value="Yes">New</option>
+                                         <option value="No">Old</option>
+                                     </select>
+                                 </td>
+                                 <td>Number of drums found leak</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="numberOfDrumsLeak"
+                                         placeholder="Number of drums found leak">
+                                 </td>
+                             </tr>
+
+
+                             <tr>
+                                 <td></td>
+                                 <td>
+                                 </td>
+                                 <td>Supplier’s weight chart</td>
+                                 <td>
+                                     <select name="supplierWeightChart" id="supplierWeightChart" class="form-control">
+                                         <option value="Yes">Yes</option>
+                                         <option value="No">No</option>
+                                     </select>
+                                 </td>
+                             </tr>
+
+
+                             <tr>
+                                 <td>Material is acceptable</td>
+                                 <td>
+                                     <select name="materialAccept" id="materialAccept" class="form-control">
+                                         <option value="Yes">Yes</option>
+                                         <option value="No">No</option>
+                                     </select>
+                                 </td>
+                                 <td>Material rejected and returned</td>
+                                 <td>
+                                     <select name="materialRejectReturn" id="materialRejectReturn" class="form-control">
+                                         <option value="Yes">Yes</option>
+                                         <option value="No">No</option>
+                                     </select>
+                                 </td>
+                             </tr>
+
+
+                             <tr>
+                                 <td>Warning to the supplier required (Details)</td>
+                                 <td colspan="3">
+                                     <input type="text" class="form-control" name="warningSupplier"
+                                         placeholder="Warning to the supplier required (Details)" required>
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>Cause of rejection of material</td>
+                                 <td colspan="3">
+                                     <input type="text" class="form-control" name="rejectionMaterial"
+                                         placeholder="Cause of rejection of material">
+                                 </td>
+                             </tr>
+
+
+                             <tr>
+                                 <td>Weight of the material checked</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="weightMaterialChecked"
+                                         placeholder="Weight of the material checked">
+                                 </td>
+                                 <td>Weight Difference</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="weightDifference"
+                                         placeholder="Weight Difference">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>Remarks</td>
+                                 <td colspan="3">
+                                     <input type="text" class="form-control" name="remarks" placeholder="Remarks">
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td>Date & Time of unloading of material</td>
+                                 <td colspan="2">
+                                     <input type="datetime-local" class="form-control" name="dateTimeUnloading"
+                                         placeholder="Date & Time of unloading of material">
+                                 </td>
+                                 <td></td>
+                             </tr>
+
+                             <tr>
+                                 <td>Name & Signature of Ware- house Supervisor</td>
+                                 <td>
+                                     <input type="text" class="form-control" name="name" id="name"
+                                         placeholder="Name"><br>
+                                     <label for="name">Name</label>
+                                 </td>
+                                 <td colspan="2">
+                                     <input type="text" class="form-control" name="signature" id="signature"
+                                         placeholder="Signature"><br>
+                                     <label for="signature">Signature</label>
+                                 </td>
+                             </tr>
+
+                             <tr>
+                                 <td colspan="5">
+                                     <button class="btn btn-warning px-5">Submit</button>
+                                 </td>
+                             </tr>
+
+                         </table>
+
+                     </form>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+ </div>

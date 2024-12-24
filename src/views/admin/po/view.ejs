@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-lg-12 col-md-2">
+        <h3 class="mb-4">View PO</h3>
+        <div class="table-responsive pt-1 pr-3">
+            <table class="table table-bordered table-sm" id="myTable">
+                <thead class="bg-warning align-center">
+                    <tr class="align-middle" style="background-color: #ffc107 !important;">
+                        <th scope="col">PO Recived Date</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Customer Address</th>
+    
+                        <th scope="col">Po For Where</th>
+                        <th scope="col">Customer Po No</th>
+                        <th scope="col">Customer Product Name</th>
+                        <th scope="col">Customer Product Code</th>
+    
+                        <th scope="col">Sharp Product Name</th>
+                        <th scope="col">Qty kgs</th>
+                        <th scope="col">Cur</th>
+                        <th scope="col">Price kg</th>
+    
+    
+                        <th scope="col">Sharp Product Name</th>
+                        <th scope="col">Exchange Rate</th>
+                        <th scope="col">Value in INR</th>
+                        <th scope="col">Incoterm</th>
+    
+    
+    
+                        <th scope="col">Payment Terms</th>
+                        <th scope="col">Shipment Period ETD</th>
+                        <th scope="col">Shipment Period ETA</th>
+                        <th scope="col">Req Factory ETD</th>
+    
+    
+                        <th scope="col">Dispatch Plan Date</th>
+                        <th scope="col">Status of Orders</th>
+                        <th scope="col">Remark</th>
+                        <th scope="col">Delay Status</th>
+                        <th scope="col">Delay Remarks</th>
+    
+    
+                        <th scope="col">INV No</th>
+                        <th scope="col">INV Date</th>
+                        <th scope="col">Sample Required</th>
+                        <th scope="col">Batch No</th>
+                        <th scope="col">DHL No</th>
+    
+                        <th scope="col">Date</th>
+                        <th scope="col">Sample Remarks</th>
+    
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <% if(podata){ %>
+                    <% podata.forEach(po =>{  %>
+                    <tr class="align-middle">
+                        <td scope="col"><%= po.po_received_date %></td>
+                        <td scope="col"><%= po.customer_name %></td>
+                        <td scope="col"><%= po.country %></td>
+                        <td scope="col"><%= po.customer_address %></td>
+    
+                        <td scope="col"><%= po.po_for_where %></td>
+                        <td scope="col"><%= po.customer_po_no %></td>
+                        <td scope="col"><%= po.customer_product_name %></td>
+                        <td scope="col"><%= po.customer_product_code %></td>
+    
+                        <td scope="col"><%= po.sharp_product_name %></td>
+                        <td scope="col"><%= po.qty_kgs %></td>
+                        <td scope="col"><%= po.cur %></td>
+                        <td scope="col"><%= po.price_kg %></td>
+    
+    
+                        <td scope="col"><%= po.value %></td>
+                        <td scope="col"><%= po.exchange_rate %></td>
+                        <td scope="col"><%= po.value_in_inr %></td>
+                        <td scope="col"><%= po.incoterm %></td>
+    
+    
+    
+                        <td scope="col"><%= po.payment_terms %></td>
+                        <td scope="col"><%= po.shipment_period_etd %></td>
+                        <td scope="col"><%= po.shipment_period_eta %></td>
+                        <td scope="col"><%= po.req_factory_etd %></td>
+    
+    
+                        <td scope="col"> <%= po.dispatch_plan_date %> </td>
+                        <td scope="col"> <%= po.status_of_orders %></td>
+                        <td scope="col"> <%= po.remark %></td>
+                        <td scope="col"> <%= po.delay_status %></td>
+                        <td scope="col"> <%= po.delay_remarks %></td>
+    
+    
+                        <td scope="col"> <%= po.inv_no %></td>
+                        <td scope="col"> <%= po.inv_date %></td>
+                        <td scope="col"> <%= po.sample_required %></td>
+                        <td scope="col"> <%= po.batch_no %></td>
+                        <td scope="col"> <%= po.dhl_no %></td>
+    
+                        <td scope="col"> <%= po.date %> Date</td>
+                        <td scope="col"> <%= po.sample_remarks %></td>
+    
+                    </tr>
+                    <% }) %>
+                    <% } %>
+   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

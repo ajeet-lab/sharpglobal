@@ -1,0 +1,108 @@
+<div class="row">
+    <div class="col-md-8 col-12 px-md-4 offset-md-2 ">
+        <div class="card p-3">
+            <h5 class="bg-info rounded-pill text-center">Attendance</h5>
+
+            <form action="/admin/markOut" method="POST">
+                <div class="form-group">
+                    <label>Attendance Options</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="attendance" value="p" id="flexRadioDefault2"
+                        checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Present
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="attendance" value="cl" id="cl">
+                    <label class="form-check-label" for="cl">
+                        Casual Leave
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="sl" name="attendance" id="sl">
+                    <label class="form-check-label" for="sl">
+                        Sick Leave
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="pl" name="attendance" id="pl">
+                    <label class="form-check-label" for="pl">
+                        Privilege Leave
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="co" name="attendance" id="co">
+                    <label class="form-check-label" for="co">
+                        Comp-Off
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="hf" name="attendance" id="hf">
+                    <label class="form-check-label" for="hf">
+                        Half Day
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="wo" name="attendance" id="wo">
+                    <label class="form-check-label" for="wo">
+                        Weekly Off
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="training" name="attendance" id="training">
+                    <label class="form-check-label" for="training">
+                        Training
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="h" name="attendance" id="h">
+                    <label class="form-check-label" for="h">
+                        Holiday
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="oc" name="attendance" id="oc">
+                    <label class="form-check-label" for="oc">
+                        Market/Outlet Close
+                    </label>
+                </div>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" value="tm" name="attendance" id="tm">
+                    <label class="form-check-label" for="tm">
+                        Team Meeting
+                    </label>
+                </div>
+
+                <div class="form-group mb-2">
+                    <input class="form-control form-control-sm border-bottom" name="remark" id="remark"
+                        placeholder="Remark">
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <a href="/admin/home"
+                        class="btn btn-warning text-center d-flex align-items-center justify-content-center mr-4"
+                        style="height: 40px; width: 40px; border-radius: 50%;">
+                        <i class="fas fa-caret-left fa-2x"></i>
+                    </a>
+                    <button class="btn btn-warning text-center d-flex align-items-center justify-content-center"
+                        style="height: 40px; width: 40px; border-radius: 50%;" disabled>
+                        <i class="fas fa-caret-right fa-2x"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    PHYSICAL MATERIAL RECEIPT NOTE (WH003-F01-00)
+                </h5>
+                <div class="table-responsive p-2">
+                    <table class="table table-bordered">
+                        <tr class="table-warning font-weight-bold">
+                            <td>S.No</td>
+                            <td>Name Of Supplier's</td>
+                            <td>Date</td>
+                            <td>Invoice No Date</td>
+                            <td>Description</td>
+                            <td>Quantity Per Invoice</td>
+                            <td>Weight Shortage Excess</td>
+                            <td>No Of Drums</td>
+                            <td>No Of Packing</td>
+                            <td>Dentication No LotByQC</td>
+                        </tr>
+
+                        <% if(physical.length > 0){ %>
+                            <% physical.forEach(item=>{ %>
+                                <tr>
+                                    <td><%= item.sNo %></td>
+                                    <td><%= item.nameOfSupplier %></td>
+                                    <td><%= item.date %></td>
+                                    <td><%= item.invoiceNoDate %></td>
+                                    <td><%= item.description %></td>
+                                    <td><%= item.quantityPerInvoice %></td>
+                                    <td><%= item.weightShortageExcess %></td>
+                                    <td><%= item.noOfDrums %></td>
+                                    <td><%= item.noOfPacking %></td>
+                                    <td><%= item.denticationNoLotByQC %></td>
+                                    
+                                </tr>
+                            <% }) %> 
+                        <% } %> 
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

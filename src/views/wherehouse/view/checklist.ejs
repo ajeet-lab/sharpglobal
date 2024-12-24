@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-12 attendance">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title font-weight-bold mb-4">
+                    CHECKLIST OF RECIEPT OF MATERIAL (WH001-F01-00)
+                </h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr class="table-warning font-weight-bold">
+                            <td>Invoice No.</td>
+                            <td>Date</td>
+                            <td>Supplier’s name</td>
+                            <td>Material</td>
+                            <td>Weight of material (kg)</td>
+                            <td>Quantity in Drums</td>
+                            <td>Supply as per Approved Vendor list.</td>
+                            <td>Vehicle condition</td>
+                            <td>Leaked Drum</td>
+                            <td>Any Evidence of Broken seals</td>
+                            <td>Damaged containers </td>
+                            <td>Wet containers</td>
+                            <td>Rodent/ Insect infestations</td>
+                            <td>Wrong Labeling</td>
+                            <td>Is there any leakage</td>
+                            <td>Number of drums found leak</td>
+                            <td>Supplier’s weight chart</td>
+                            <td>Material is acceptable</td>
+                            <td>Material rejected and returned</td>
+                            <td>Warning to the supplier required (Details)</td>
+                            <td>Cause of rejection of material</td>
+                            <td>Weight of the material checked</td>
+                            <td>Weight Difference</td>
+                            <td>Remarks</td>
+                            <td>Date & Time of unloading of material</td>
+                            <td>Name</td>
+                            <!-- <td>Signature</td> -->
+                        </tr>
+
+                        <% if(checkList.length > 0){ %>
+                            <% checkList.forEach(item=>{ %>
+                                <tr>
+                                    <td><%= item.invoiceNo %></td>
+                                    <td><%= item.date %></td>
+                                    <td><%= item.supplierName %></td>
+                                    <td><%= item.material %></td>
+                                    <td><%= item.weightOfMaterial %></td>
+                                    <td><%= item.quantityInDrums %></td>
+                                    <td><%= item.supplyAsPerApproved %></td>
+                                    <td><%= item.vehicleCondition %></td>
+                                    <td><%= item.leakedDrum %></td>
+                                    <td><%= item.evidenceBrokenSeals %></td>
+                                    <td><%= item.damagedContainers %></td>
+                                    <td><%= item.wetContainers %></td>
+                                    <td><%= item.rodentInsectInfestations %></td>
+                                    <td><%= item.wrongLabeling %></td>
+                                    <td><%= item.leakage %></td>
+                                    <td><%= item.numberOfDrumsLeak %></td>
+                                    <td><%= item.supplierWeightChart %></td>
+                                    <td><%= item.materialAccept %></td>
+                                    <td><%= item.materialRejectReturn %></td>
+                                    <td><%= item.warningSupplier %></td>
+                                    <td><%= item.rejectionMaterial %></td>
+                                    <td><%= item.weightMaterialChecked %></td>
+                                    <td><%= item.weightDifference %></td>
+                                    <td><%= item.remarks %></td>
+                                    <td><%= item.dateTimeUnloading %></td>
+                                    <td><%= item.name %></td>
+                                    <!-- <td><%= item.signature %></td> -->
+                                </tr>
+                            <% }) %> 
+                        <% } %> 
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

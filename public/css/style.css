@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --t-dark: #000;
+}
+
+body {
+  /* overflow-x: hidden !important;
+      background-color: aqua; */
+}
+
+/* =============GLOBAL CSS=============== */
+a {
+  text-transform: uppercase;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000
+}
+
+section {
+  padding: 2rem 0;
+}
+
+
+.table>tbody>tr>td,
+.table>thead>tr>th,
+.table>thead>tr>td,
+.table>tr>th,
+.table>tr>td {
+  vertical-align: middle;
+}
+
+
+#myTable_filter label {
+  padding: 5px !important;
+}
+
+.dataTables_empty {
+  background-color: rgb(255, 242, 242);
+  color: rgb(204, 30, 30);
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/* =============END GLOBAL CSS=============== */
+
+
+/* =============TOP NAVBAR CSS=============== */
+#navbar .nav-item .nav-link {
+  font-size: .8rem !important;
+}
+
+#navbar .navbar-brand {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+}
+
+/* =============END TOP NAVBAR CSS=============== */
+
+/* =============HOME PAGE CSS=============== */
+
+.attendance ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.attendance ul li {
+  list-style: none;
+  margin: 0 2rem 0 0;
+  text-align: center;
+}
+
+.attendance ul li a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--t-dark);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#formTable tr td input#sNo{
+  display: inline-block !important;
+  width: 40px !important;
+}
+
+#formTable tr td input{
+  display: inline-block !important;
+  width: 125px !important;
+}
+
+
+#home .attendance ul li a img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =============END HOME PAGE CSS=============== */
+
+
+#home_nav_pills .nav-pills>button {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home_nav_pills .nav-pills>button>img {
+  margin-right: .5rem;
+}
+
+#home_nav_pills .nav-pills>button {
+  border: 2px solid #fff !important;
+}
+
+
+#home_nav_pills .nav-pills>button.active {
+  background-color: rgb(250 250 241) !important;
+  border: 2px solid #ffc107 !important;
+  color: var(--t-dark)
+}
+
+
+#profile .userProfile ul li {
+  width: 100;
+  margin: 1rem 0;
+  border-bottom: 1px solid #ffc107;
+  display: flex;
+  justify-content: space-between;
+}
+
+#profile .card {
+  background-color: 'green' !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  /* =============HOME PAGE CSS=============== */
+  #home .sales ul,
+  #home .attndance ul,
+  #tool .sales ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #home .sales ul li,
+  #home .attndance ul li,
+  #tool .sales ul li {
+    width: 25%;
+    margin-top: 1rem;
+  }
+
+  /* =============END HOME PAGE CSS=============== */
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  /* =============HOME PAGE CSS=============== */
+  #home .sales ul,
+  #home .attndance ul,
+  #tool .sales ul {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #home .attndance ul,
+  #tool .sales ul {
+    flex-wrap: nowrap;
+  }
+
+  #home .sales ul li,
+  #home .attndance ul li {
+    margin-top: 1rem;
+  }
+
+  #home .attndance .card-body {
+    padding: 0.75rem 0 !important;
+  }
+
+  #home .sales ul li a,
+  #home .attndance ul li a,
+  #tool .sales ul li a {
+    font-size: 0.7rem;
+  }
+
+  #home .sales ul li a img,
+  #home .attndance ul li a img,
+  #tool .sales ul li a img {
+    width: 25px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* =============END HOME PAGE CSS=============== */
+}
+
+
+#markin table tbody td,
+#markin table tbody th,
+a,
+#zone table tbody td,
+#zone table tbody th,
+a {
+  font-size: 0.85rem;
+}
+
+/* #myTable.table,
+#myTable1.table {
+  border-right: 1px solid rgb(233, 233, 233) !important;
+}
+
+#myTable th,
+#myTable1 th {
+  border-top: 1px solid rgb(233, 233, 233) !important;
+}
+
+#myTable th,
+#myTable td,
+#myTable1 th,
+#myTable1 td {
+  border-left: 1px solid rgb(233, 233, 233) !important;
+  border-bottom: 1px solid rgb(233, 233, 233) !important;
+} */
+
+#nestedTable table,
+#nestedTable table body {
+  height: 100% !important;
+  background-color: transparent !important;
+  overflow: hidden;
+  vertical-align: middle !important;
+}
+
+#nestedTable table tr,
+#nestedTable td{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#nestedTable table tr,
+#nestedTable td{
+    height: 40px !important;
+}
+
+#nestedTable table th{
+  border: 1px solid gray !important; width: 100px !important; display:inline-block !important;
+}
+
+#nestedTable td{
+  width: 102px;
+  display: inline-block;
+  vertical-align: middle !important;
+  border: 1px solid transparent;
+  line-height: 40px;
+}
+
+
+#sales_confirmation table td,
+#sales_confirmation table th{
+  text-align: left;
+}
+
+#sales_confirmation .fw-20{
+  font-size: 1.2rem;
+}
+
+#sales_confirmation .fw-22{
+  font-size: 1.4rem;
+}
+
+#sales_confirmation tr{
+  background-color: #fff;
+}
+
+#sales_confirmation .bg-warn {background-color: rgb(250 250 241) !important;}
