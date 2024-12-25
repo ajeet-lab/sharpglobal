@@ -13,8 +13,9 @@ function AuthController() {
                     uin,
                     password
                 } = req.body;
+                console.log("Request body ",req.body )
                 const user = await User.findOne({
-                    uin: uin
+                    uin: parseInt(uin)
                 });
                 if (!user) {
                     req.flash("error_msg", "Invalid Credentials")
@@ -120,27 +121,27 @@ function AuthController() {
         },
 
 
-        // async allUpdate(req, res) {
-        //     const attendace = await Attendance.find({});
-        //     const emp = await User.find({});
-        //     if (attendace) {
-        //         emp.forEach(async atten => {
-        //             const emp = await AttenDBD.findOne({uin: atten.uin, unit:"BHIWADI"});
-        //             console.log(emp)
-        //             await Attendance.findOneAndUpdate({
-        //                uin: atten.uin, unit:"BHIWADI", designation:undefined
-        //             }, {
-        //                 designation: atten.designation
-        //             }, {
-        //                 new: true
-        //             });
-        //         })
-        //         res.json({message: "Success"})
-        //     }else{
-        //         res.json("failed")
-        //     }
+        async allUpdate(req, res) {
+            const attendace = await Attendance.find({});
+            const emp = await User.find({});
+            if (attendace) {
+                emp.forEach(async atten => {
+                    const emp = await AttenDBD.findOne({uin: atten.uin, unit:"BHIWADI"});
+                    console.log(emp)
+                    await Attendance.findOneAndUpdate({
+                       uin: atten.uin, unit:"BHIWADI", designation:undefined
+                    }, {
+                        designation: atten.designation
+                    }, {
+                        new: true
+                    });
+                })
+                res.json({message: "Success"})
+            }else{
+                res.json("failed")
+            }
 
-        // }
+        }
 
     }
 }

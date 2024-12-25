@@ -13,6 +13,6 @@ router.route('/')
     .post(AuthController().postLogin);
 
 
-// router.put("/all/update", AuthController().allUpdate);
+router.put("/all/update", AuthController().allUpdate);
 
 module.exports = router

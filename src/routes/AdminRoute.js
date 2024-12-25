@@ -59,8 +59,8 @@ router
   );
 
 // INVENTORY VIEW ROUTE
-// router.route('/inventory/view')
-//     .get(GlobalMiddleware().adminAuth, AdminController().inventoryView)
+router.route('/inventory/view')
+    .get(GlobalMiddleware().adminAuth, AdminController().inventoryView)
 
 router
   .route("/issue/drumno")
@@ -73,9 +73,9 @@ router
   .post(GlobalMiddleware().adminAuth, AdminController().postMoveInventory);
 
 // INVENTORY UPDATE
-// router.route('/update/inventory')
-//     .get(GlobalMiddleware().adminAuth, AdminController().updateInventory)
-//     .post(GlobalMiddleware().adminAuth, AdminController().postUpdateInventory);
+router.route('/update/inventory')
+    .get(GlobalMiddleware().adminAuth, AdminController().updateInventory)
+    .post(GlobalMiddleware().adminAuth, AdminController().postUpdateInventory);
 
 router
   .route("/search/drum")

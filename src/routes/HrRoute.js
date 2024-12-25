@@ -9,7 +9,7 @@ router.all('/*', (req, res, next) => {
 })
 
 // DASHBOARD ROUTE
-// router.get('/home', GlobalMiddleware().hrAuth, HrController().home);
+router.get('/home', GlobalMiddleware().hrAuth, HrController().home);
 
 // ATTENDACE HOME ROUTE
 router.route('/attendance')

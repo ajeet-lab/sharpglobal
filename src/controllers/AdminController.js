@@ -443,17 +443,17 @@ function AdminController() {
       }
     },
 
-    // async inventoryView(req, res) {
-    //     try {
-    //         const inventory = await SharpInventory.find({});
-    //         res.render("admin/inventory/inventoryview", {
-    //             inventory
-    //         })
-    //     } catch (error) {
-    //         req.flash("error_msg", error.message);
-    //         res.redirect('/admin/inventory/view')
-    //     }
-    // },
+    async inventoryView(req, res) {
+        try {
+            const inventory = await SharpInventory.find({});
+            res.render("admin/inventory/inventoryview", {
+                inventory
+            })
+        } catch (error) {
+            req.flash("error_msg", error.message);
+            res.redirect('/admin/inventory/view')
+        }
+    },
 
     async issueDrumNo(req, res) {
       const drums = await ConstantDrum.find({});
@@ -559,111 +559,111 @@ function AdminController() {
     },
 
     // GET INVENTORY UPDATE
-    // async updateInventory(req, res) {
-    //     res.render('admin/inventery/updateinventory')
-    // },
+    async updateInventory(req, res) {
+        res.render('admin/inventery/updateinventory')
+    },
 
     // POST INVENTORY UPDATE
-    // async postUpdateInventory(req, res) {
-    //     const {
-    //         batchNo,
-    //         a_Pinene,
-    //         b_Pinene,
-    //         sebanine,
-    //         mercine,
-    //         limonine,
-    //         cineole,
-    //         cisIsomer,
-    //         cis,
-    //         i_Octonal,
-    //         menthone,
-    //         isoMenthone,
-    //         menthylAcetate,
-    //         ip_isopulegol,
-    //         neoMenthol,
-    //         pcbBetaCaryophyllene,
-    //         neoIsoPulegol,
-    //         neoIsoMenthol,
-    //         lm,
-    //         isoMenthol,
-    //         pu,
-    //         pip,
-    //         carvone,
-    //         aTerpineols,
-    //         menthofuran,
-    //         sebanineHydrate,
-    //         germacreneD,
-    //         viridifloral,
-    //         diHydroCarvone,
-    //         terpenene_1_4_ol,
-    //         betaFarnacene,
-    //         betaBourbonene,
-    //         dMenthol,
-    //         only_L_Menthol,
-    //         linalool,
-    //         methylChavi,
-    //         cis2,
-    //         tt,
-    //         tmc,
-    //         hb,
-    //         total
-    //     } = req.body
-    //     const sInventory = await SharpInventory.findOne({
-    //         batchNo_LotNo: batchNo
-    //     });
-    //     if (sInventory != null) {
-    //         await SharpInventory.findByIdAndUpdate(sInventory._id, {
-    //             a_Pinene,
-    //             b_Pinene,
-    //             sebanine,
-    //             mercine,
-    //             limonine,
-    //             cineole,
-    //             cisIsomer,
-    //             cis,
-    //             i_Octonal,
-    //             menthone,
-    //             isoMenthone,
-    //             menthylAcetate,
-    //             ip_isopulegol,
-    //             neoMenthol,
-    //             pcbBetaCaryophyllene,
-    //             neoIsoPulegol,
-    //             neoIsoMenthol,
-    //             lm,
-    //             isoMenthol,
-    //             pu,
-    //             pip,
-    //             carvone,
-    //             aTerpineols,
-    //             menthofuran,
-    //             sebanineHydrate,
-    //             germacreneD,
-    //             viridifloral,
-    //             diHydroCarvone,
-    //             terpenene_1_4_ol,
-    //             betaFarnacene,
-    //             betaBourbonene,
-    //             dMenthol,
-    //             only_L_Menthol,
-    //             linalool,
-    //             methylChavi,
-    //             cis2,
-    //             tt,
-    //             tmc,
-    //             hb,
-    //             total,
-    //             updatedAt: Date.now()
-    //         }, {
-    //             new: true
-    //         });
-    //         req.flash("success_msg", "Inventory update Successfully");
-    //         return res.redirect('/admin/update/inventory');
-    //     } else {
-    //         req.flash("error_msg", "Somthing Went Wrong");
-    //         return res.redirect('/admin/update/inventory');
-    //     }
-    // },
+    async postUpdateInventory(req, res) {
+        const {
+            batchNo,
+            a_Pinene,
+            b_Pinene,
+            sebanine,
+            mercine,
+            limonine,
+            cineole,
+            cisIsomer,
+            cis,
+            i_Octonal,
+            menthone,
+            isoMenthone,
+            menthylAcetate,
+            ip_isopulegol,
+            neoMenthol,
+            pcbBetaCaryophyllene,
+            neoIsoPulegol,
+            neoIsoMenthol,
+            lm,
+            isoMenthol,
+            pu,
+            pip,
+            carvone,
+            aTerpineols,
+            menthofuran,
+            sebanineHydrate,
+            germacreneD,
+            viridifloral,
+            diHydroCarvone,
+            terpenene_1_4_ol,
+            betaFarnacene,
+            betaBourbonene,
+            dMenthol,
+            only_L_Menthol,
+            linalool,
+            methylChavi,
+            cis2,
+            tt,
+            tmc,
+            hb,
+            total
+        } = req.body
+        const sInventory = await SharpInventory.findOne({
+            batchNo_LotNo: batchNo
+        });
+        if (sInventory != null) {
+            await SharpInventory.findByIdAndUpdate(sInventory._id, {
+                a_Pinene,
+                b_Pinene,
+                sebanine,
+                mercine,
+                limonine,
+                cineole,
+                cisIsomer,
+                cis,
+                i_Octonal,
+                menthone,
+                isoMenthone,
+                menthylAcetate,
+                ip_isopulegol,
+                neoMenthol,
+                pcbBetaCaryophyllene,
+                neoIsoPulegol,
+                neoIsoMenthol,
+                lm,
+                isoMenthol,
+                pu,
+                pip,
+                carvone,
+                aTerpineols,
+                menthofuran,
+                sebanineHydrate,
+                germacreneD,
+                viridifloral,
+                diHydroCarvone,
+                terpenene_1_4_ol,
+                betaFarnacene,
+                betaBourbonene,
+                dMenthol,
+                only_L_Menthol,
+                linalool,
+                methylChavi,
+                cis2,
+                tt,
+                tmc,
+                hb,
+                total,
+                updatedAt: Date.now()
+            }, {
+                new: true
+            });
+            req.flash("success_msg", "Inventory update Successfully");
+            return res.redirect('/admin/update/inventory');
+        } else {
+            req.flash("error_msg", "Somthing Went Wrong");
+            return res.redirect('/admin/update/inventory');
+        }
+    },
 
     async searchDrum(req, res) {
       res.render("admin/inventory/searchdrum", {
